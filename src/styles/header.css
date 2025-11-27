@@ -1,0 +1,44 @@
+.gradient {
+  background: linear-gradient(-135deg, #ffcd00, #962a2a, #ffcd00, #962a2a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 8px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.navbar-link {
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 1s ease;
+}
+
+.anchor {
+  position: absolute;
+  top: -64px; /* given the fixed header is 50px tall, and you want 15px padding */
+  left: 0px;
+}
+
+.navbar-text-black {
+  color: rgb(24, 24, 24);
+}
