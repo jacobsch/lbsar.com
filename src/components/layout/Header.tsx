@@ -1,7 +1,10 @@
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { List, Menu } from 'react-feather';
 
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
+
+import logo from '~/images/logo.png'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -58,13 +61,13 @@ export default function Header({
           <span className='mt-1 hidden xl:inline-block'>
             
           </span>
-          {/* <Image
-            src="replace.png"
-            alt=''
+          <Image
+            src={logo}
+            alt='Lions Bay SAR Logo'
             width={55}
             height={55}
             className='xl:hidden'
-          /> */}
+          />
         </div>
         <div className='lg:hidden'>
           <button onClick={toggleMenu} className='focus:outline-none'>

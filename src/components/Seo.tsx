@@ -2,11 +2,12 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: '',
-  siteName: '',
+  title: 'Lions Bay SAR',
+  siteName: 'Lions Bay SAR',
   description:
-    '',
-  url: '', // without the trailing / at the end of url
+    `Lions Bay Search and Rescue Lions Bay Search and Rescue Society operates under the umbrella of the Emergency Management Climate Readiness (EMCR). 
+    Our team provides wilderness and urban search and rescue services, primarily in the area from Horseshoe Bay to Porteau Cove.`,
+  url: 'https://lbsar.com', // without the trailing / at the end of url
   type: 'website',
   robots: 'follow, index',
   /**
