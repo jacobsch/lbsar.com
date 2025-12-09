@@ -9,6 +9,7 @@ import logo from '~/images/logo.png'
 const links = [
   { href: '/', label: 'Home' },
   { href: '/#about-us', label: 'About Us' },
+  { href: '/history', label: 'History' },
 ];
 
 const HeaderItem = ({ href, label }: { href: string; label: string }) => {

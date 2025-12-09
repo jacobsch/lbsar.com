@@ -47,3 +47,14 @@
   background-image: url('../../public/images/ski.jpg');
 }
 
+.history-parallax-1 {
+  background-image: url('../../public/images/history/new-team.jpg');
+}
+
+.history-parallax-2 {
+  background-image: url('../../public/images/history/ski.jpg');
+}
+
+.history-parallax-3 {
+  background-image: url('../../public/images/history/vehicle.jpg');
+}
