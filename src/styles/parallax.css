@@ -30,6 +30,20 @@
 }
 
 /* Parallax Backgrounds for Landing*/
-/* .bg-parallax {
-  background-image: url('../../public/images/example.jpg');
-} */
+
+.bg-parallax-1 {
+  background-image: url('../../public/images/home1.jpg');
+}
+
+.bg-parallax-2 {
+  background-image: url('../../public/images/hoist.jpg');
+}
+
+.bg-parallax-3 {
+  background-image: url('../../public/images/dog2.jpg');
+}
+
+.bg-parallax-4 {
+  background-image: url('../../public/images/ski.jpg');
+}
+
