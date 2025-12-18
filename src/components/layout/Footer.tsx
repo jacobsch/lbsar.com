@@ -40,13 +40,13 @@ export default function Footer() {
           <div className='h3 container-heading pb-8'>SOCIAL MEDIA</div>
           <div className='flex items-center justify-center'>
             <a
-              href='https://www.instagram.com/example.com/'
+              href='https://www.instagram.com/lionsbaysar/'
               className='icon-link rounded-full border-2 p-2'
             >
               <Instagram />
             </a>
             <a
-              href='https://www.facebook.com/example.com/'
+              href='https://www.facebook.com/LionsBaySAR/'
               className='icon-link mx-6 rounded-full border-2 p-2 sm:mx-12'
             >
               <Facebook />
