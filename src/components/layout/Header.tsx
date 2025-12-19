@@ -22,8 +22,8 @@ const HeaderItem = ({ href, label }: { href: string; label: string }) => {
   );
 };
 
-export default function Header({ transparentHeader = true }: { transparentHeader: boolean }) {
-  const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
+export default function Header({ }: { transparentHeader: boolean }) {
+  const [, setIsNavbarTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
