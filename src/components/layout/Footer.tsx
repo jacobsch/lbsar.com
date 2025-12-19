@@ -40,7 +40,7 @@ export default function Footer() {
             className='bg-red-600 text-white rounded px-4 py-2 text-sm font-semibold text-center'
             role='alert'
           >
-            For All Search and Rescue Emergencies, call 911
+            For All Search and Rescue Emergencies, Call 911
           </div>
         </div>
 

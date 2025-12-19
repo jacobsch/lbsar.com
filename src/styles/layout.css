@@ -22,12 +22,13 @@
 .icon-link {
   text-decoration: none;
   color: #000000;
-  background-color: rgba(255, 232, 128, 0.5);
-  border-color: rgba(255, 232, 128, 0.5);
+  background-color: rgba(244, 234, 23, 1);
+  border-color: rgba(27, 67, 126, 1);
+  transition: 0.3s
 }
 
 .icon-link:hover {
-  color: #000000;
-  background-color: rgba(255, 127, 127, 0.5);
-  border-color: rgba(255, 127, 127, 0.5);
+  color: #FFFFFF;
+  background-color: rgba(27, 67, 126, 1);
+  border-color: rgba(244, 234, 23, 1);
 }
