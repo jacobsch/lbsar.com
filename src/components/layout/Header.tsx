@@ -50,11 +50,7 @@ export default function Header({
 
   return (
     <header
-      className={`header navbar ${
-        isNavbarTransparent && transparentHeader
-          ? 'bg-transparent'
-          : 'bg-white'
-      }`}
+      className='header navbar bg-white'
     >
       <div className='gradient'>&nbsp;</div>
       <nav className='layout mx-4 flex h-14 items-center justify-between'>
