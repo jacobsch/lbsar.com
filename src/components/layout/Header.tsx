@@ -26,6 +26,7 @@ const DonateButton = () => {
   return (
     <a
       href='https://www.canadahelps.org/en/dn/9468'
+      target='_blank'
       className="
         items-center
         rounded-md
