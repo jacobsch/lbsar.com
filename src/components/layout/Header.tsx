@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { List, Menu } from 'react-feather';
 
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
-import logo from '~/images/logo_new.jpg';
+import logo from '~/images/logo.png';
 
 const links = [
   { href: '/', label: 'Home' },
