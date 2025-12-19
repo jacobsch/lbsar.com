@@ -46,7 +46,7 @@ const DonateButton = () => {
   );
 };
 
-export default function Header({ transparentHeader }: { transparentHeader: boolean }) {
+export default function Header({ }: { transparentHeader: boolean }) {
   const [, setIsNavbarTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
