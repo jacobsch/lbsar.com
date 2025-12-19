@@ -46,8 +46,8 @@ const DonateButton = () => {
   );
 };
 
-export default function Header({ }: { transparentHeader: boolean }) {
-  const [, setIsNavbarTransparent] = useState(true);
+export default function Header({ transparentHeader = true }: { transparentHeader: boolean }) {
+  const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -62,9 +62,14 @@ export default function Header({ }: { transparentHeader: boolean }) {
   }, []);
 
   return (
-    <header className='header navbar bg-white w-full relative'>
+    <header
+      className={`header navbar ${
+        isNavbarTransparent && transparentHeader
+          ? 'bg-transparent'
+          : 'bg-white'
+      }`}
+    >
       <div className='gradient'>&nbsp;</div>
-
       <nav className='flex h-14 items-center justify-between w-full pl-4 pr-1 lg:pl-8 lg:pr-2 relative'>
         {/* LEFT: Nav links + Hamburger */}
         <div className='flex items-center space-x-4'>
