@@ -22,7 +22,31 @@ const HeaderItem = ({ href, label }: { href: string; label: string }) => {
   );
 };
 
-export default function Header({ }: { transparentHeader: boolean }) {
+const DonateButton = () => {
+  return (
+    <a
+      href='https://www.canadahelps.org/en/dn/9468'
+      className="
+        items-center
+        rounded-md
+        bg-red-600
+        px-4
+        py-2
+        text-sm
+        font-semibold
+        text-white
+        hover:bg-red-700
+        transition-colors
+        whitespace-nowrap
+        mr-4
+      "
+    >
+      Donate Today
+    </a>
+  );
+};
+
+export default function Header({ transparentHeader }: { transparentHeader: boolean }) {
   const [, setIsNavbarTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -61,8 +85,9 @@ export default function Header({ }: { transparentHeader: boolean }) {
           </ul>
         </div>
 
-        {/* RIGHT: Logo */}
+        {/* RIGHT: Logo + Donate Button */}
         <div className='flex items-center ml-auto mr-4 lg:mr-3 -mt-0'>
+          <DonateButton></DonateButton>
           <Image src={logo} alt='Lions Bay SAR Logo' width={50} height={50} />
         </div>
 
