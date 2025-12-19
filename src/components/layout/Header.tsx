@@ -7,7 +7,7 @@ import logo from '~/images/logo.png';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/#about-us', label: 'About Us' },
+  { href: '/#about-1', label: 'About Us' },
   { href: '/history', label: 'History' },
 ];
 
