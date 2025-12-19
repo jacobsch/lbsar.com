@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { List, Menu } from 'react-feather';
 
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
-
-import logo from '~/images/logo_new.jpg'
+import logo from '~/images/logo_new.jpg';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -16,71 +15,67 @@ const HeaderItem = ({ href, label }: { href: string; label: string }) => {
   return (
     <UnderlineLink
       href={href}
-      className='navbar-link navbar-text-black ms-4 h-10 w-full lg:ms-0 lg:h-auto'
+      className='navbar-link navbar-text-black ms-4 h-10 w-fit lg:ms-0 lg:h-auto lg:w-auto'
     >
       {label.toUpperCase()}
     </UnderlineLink>
   );
 };
 
-export default function Header({
-  transparentHeader = true,
-}: {
-  transparentHeader: boolean
-}) {
+export default function Header({ transparentHeader = true }: { transparentHeader: boolean }) {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       setIsNavbarTransparent(scrollTop === 0);
     };
-
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header
-      className='header navbar bg-white'
-    >
+    <header className='header navbar bg-white w-full relative'>
       <div className='gradient'>&nbsp;</div>
-      <nav className='layout mx-4 flex h-14 items-center justify-between'>
-        <div className='container-heading navbar-text-black absolute right-0 -top-7 me-2 text-4xl'>
-          <span className='mt-1 hidden xl:inline-block'>
-            
-          </span>
-          <Image
-            src={logo}
-            alt='Lions Bay SAR Logo'
-            width={50}
-            height={50}
-          />
+
+      <nav className='flex h-14 items-center justify-between w-full pl-4 pr-1 lg:pl-8 lg:pr-2 relative'>
+        {/* LEFT: Nav links + Hamburger */}
+        <div className='flex items-center space-x-4'>
+          {/* Mobile hamburger */}
+          <div className='lg:hidden'>
+            <button onClick={toggleMenu} className='focus:outline-none'>
+              {isOpen ? <List /> : <Menu />}
+            </button>
+          </div>
+
+          {/* Desktop nav links */}
+          <ul className='hidden lg:flex items-center space-x-10'>
+            {links.map(({ href, label }) => (
+              <li key={`${href}${label}`}>
+                <HeaderItem href={href} label={label} />
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className='lg:hidden'>
-          <button onClick={toggleMenu} className='focus:outline-none'>
-            {isOpen ? <List /> : <Menu />}
-          </button>
+
+        {/* RIGHT: Logo */}
+        <div className='flex items-center ml-auto mr-4 lg:mr-3 -mt-0'>
+          <Image src={logo} alt='Lions Bay SAR Logo' width={50} height={50} />
         </div>
-        <ul
-          className={`${
-            isOpen ? 'block' : 'hidden'
-          } absolute start-0 mt-80 w-full bg-white/[0.95] py-3 lg:start-8 lg:mt-0 lg:flex lg:w-auto lg:items-center lg:justify-around lg:space-x-10 lg:bg-transparent`}
-        >
-          {links.map(({ href, label }) => (
-            <li key={`${href}${label}`}>
-              <HeaderItem href={href} label={label} />
-            </li>
-          ))}
-        </ul>
+
+        {/* MOBILE DROPDOWN */}
+        {isOpen && (
+          <ul className='absolute start-0 top-14 w-full bg-white/[0.50] py-3 lg:hidden'>
+            {links.map(({ href, label }) => (
+              <li key={`${href}${label}`} className='text-center'>
+                <HeaderItem href={href} label={label} />
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </header>
   );
