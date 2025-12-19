@@ -13,7 +13,7 @@ import Section from '$/ui/Section';
 
 export default function HomePage() {
   return (
-    <Layout>
+    <Layout transparentHeader={false}>
       <Seo />
 
       <main>
