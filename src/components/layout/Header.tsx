@@ -4,7 +4,7 @@ import { List, Menu } from 'react-feather';
 
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
 
-import logo from '~/images/logo.png'
+import logo from '~/images/logo_new.jpg'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -54,16 +54,15 @@ export default function Header({
     >
       <div className='gradient'>&nbsp;</div>
       <nav className='layout mx-4 flex h-14 items-center justify-between'>
-        <div className='container-heading navbar-text-black absolute right-0 top-0 me-2 mt-3 text-4xl'>
+        <div className='container-heading navbar-text-black absolute right-0 -top-7 me-2 text-4xl'>
           <span className='mt-1 hidden xl:inline-block'>
             
           </span>
           <Image
             src={logo}
             alt='Lions Bay SAR Logo'
-            width={55}
-            height={55}
-            className='xl:hidden'
+            width={50}
+            height={50}
           />
         </div>
         <div className='lg:hidden'>
