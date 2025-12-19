@@ -14,6 +14,7 @@ const links = [
   { href: '/shop', label: 'Shop' },
   { href: '/training-specialties', label: 'Training Specialties' },
   { href: '/local-area', label: 'Local Area' },
+  { href: '/volunteer', label: 'Volunteer' },
 ];
 
 const HeaderItem = ({ href, label }: { href: string; label: string }) => {
