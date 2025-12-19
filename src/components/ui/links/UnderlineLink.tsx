@@ -15,7 +15,7 @@ const UnderlineLink = forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
         className={clsxm(
           'animated-underline custom-link inline-flex items-center font-medium',
           'focus-visible:ring-primary-500 focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-offset-2',
-          'border-b border-yellow-500 hover:border-black/0',
+          'border-b border-blue-700 hover:border-black/0',
           className
         )}
       >
