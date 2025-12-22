@@ -15,6 +15,7 @@ const links = [
   { href: '/training-specialties', label: 'Training Specialties' },
   { href: '/local-area', label: 'Local Area' },
   { href: '/#contact', label: 'Contact Us' },
+  { href: '/shop', label: 'Shop' },
 ];
 
 const educationLinks = [
