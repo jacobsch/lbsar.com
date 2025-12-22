@@ -2,7 +2,7 @@ import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 import BackgroundImage from '$/ui/BackgroundImage';
 import Section from '$/ui/Section';
-import { ArrowDown, ChevronDown, ChevronsDown } from 'react-feather'
+import { ChevronsDown } from 'react-feather'
 
 /**
  * SVGR Support
@@ -30,7 +30,7 @@ export default function HomePage() {
           bottomNode={
             <div className='flex flex-col items-center mt-2'>
               <a href='#about-2' className='text-white hover:text-blue-300 transition duration-300 ease-in-out'>
-                <ArrowDown/>
+                <ChevronsDown/>
               </a>
             </div>
           }
@@ -62,7 +62,7 @@ export default function HomePage() {
           bottomNode={
             <div className='flex flex-col items-center mt-2'>
               <a href='#contact-us' className='text-white hover:text-blue-300 transition duration-300 ease-in-out'>
-                <ChevronDown/>
+                <ChevronsDown/>
               </a>
             </div>
           }
