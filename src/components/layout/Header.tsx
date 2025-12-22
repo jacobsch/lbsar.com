@@ -20,9 +20,10 @@ const links = [
 
 const educationLinks = [
   { href: '/education', label: 'Overview' },
-  { href: '/education/training', label: 'EduPage1' },
-  { href: '/education/resources', label: 'EduPage2' },
-  { href: '/education/youth', label: 'EduPage3' },
+  { href: '/education/what-to-bring', label: 'What To Bring' },
+  { href: '/education/location-services', label: 'Location Services' },
+  { href: '/education/satellite-devices', label: 'Satellite Devices' },
+  { href: '/education/treating-hypothermia', label: 'Treating Hypothermia' },
 ];
 
 /* -------------------- HEADER -------------------- */
