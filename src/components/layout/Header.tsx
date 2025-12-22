@@ -62,52 +62,51 @@ export default function Header({
             </button>
           </div>
 
-          {/* DESKTOP NAV */}
-          <ul className="hidden lg:flex items-center space-x-10">
-            {links.map((link) => (
-              <li key={link.href}>
-                <UnderlineLink
-                  href={link.href}
-                  className="navbar-link navbar-text-black"
-                >
-                  {link.label.toUpperCase()}
-                </UnderlineLink>
-              </li>
-            ))}
+{/* DESKTOP NAV */}
+<ul className="hidden lg:flex items-center space-x-10">
+  {links.map(({ href, label }) => (
+    <li key={href}>
+      <UnderlineLink
+        href={href}
+        className="navbar-link navbar-text-black"
+      >
+        {label.toUpperCase()}
+      </UnderlineLink>
+    </li>
+  ))}
 
-            {/* EDUCATION (DESKTOP) */}
-            <li className="relative group">
-              <UnderlineLink
-                href="#"
-                className="navbar-link navbar-text-black flex items-center gap-1"
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                EDUCATION
-                <ChevronDown
-                  size={14}
-                  className="transition-transform group-hover:rotate-180"
-                />
-              </UnderlineLink>
+  {/* EDUCATION (DESKTOP) */}
+  <li className="relative group">
+    <UnderlineLink
+      href="#"
+      className="navbar-link navbar-text-black flex items-center gap-1"
+      onClick={(e) => {
+        e.preventDefault();
+      }}
+    >
+      EDUCATION
+      <ChevronDown
+        size={14}
+        className="transition-transform group-hover:rotate-180"
+      />
+    </UnderlineLink>
 
-              {/* Dropdown */}
-              <div className="absolute left-0 top-full pt-2 hidden group-hover:block">
-                <ul className="bg-white shadow-lg rounded-md overflow-hidden min-w-[200px] z-50">
-                  {educationLinks.map((item) => (
-                    <li
-                      key={item.href}
-                      className="px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
-                    >
-                      <UnderlineLink href={item.href}>
-                        {item.label}
-                      </UnderlineLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          </ul>
+    {/* Dropdown */}
+    <ul className="absolute left-0 mt-3 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-[200px] z-50">
+      {educationLinks.map(({ href, label }) => (
+        <li key={href} className="px-4 py-2 hover:bg-gray-100">
+  <UnderlineLink
+    href={href}
+    className="navbar-link navbar-text-black text-sm"
+  >
+    {label}
+  </UnderlineLink>
+</li>
+
+      ))}
+    </ul>
+  </li>
+</ul>
         </div>
 
         {/* RIGHT */}
