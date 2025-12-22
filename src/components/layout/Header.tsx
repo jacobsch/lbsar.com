@@ -10,6 +10,7 @@ const links = [
   { href: '/#about-1', label: 'About Us' },
   { href: '/history', label: 'History' },
   { href: '/volunteer', label: 'Volunteer' },
+  { href: '/donate', label: 'Donate' },
 ];
 
 const HeaderItem = ({ href, label }: { href: string; label: string }) => {
