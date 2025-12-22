@@ -12,6 +12,7 @@ const links = [
   { href: '/faq', label: 'FAQ' },
   { href: '/donate', label: 'Donate' },
   { href: '/shop', label: 'Shop' },
+  { href: '/training-specialties', label: 'Training Specialties' },
 ];
 
 const HeaderItem = ({ href, label }: { href: string; label: string }) => {
