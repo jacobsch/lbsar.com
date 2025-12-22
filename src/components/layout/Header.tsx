@@ -12,6 +12,7 @@ const links = [
   { href: '/history', label: 'History' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/donate', label: 'Donate' },
+  { href: '/training-specialties', label: 'Training Specialties' },
 ];
 
 const educationLinks = [
