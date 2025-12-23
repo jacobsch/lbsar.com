@@ -7,7 +7,7 @@ export default function Footer() {
     // TODO: Put section classname into Section component
     <section
       className='relative inset-x-0 bottom-0 z-50 w-full bg-[#242424] px-2 pb-6 pt-12 text-center text-white'
-      id='contact-us'
+      id='contact'
     >
       <div className='h2 container-heading pb-10'>QUICK LINKS</div>
 
