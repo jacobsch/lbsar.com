@@ -88,3 +88,7 @@ html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
+
+.donate-page-bg {
+  background-color: #e4dfdf;
+}
