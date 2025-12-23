@@ -9,7 +9,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/#about-1', label: 'About Us' },
   { href: '/history', label: 'History' },
-  { href: '/faq', label: 'FAQs' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 const HeaderItem = ({ href, label }: { href: string; label: string }) => {
