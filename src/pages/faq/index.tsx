@@ -6,7 +6,7 @@ export default function FAQPage() {
     <Layout transparentHeader={false}>
       <Seo templateTitle="FAQs" />
 
-      <div className='bg-[#e4dfdf]'>
+      <div className='bg-off-white'>
         <main className="mx-auto max-w-4xl px-6 py-20 text-gray-800">
           {/* ================= FAQ TITLE ================= */}
           <h1 className="mb-6 text-4xl font-bold text-gray-900">

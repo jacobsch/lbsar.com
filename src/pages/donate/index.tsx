@@ -1,23 +1,12 @@
-import { useEffect } from 'react';
-
 import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 
 export default function DonatePage() {
-  // Page-specific background override
-  useEffect(() => {
-    document.body.classList.add('donate-page-bg');
-
-    return () => {
-      document.body.classList.remove('donate-page-bg');
-    };
-  }, []);
-
   return (
     <Layout transparentHeader={false}>
       <Seo templateTitle="Donate" />
 
-      <main>
+      <main className='bg-off-white'>
         <section className="mx-auto max-w-4xl px-6 py-20 text-gray-800">
           <h1 className="mb-6 text-4xl font-bold text-gray-900">
             Donate
