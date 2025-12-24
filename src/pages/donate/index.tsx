@@ -32,14 +32,11 @@ export default function DonatePage() {
               donations to remain operationally ready. Every contribution helps
               keep our volunteers trained, equipped, and ready to respond.
             </p>
-
-<p>
-  <strong>
-    Search and rescue services in British Columbia are always provided at no cost to the public—donor support makes this possible.
-  </strong>
-</p>
-
-
+            <p>
+              <strong>
+                Search and rescue services in British Columbia are always provided at no cost to the public—donor support makes this possible.
+              </strong>
+            </p>
             <p>
               Serving a complex, hard-to-access response area with a history of
               natural disasters, our team depends on specialized equipment,
@@ -102,20 +99,18 @@ export default function DonatePage() {
               respond quickly when help is needed.
             </li>
           </ul>
-<br />
-<p className="mb-6">
-  To make a donation, please click the <strong>DONATE NOW</strong> button and help keep our community and backcountry safe.
-</p>
-
-<div className="mt-10 flex justify-center">
-  <a
-    href="https://your-donation-link-here"
-    className="inline-block rounded-lg bg-red-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-700"
-  >
-    DONATE NOW
-  </a>
-</div>
-
+          <br />
+          <p className="mb-6">
+            To make a donation, please click the <strong>DONATE NOW</strong> button and help keep our community and backcountry safe.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <a
+              href="https://your-donation-link-here"
+              className="inline-block rounded-lg bg-red-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-700"
+            >
+              DONATE NOW
+            </a>
+          </div>
         </section>
       </main>
     </Layout>
