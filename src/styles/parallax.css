@@ -47,6 +47,10 @@
   background-image: url('../../public/images/ski.jpg');
 }
 
+.bg-parallax-5 {
+  background-image: url('../../public/images/brunswick.jpg');
+}
+
 .history-parallax-1 {
   background-image: url('../../public/images/history/new-team.jpg');
 }
