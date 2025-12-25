@@ -21,7 +21,7 @@ export default function HomePage() {
         <BackgroundImage imgClass='bg-parallax-1' />
 
         <Section
-          topNode={<a className='anchor' id='about-1'></a>}
+          topNode={<a className='anchor' id='about-us'></a>}
           body='Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization providing search and rescue services in the 
           Sea-to-Sky corridor.  Our response area includes the village of Lions Bay, the mountains of the Howe Sound Crest, and remote wilderness 
           terrain that reaches into the Capilano watershed. The most popular trails we support include the Howe Sound Crest Trail which leads to the 

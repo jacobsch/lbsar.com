@@ -8,13 +8,13 @@ import logo from '~/images/logo.png';
 /* -------------------- NAV DATA -------------------- */
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/#about-1', label: 'About Us' },
+  { href: '/#about-us', label: 'About Us' },
   { href: '/history', label: 'History' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/donate', label: 'Donate' },
   { href: '/training-specialties', label: 'Training Specialties' },
   { href: '/local-area', label: 'Local Area' },
-  { href: '/#contact', label: 'Contact Us' },
+  { href: '/#contact-us', label: 'Contact Us' },
 ];
 
 const educationLinks = [
