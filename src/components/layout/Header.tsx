@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { List, Menu, ChevronDown } from 'react-feather';
 
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
@@ -43,24 +43,17 @@ const trainingLinks = [
 ];
 
 /* -------------------- HEADER -------------------- */
-export default function Header({
-  transparentHeader = true,
-}: {
-  transparentHeader: boolean;
-}) {
+export default function Header({ transparentHeader = true }: { transparentHeader: boolean }) {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [educationOpen, setEducationOpen] = useState(false);
-  const [localAreaOpen, setLocalAreaOpen] = useState(false);
-  const [trainingOpen, setTrainingOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [mobileDropdown, setMobileDropdown] = useState<
+    'education' | 'local' | 'training' | null
+  >(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsNavbarTransparent(scrollTop === 0);
+      setIsNavbarTransparent(window.scrollY === 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -69,76 +62,59 @@ export default function Header({
   return (
     <header
       className={`header navbar ${
-        isNavbarTransparent && transparentHeader
-          ? 'bg-transparent'
-          : 'bg-white'
+        isNavbarTransparent && transparentHeader ? 'bg-transparent' : 'bg-white'
       }`}
     >
       <div className="gradient">&nbsp;</div>
 
-      <nav className="flex h-14 items-center justify-between w-full pl-4 pr-1 lg:pl-8 lg:pr-2 relative">
+      <nav className="relative flex h-14 w-full items-center justify-between px-4 lg:px-8">
         {/* LEFT */}
-        <div className="flex items-center space-x-4">
-          {/* MOBILE HAMBURGER */}
-          <div className="lg:hidden">
-            <button onClick={toggleMenu}>
-              {isOpen ? <List /> : <Menu />}
-            </button>
-          </div>
+        <div className="flex items-center gap-4">
+          {/* MOBILE BUTTON */}
+          <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <List /> : <Menu />}
+          </button>
 
           {/* DESKTOP NAV */}
-          <ul className="hidden lg:flex items-center space-x-10">
+          <ul className="hidden lg:flex items-center gap-10">
             {links.map(({ href, label }) => (
               <li key={href}>
-                <UnderlineLink
-                  href={href}
-                  className="navbar-link navbar-text-black"
-                >
+                <UnderlineLink href={href} className="navbar-link navbar-text-black">
                   {label.toUpperCase()}
                 </UnderlineLink>
               </li>
             ))}
 
-            {/* EDUCATION (DESKTOP) */}
             <DropdownDesktop title="EDUCATION" links={educationLinks} />
-
-            {/* LOCAL AREA (DESKTOP) */}
             <DropdownDesktop title="LOCAL AREA" links={localAreaLinks} />
-
-            {/* TRAINING (DESKTOP) */}
             <DropdownDesktop title="TRAINING SPECIALTIES" links={trainingLinks} />
           </ul>
         </div>
 
         {/* RIGHT */}
-        <div className="flex items-center ml-auto mr-4 lg:mr-3">
+        <div className="flex items-center gap-4">
           <a
             href="https://www.canadahelps.org/en/dn/9468"
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              items-center rounded-md
-              bg-red-600 px-4 py-2
-              text-sm font-semibold text-white
-              hover:bg-red-700 transition-colors
-              whitespace-nowrap mr-4
-            "
+            className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700"
           >
             Donate Today
           </a>
           <Image src={logo} alt="Lions Bay SAR Logo" width={50} height={50} />
         </div>
 
-        {/* MOBILE DROPDOWN */}
-        {isOpen && (
-          <ul className="absolute start-0 top-14 w-full bg-white/[0.85] py-3 lg:hidden">
-            {links.map((link) => (
-              <li key={link.href} className="text-center">
+        {/* MOBILE MENU */}
+        {mobileOpen && (
+          <ul className="absolute top-14 left-0 w-full bg-white py-3 lg:hidden">
+            {links.map(({ href, label }) => (
+              <li key={href} className="text-center">
                 <UnderlineLink
-                  href={link.href}
+                  href={href}
                   className="navbar-link navbar-text-black"
+                  onClick={() => setMobileOpen(false)}
                 >
-                  {link.label.toUpperCase()}
+                  {label.toUpperCase()}
                 </UnderlineLink>
               </li>
             ))}
@@ -146,22 +122,31 @@ export default function Header({
             <DropdownMobile
               title="EDUCATION"
               links={educationLinks}
-              isOpen={educationOpen}
-              setIsOpen={setEducationOpen}
+              open={mobileDropdown === 'education'}
+              onToggle={() =>
+                setMobileDropdown(mobileDropdown === 'education' ? null : 'education')
+              }
+              onNavigate={() => setMobileOpen(false)}
             />
 
             <DropdownMobile
               title="LOCAL AREA"
               links={localAreaLinks}
-              isOpen={localAreaOpen}
-              setIsOpen={setLocalAreaOpen}
+              open={mobileDropdown === 'local'}
+              onToggle={() =>
+                setMobileDropdown(mobileDropdown === 'local' ? null : 'local')
+              }
+              onNavigate={() => setMobileOpen(false)}
             />
 
             <DropdownMobile
               title="TRAINING SPECIALTIES"
               links={trainingLinks}
-              isOpen={trainingOpen}
-              setIsOpen={setTrainingOpen}
+              open={mobileDropdown === 'training'}
+              onToggle={() =>
+                setMobileDropdown(mobileDropdown === 'training' ? null : 'training')
+              }
+              onNavigate={() => setMobileOpen(false)}
             />
           </ul>
         )}
@@ -170,8 +155,7 @@ export default function Header({
   );
 }
 
-/* -------------------- REUSABLE DROPDOWNS -------------------- */
-
+/* -------------------- DESKTOP DROPDOWN -------------------- */
 function DropdownDesktop({
   title,
   links,
@@ -179,46 +163,66 @@ function DropdownDesktop({
   title: string;
   links: { href: string; label: string }[];
 }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const enter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+
+  const leave = () => {
+    closeTimer.current = setTimeout(() => {
+      setOpen(false);
+    }, 80); // tiny grace period
+  };
+
   return (
-    <li className="relative group">
+    <li
+      className="relative"
+      onMouseEnter={enter}
+      onMouseLeave={leave}
+    >
       <UnderlineLink
         href="#"
-        className="navbar-link navbar-text-black flex items-center gap-1"
+        className="navbar-link navbar-text-black inline-flex items-center gap-1"
         onClick={(e) => e.preventDefault()}
       >
         {title}
-        <ChevronDown
-          size={14}
-          className="transition-transform group-hover:rotate-180"
-        />
+        <ChevronDown size={14} />
       </UnderlineLink>
 
-      <ul className="absolute left-0 mt-3 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-[220px] z-50">
-        {links.map(({ href, label }) => (
-          <li key={href} className="px-4 py-2 hover:bg-gray-100">
-            <UnderlineLink
-              href={href}
-              className="navbar-link navbar-text-black text-sm"
-            >
-              {label}
-            </UnderlineLink>
-          </li>
-        ))}
-      </ul>
+      {open && (
+        <ul className="absolute left-0 top-full mt-3 min-w-[220px] rounded-md bg-white shadow-lg z-50">
+          {links.map(({ href, label }) => (
+            <li key={href} className="px-4 py-2 hover:bg-gray-100">
+              <UnderlineLink
+                href={href}
+                className="navbar-link navbar-text-black text-sm"
+              >
+                {label}
+              </UnderlineLink>
+            </li>
+          ))}
+        </ul>
+      )}
     </li>
   );
 }
 
+/* -------------------- MOBILE DROPDOWN -------------------- */
 function DropdownMobile({
   title,
   links,
-  isOpen,
-  setIsOpen,
+  open,
+  onToggle,
+  onNavigate,
 }: {
   title: string;
   links: { href: string; label: string }[];
-  isOpen: boolean;
-  setIsOpen: (v: boolean) => void;
+  open: boolean;
+  onToggle: () => void;
+  onNavigate: () => void;
 }) {
   return (
     <li className="flex flex-col items-center">
@@ -226,28 +230,27 @@ function DropdownMobile({
         href="#"
         className="navbar-link navbar-text-black flex items-center gap-1"
         onClick={(e) => {
-          e.preventDefault();
-          setIsOpen(!isOpen);
+          e.preventDefault(); // prevent navigation
+          onToggle();
         }}
       >
         {title}
         <ChevronDown
           size={16}
-          className={`transition-transform ${
-            isOpen ? 'rotate-180' : ''
-          }`}
+          className={`transition-transform ${open ? 'rotate-180' : ''}`}
         />
       </UnderlineLink>
 
-      {isOpen && (
-        <ul className="mt-2 w-full">
-          {links.map((item) => (
-            <li key={item.href} className="text-center">
+      {open && (
+        <ul className="w-full mt-2">
+          {links.map(({ href, label }) => (
+            <li key={href} className="text-center">
               <UnderlineLink
-                href={item.href}
+                href={href}
                 className="navbar-link navbar-text-black"
+                onClick={onNavigate}
               >
-                {item.label.toUpperCase()}
+                {label.toUpperCase()}
               </UnderlineLink>
             </li>
           ))}
