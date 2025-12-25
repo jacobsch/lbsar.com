@@ -94,7 +94,7 @@ export default function DonatePage() {
           </p>
           <div className="mt-10 flex justify-center">
             <a
-              href="https://your-donation-link-here"
+              href="https://www.canadahelps.org/en/dn/9468" target="_blank"
               className="inline-block rounded-lg bg-red-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-700"
             >
               DONATE NOW
