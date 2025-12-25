@@ -9,10 +9,9 @@ export default function Footer() {
       className='relative inset-x-0 bottom-0 z-50 w-full bg-[#242424] px-2 pb-6 pt-12 text-center text-white'
       id='contact-us'
     >
-      <div className='h2 container-heading pb-10'>QUICK LINKS</div>
 
       {/* Use 1 column on mobile, 3 columns on sm+ so message sits between sections */}
-      <div className='container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 items-start'>
+      <div className='container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 items-center'>
         {/* Left column */}
         <div className='sm:col-span-1 flex flex-col items-center text-center'>
           <div className='h3 container-heading'>CONNECT WITH US</div>
