@@ -50,13 +50,13 @@ export default function Footer() {
           <div className='flex items-center justify-center'>
             <div className='flex items-center justify-center space-x-6'>
               <a
-                href='https://www.instagram.com/lionsbaysar/'
+                href='https://www.instagram.com/lionsbaysar/' target="_blank"
                 className='icon-link rounded-full border-2 p-2'
               >
                 <Instagram />
               </a>
               <a
-                href='https://www.facebook.com/LionsBaySAR/'
+                href='https://www.facebook.com/LionsBaySAR/' target="_blank"
                 className='icon-link rounded-full border-2 p-2'
               >
                 <Facebook />
