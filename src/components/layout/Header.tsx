@@ -21,23 +21,24 @@ const DonateButton = () => (
     target="_blank"
     rel="noreferrer"
     className="
-      inline-flex items-center
-      rounded-md
-      bg-orange-600
-      px-4 py-2
-      text-[11px]
-      font-bold
+      inline-flex items-center justify-center
+      rounded-xl
+      bg-[#fc6421]
+      px-12 py-2.5
+      font-chakra font-bold uppercase
+      text-[20px] leading-none
       tracking-[0.22em]
-      uppercase
       text-white
-      hover:bg-orange-700
+      hover:bg-[#c94a18]
       transition-colors
+      shadow-[0_10px_28px_rgba(0,0,0,0.28)]
       whitespace-nowrap
     "
   >
-    Donate Today
+    DONATE
   </a>
 )
+
 
 function useActiveHref() {
   const { asPath } = useRouter()
@@ -98,7 +99,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-[9999]"
       style={{
         backgroundColor: HEADER_BG,
         width: '100vw',
@@ -106,7 +107,7 @@ export default function Header() {
         margin: 0,
       }}
     >
-      <nav className="relative flex h-14 w-full items-center justify-between px-4 lg:px-8">
+      <nav className="relative flex w-full items-center justify-between px-4 py-4 lg:px-8 lg:py-5">
         {/* LEFT: Hamburger + Desktop links */}
         <div className="flex items-center gap-4">
           {/* Mobile hamburger */}
@@ -140,24 +141,25 @@ export default function Header() {
           <DonateButton />
         </div>
 
-        {/* MOBILE DROPDOWN */}
-        {isOpen && (
-          <ul
-            className="absolute left-0 right-0 top-14 w-full py-3 lg:hidden border-t border-white/10"
-            style={{ backgroundColor: HEADER_BG }}
-          >
-            {links.map(({ href, label }) => (
-              <li key={href} className="text-center py-1">
-                <HeaderItem
-                  href={href}
-                  label={label}
-                  isActive={isActiveHref(href)}
-                  onClick={closeMenu}
-                />
-              </li>
-            ))}
-          </ul>
-        )}
+{/* MOBILE DROPDOWN */}
+{isOpen && (
+  <ul
+    className="absolute left-0 right-0 top-full z-[9999] w-full py-3 lg:hidden border-t border-white/10"
+    style={{ backgroundColor: HEADER_BG }}
+  >
+    {links.map(({ href, label }) => (
+      <li key={href} className="text-center py-1">
+        <HeaderItem
+          href={href}
+          label={label}
+          isActive={isActiveHref(href)}
+          onClick={closeMenu}
+        />
+      </li>
+    ))}
+  </ul>
+)}
+
       </nav>
     </header>
   )
