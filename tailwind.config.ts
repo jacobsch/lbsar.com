@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -7,10 +7,11 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        // ✅ Chakra Petch
+        chakra: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
-          // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
           100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
           200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
@@ -39,12 +40,8 @@ export default {
           },
         },
         shimmer: {
-          '0%': {
-            backgroundPosition: '-700px 0',
-          },
-          '100%': {
-            backgroundPosition: '700px 0',
-          },
+          '0%': { backgroundPosition: '-700px 0' },
+          '100%': { backgroundPosition: '700px 0' },
         },
       },
       animation: {
@@ -55,4 +52,4 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('@tailwindcss/forms')],
-} satisfies Config;
+} satisfies Config

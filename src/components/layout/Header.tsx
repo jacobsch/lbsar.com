@@ -46,10 +46,7 @@ function useActiveHref() {
     const path = asPath.split('?')[0].split('#')[0]
     const target = href.split('?')[0].split('#')[0]
 
-    // home only active on "/"
     if (target === '/') return path === '/'
-
-    // exact match or sub-route match
     return path === target || path.startsWith(target + '/')
   }
 }
@@ -72,15 +69,25 @@ const HeaderItem = ({
       underlineMobileOnly
       className={[
         'navbar-link',
-        'text-[11px] font-semibold tracking-[0.22em] uppercase',
+
+        // Chakra Petch base
+        'font-chakra uppercase',
+        'text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]',
+        'tracking-[0.14em]',
+
+        // Active state = bold + orange
+        isActive
+          ? 'font-bold text-orange-400'
+          : 'font-normal text-white/90 hover:text-white',
+
         'transition-colors whitespace-nowrap',
-        isActive ? 'text-orange-400' : 'text-white/90 hover:text-white',
       ].join(' ')}
     >
       {label.toUpperCase()}
     </UnderlineLink>
   )
 }
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -140,7 +147,7 @@ export default function Header() {
             style={{ backgroundColor: HEADER_BG }}
           >
             {links.map(({ href, label }) => (
-              <li key={href} className="text-center">
+              <li key={href} className="text-center py-1">
                 <HeaderItem
                   href={href}
                   label={label}

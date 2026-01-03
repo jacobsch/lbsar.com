@@ -15,6 +15,23 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
+  /* Chakra Petch */
+  @font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ChakraPetch-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/ChakraPetch-Bold.ttf') format('truetype');
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
@@ -55,8 +72,6 @@
     max-width: 68.75rem;
     @apply mx-auto w-11/12;
   }
-
-  /**======== Typography =========== */
 
   .section {
     @apply px-6 py-6 sm:px-8 md:px-10 lg:xl:py-5 lg:xl:px-12;
