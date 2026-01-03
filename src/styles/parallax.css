@@ -31,30 +31,3 @@
 
 /* Parallax Backgrounds for Landing*/
 
-.bg-parallax-1 {
-  background-image: url('../../public/images/home1.jpg');
-}
-
-.bg-parallax-2 {
-  background-image: url('../../public/images/avalanche-training.jpg');
-}
-
-.bg-parallax-3 {
-  background-image: url('../../public/images/hets-rescue.jpg');
-}
-
-.bg-parallax-4 {
-  background-image: url('../../public/images/lions-sunset.jpg');
-}
-
-.history-parallax-1 {
-  background-image: url('../../public/images/history/new-team.jpg');
-}
-
-.history-parallax-2 {
-  background-image: url('../../public/images/history/ski.jpg');
-}
-
-.history-parallax-3 {
-  background-image: url('../../public/images/history/vehicle.jpg');
-}
