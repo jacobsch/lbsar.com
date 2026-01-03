@@ -1,45 +1,19 @@
 import { useState } from 'react'
 import { List, Menu } from 'react-feather'
-import UnderlineLink from '@/components/ui/links/UnderlineLink'
 import { useRouter } from 'next/router'
+import UnderlineLink from '@/components/ui/links/UnderlineLink'
+
+const HEADER_BG = '#151f2f'
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/rescue-specialties', label: 'Rescue Specialties' },  
+  { href: '/rescue-specialties', label: 'Rescue Specialties' },
   { href: '/faq', label: 'FAQ' },
   { href: '/trails', label: 'Trails' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/education', label: 'Education' },
-]
-
-const HeaderItem = ({
-  href,
-  label,
-  isActive,
-  onClick,
-}: {
-  href: string
-  label: string
-  isActive: boolean
-  onClick?: () => void
-}) => {
-  return (
-    <UnderlineLink
-      href={href}
-      onClick={onClick}
-      className={[
-        'navbar-link',
-        'text-[11px] font-semibold tracking-[0.22em] uppercase',
-        'transition-colors whitespace-nowrap',
-        // Active = orange, otherwise white
-        isActive ? 'text-orange-400' : 'text-white/90 hover:text-white',
-      ].join(' ')}
-    >
-      {label.toUpperCase()}
-    </UnderlineLink>
-  )
-}
+] as const
 
 const DonateButton = () => (
   <a
@@ -65,35 +39,61 @@ const DonateButton = () => (
   </a>
 )
 
+function useActiveHref() {
+  const { asPath } = useRouter()
+
+  return (href: string) => {
+    const path = asPath.split('?')[0].split('#')[0]
+    const target = href.split('?')[0].split('#')[0]
+
+    // home only active on "/"
+    if (target === '/') return path === '/'
+
+    // exact match or sub-route match
+    return path === target || path.startsWith(target + '/')
+  }
+}
+
+const HeaderItem = ({
+  href,
+  label,
+  isActive,
+  onClick,
+}: {
+  href: string
+  label: string
+  isActive: boolean
+  onClick?: () => void
+}) => {
+  return (
+    <UnderlineLink
+      href={href}
+      onClick={onClick}
+      underlineMobileOnly
+      className={[
+        'navbar-link',
+        'text-[11px] font-semibold tracking-[0.22em] uppercase',
+        'transition-colors whitespace-nowrap',
+        isActive ? 'text-orange-400' : 'text-white/90 hover:text-white',
+      ].join(' ')}
+    >
+      {label.toUpperCase()}
+    </UnderlineLink>
+  )
+}
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const isActiveHref = useActiveHref()
+
   const toggleMenu = () => setIsOpen((v) => !v)
-
-  const router = useRouter()
-  const current = router.asPath
-
-  const isActiveHref = (href: string) => {
-    // Exact route match
-    if (current === href) return true
-
-    // If you later use hash links like "/#about-1"
-    if (href.includes('#')) {
-      const hash = href.split('#')[1]
-      return current.includes(`#${hash}`)
-    }
-
-    // Treat "/" as home only (avoid matching every path)
-    if (href === '/') return current === '/'
-
-    // Optional: consider subpaths active (e.g. /shop/item)
-    return current.startsWith(href + '/')
-  }
+  const closeMenu = () => setIsOpen(false)
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
-        backgroundColor: '#151f2f',
+        backgroundColor: HEADER_BG,
         width: '100vw',
         maxWidth: 'none',
         margin: 0,
@@ -117,8 +117,12 @@ export default function Header() {
           {/* Desktop nav links */}
           <ul className="hidden lg:flex items-center gap-10">
             {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <HeaderItem href={href} label={label} isActive={isActiveHref(href)} />
+              <li key={href}>
+                <HeaderItem
+                  href={href}
+                  label={label}
+                  isActive={isActiveHref(href)}
+                />
               </li>
             ))}
           </ul>
@@ -133,15 +137,15 @@ export default function Header() {
         {isOpen && (
           <ul
             className="absolute left-0 right-0 top-14 w-full py-3 lg:hidden border-t border-white/10"
-            style={{ backgroundColor: '#151f2f' }}
+            style={{ backgroundColor: HEADER_BG }}
           >
             {links.map(({ href, label }) => (
-              <li key={`${href}${label}`} className="text-center">
+              <li key={href} className="text-center">
                 <HeaderItem
                   href={href}
                   label={label}
                   isActive={isActiveHref(href)}
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                 />
               </li>
             ))}
