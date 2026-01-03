@@ -24,7 +24,7 @@ const UnderlineLink = forwardRef<HTMLAnchorElement, UnderlineLinkProps>(
                 'animated-underline border-b border-blue-700 hover:border-black/0',
                 // underline OFF on lg+
                 'lg:[background-image:none!important] lg:[background-size:0_0!important]',
-                'lg:border-b-0 lg:!border-b-0',
+                'lg:!border-b-0',
               ]
             : [
                 // underline everywhere (original behavior)
