@@ -1,14 +1,14 @@
-import Image from 'next/image'
-import Layout from '$/layout/Layout'
-import Seo from '$/Seo'
+import Image from 'next/image';
+import Layout from '$/layout/Layout';
+import Seo from '$/Seo';
 
 /** --------- Grid framework --------- */
 function GridContainer({
   children,
   className = '',
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <div
@@ -20,15 +20,15 @@ function GridContainer({
     >
       {children}
     </div>
-  )
+  );
 }
 
 function Grid12({
   children,
   className = '',
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <div
@@ -40,17 +40,17 @@ function Grid12({
     >
       {children}
     </div>
-  )
+  );
 }
 
 /** ----------------- HERO ----------------- */
 const Hero = () => {
-  const HEADER_BG = '#151f2f'
-  const BAR_BG = '#121d2f'
-  const ORANGE = '#FC6421'
+  const HEADER_BG = '#151f2f';
+  const BAR_BG = '#121d2f';
+  const ORANGE = '#FC6421';
 
-  const BAR_HEIGHT = 50
-  const SEAM_HEIGHT = 32
+  const BAR_HEIGHT = 50;
+  const SEAM_HEIGHT = 32;
 
   return (
     <section id='home' className='relative isolate overflow-visible'>
@@ -71,8 +71,8 @@ const Hero = () => {
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden lg:block',
-          'md:[--tri-w:700px] md:[--tri-h:700px] md:[--tri-top:0.5vh] md:[--tri-right:-14vw] md:[--tri-tx:-14vw]',
-          'lg:[--tri-w:1500px] lg:[--tri-h:1100px] lg:[--tri-top:0.20vh] lg:[--tri-right:-16.5vw] lg:[--tri-tx:-16vw]',
+          'md:[--tri-h:700px] md:[--tri-right:-14vw] md:[--tri-top:0.5vh] md:[--tri-tx:-14vw] md:[--tri-w:700px]',
+          'lg:[--tri-h:1100px] lg:[--tri-right:-16.5vw] lg:[--tri-top:0.20vh] lg:[--tri-tx:-16vw] lg:[--tri-w:1500px]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -88,17 +88,17 @@ const Hero = () => {
           fill
           priority
           sizes='(max-width: 1023px) 700px, 1500px'
-          className='object-contain object-top-right'
+          className='object-top-right object-contain'
         />
       </div>
 
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-top:730px] [--wm-left:0px] [--wm-w:200px]',
-          'sm:[--wm-top:810px] sm:[--wm-left:0px] sm:[--wm-w:300px]',
-          'md:[--wm-top:800px] md:[--wm-left:0px] md:[--wm-w:350px]',
-          'lg:[--wm-top:900px] lg:[--wm-left:0px] lg:[--wm-w:500px]',
+          '[--wm-left:0px] [--wm-top:730px] [--wm-w:200px]',
+          'sm:[--wm-left:0px] sm:[--wm-top:810px] sm:[--wm-w:300px]',
+          'md:[--wm-left:0px] md:[--wm-top:800px] md:[--wm-w:350px]',
+          'lg:[--wm-left:0px] lg:[--wm-top:900px] lg:[--wm-w:500px]',
         ].join(' ')}
         style={{
           top: 'var(--wm-top)',
@@ -124,18 +124,18 @@ const Hero = () => {
             alt=''
             fill
             priority
-            fetchPriority="high"
+            fetchPriority='high'
             sizes='100vw'
             className='object-cover'
           />
-          <div className='absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/10' />
+          <div className='from-black/55 absolute inset-0 bg-gradient-to-b via-black/30 to-black/10' />
         </div>
 
-        <div className='relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16'>
+        <div className='relative z-10 pb-14 pt-24 sm:pt-28 lg:pb-16 lg:pt-32'>
           <GridContainer>
-            <Grid12 className='items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]'>
+            <Grid12 className='min-h-[560px] items-end sm:min-h-[640px] lg:min-h-[740px]'>
               <div className='col-span-12 lg:col-span-7'>
-                <div className='mt-6 h-10 sm:h-11 w-full max-w-[560px] bg-black/35' />
+                <div className='bg-black/35 mt-6 h-10 w-full max-w-[560px] sm:h-11' />
               </div>
 
               <div className='col-span-12 lg:col-span-5' />
@@ -144,32 +144,42 @@ const Hero = () => {
         </div>
 
         <section id='about' className='relative'>
-          <div className='absolute inset-0' style={{ backgroundColor: ORANGE }} aria-hidden />
+          <div
+            className='absolute inset-0'
+            style={{ backgroundColor: ORANGE }}
+            aria-hidden
+          />
 
           <div className='relative z-10'>
             <GridContainer className='py-20 sm:py-24 lg:py-28'>
-              <Grid12 className='gap-y-10 mt-12 sm:mt-16 lg:mt-20'>
-                <p className='col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90'>
-                  Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization
-                  providing search and rescue services in the Sea-to-Sky corridor. Our response area
-                  includes the village of Lions Bay, the mountains of the Howe Sound Crest, and remote
-                  wilderness terrain that reaches into the Capilano watershed. The most popular trails
-                  we support include the Howe Sound Crest Trail which leads to the iconic Lions, Mount
-                  Brunswick, Mount Harvey, Deeks Lakes, and the Tunnel Bluffs lookout trail. We also
-                  provide mutual aid assistance to SAR teams in all areas of British Columbia, and have
-                  also been requested for Canada-wide SAR assistance.
+              <Grid12 className='mt-12 gap-y-10 sm:mt-16 lg:mt-20'>
+                <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
+                  Lions Bay Search and Rescue (LBSAR) is a volunteer emergency
+                  response organization providing search and rescue services in
+                  the Sea-to-Sky corridor. Our response area includes the
+                  village of Lions Bay, the mountains of the Howe Sound Crest,
+                  and remote wilderness terrain that reaches into the Capilano
+                  watershed. The most popular trails we support include the Howe
+                  Sound Crest Trail which leads to the iconic Lions, Mount
+                  Brunswick, Mount Harvey, Deeks Lakes, and the Tunnel Bluffs
+                  lookout trail. We also provide mutual aid assistance to SAR
+                  teams in all areas of British Columbia, and have also been
+                  requested for Canada-wide SAR assistance.
                 </p>
 
-                <p className='col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90'>
-                  We assist people who are lost, missing, injured, or in distress in a wide range of
-                  environments. Incidents may involve urban searches, lost or injured hikers, or complex
+                <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
+                  We assist people who are lost, missing, injured, or in
+                  distress in a wide range of environments. Incidents may
+                  involve urban searches, lost or injured hikers, or complex
                   rescues in steep and technical terrain.
                   <br />
                   <br />
-                  Operating under Emergency Management and Climate Readiness (EMCR), LBSAR works closely
-                  with neighbouring search and rescue teams and other emergency services like the RCMP,
-                  Fire, and Ambulance. Our volunteers train year-round to maintain operational readiness
-                  and to respond effectively in all weather and terrain conditions.
+                  Operating under Emergency Management and Climate Readiness
+                  (EMCR), LBSAR works closely with neighbouring search and
+                  rescue teams and other emergency services like the RCMP, Fire,
+                  and Ambulance. Our volunteers train year-round to maintain
+                  operational readiness and to respond effectively in all
+                  weather and terrain conditions.
                 </p>
               </Grid12>
             </GridContainer>
@@ -177,22 +187,22 @@ const Hero = () => {
         </section>
       </div>
     </section>
-  )
-}
+  );
+};
 
 /** ----------------- EMERGENCY BANNER ----------------- */
 const EmergencyBanner = () => (
-  <section className="relative isolate overflow-visible">
+  <section className='relative isolate overflow-visible'>
     {/* Background */}
-    <div className="absolute inset-0 z-0 bg-[#121d2f]">
+    <div className='absolute inset-0 z-0 bg-[#121d2f]'>
       <Image
-        src="/images/lions-sunset.jpg"
-        alt=""
+        src='/images/lions-sunset.jpg'
+        alt=''
         fill
-        sizes="100vw"
-        className="object-cover"
+        sizes='100vw'
+        className='object-cover'
       />
-      <div className="absolute inset-0 bg-black/55" />
+      <div className='bg-black/55 absolute inset-0' />
     </div>
 
     {/* Foreground */}
@@ -210,7 +220,7 @@ const EmergencyBanner = () => (
       {/* Call 911 PNG: keep your original positioning exactly */}
       <div
         className={[
-          'pointer-events-none absolute z-20 right-0',
+          'pointer-events-none absolute right-0 z-20',
 
           'top-[-75px]',
           'sm:top-[-80px]',
@@ -230,12 +240,12 @@ const EmergencyBanner = () => (
         ].join(' ')}
       >
         <Image
-          src="/images/call-911.png"
-          alt="Call 911"
+          src='/images/call-911.png'
+          alt='Call 911'
           width={1200}
           height={600}
-          sizes="(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px"
-          className="h-auto w-full"
+          sizes='(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px'
+          className='h-auto w-full'
           quality={100}
         />
       </div>
@@ -243,7 +253,7 @@ const EmergencyBanner = () => (
       {/* Bottom triangle: bottom-left, hidden on mobile, with X/Y translate knobs */}
       <div
         className={[
-          'pointer-events-none absolute z-20 bottom-0 left-0',
+          'pointer-events-none absolute bottom-0 left-0 z-20',
           'hidden sm:block',
 
           // scale smaller (you can tweak these)
@@ -264,51 +274,51 @@ const EmergencyBanner = () => (
         }}
       >
         <Image
-          src="/images/bottom-triangles.png"
-          alt=""
+          src='/images/bottom-triangles.png'
+          alt=''
           width={1200}
           height={1200}
-          sizes="(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px"
-          className="h-auto w-full object-contain"
+          sizes='(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px'
+          className='h-auto w-full object-contain'
           quality={100}
         />
       </div>
 
       <GridContainer>
-        <Grid12 className="items-end gap-y-10">
-          <div className="col-span-12" />
+        <Grid12 className='items-end gap-y-10'>
+          <div className='col-span-12' />
         </Grid12>
       </GridContainer>
     </div>
   </section>
-)
+);
 
 /** ----------------- AREA MAP ----------------- */
 const AreaMapSection = () => {
-  const ORANGE = '#FC6421'
+  const ORANGE = '#FC6421';
 
   return (
     <section
-      id="area-map"
-      className="relative w-full bg-white isolate overflow-hidden"
+      id='area-map'
+      className='relative isolate w-full overflow-hidden bg-white'
     >
       {/* Orange bar */}
       <div
         aria-hidden
-        className="w-full"
+        className='w-full'
         style={{ backgroundColor: ORANGE, height: 40 }}
       />
 
-      <div className="relative">
+      <div className='relative'>
         {/* Wordmark */}
-        <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12 pt-6 pb-3">
+        <div className='mx-auto w-full max-w-[1320px] px-5 pb-3 pt-6 sm:px-8 lg:px-12'>
           <Image
-            src="/images/lbsar-map-word.png"
-            alt="Lions Bay Area Map"
+            src='/images/lbsar-map-word.png'
+            alt='Lions Bay Area Map'
             width={1200}
             height={220}
-            sizes="(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px"
-            className="h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[520px]"
+            sizes='(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px'
+            className='h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[520px]'
             priority={false}
           />
         </div>
@@ -316,10 +326,10 @@ const AreaMapSection = () => {
         {/* Map container with size + position controls */}
         <div
           className={[
-            'relative mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12 pb-10',
+            'relative mx-auto w-full max-w-[1320px] px-5 pb-10 sm:px-8 lg:px-12',
 
             // size knobs (edit these)
-            '[--map-w:100%] [--map-max:920px] [--map-x:0px] [--map-y:0px]',
+            '[--map-max:920px] [--map-w:100%] [--map-x:0px] [--map-y:0px]',
             'sm:[--map-max:980px] sm:[--map-x:0px] sm:[--map-y:0px]',
             'md:[--map-max:1040px] md:[--map-x:0px] md:[--map-y:0px]',
             'lg:[--map-max:1120px] lg:[--map-x:0px] lg:[--map-y:0px]',
@@ -327,7 +337,7 @@ const AreaMapSection = () => {
           ].join(' ')}
         >
           <div
-            className="relative"
+            className='relative'
             style={{
               width: 'var(--map-w)',
               maxWidth: 'var(--map-max)',
@@ -335,20 +345,20 @@ const AreaMapSection = () => {
             }}
           >
             <Image
-              src="/images/lbsar-map.svg"
-              alt="LBSAR Area Map"
+              src='/images/lbsar-map.svg'
+              alt='LBSAR Area Map'
               width={1600}
               height={2400}
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 1120px"
-              className="h-auto w-full bg-white"
+              sizes='(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 1120px'
+              className='h-auto w-full bg-white'
               style={{ transform: 'translateZ(0)' }}
             />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 /** ----------------- PAGE ----------------- */
 export default function HomePage() {
@@ -361,5 +371,5 @@ export default function HomePage() {
         <AreaMapSection />
       </main>
     </Layout>
-  )
+  );
 }
