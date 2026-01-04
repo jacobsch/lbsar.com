@@ -12,7 +12,11 @@ function GridContainer({
 }) {
   return (
     <div
-      className={`mx-auto w-full px-5 sm:px-8 lg:px-12 max-w-[1320px] 2xl:w-[1320px] ${className}`}
+      className={[
+        'mx-auto w-full px-5 sm:px-8 lg:px-12',
+        'max-w-[1320px] 2xl:w-[1320px]',
+        className,
+      ].join(' ')}
     >
       {children}
     </div>
@@ -39,39 +43,40 @@ function Grid12({
   )
 }
 
-/** ----------------- HERO TRIANGLES PLACEHOLDER ----------------- */
-const HeroTrianglesPlaceholder = () => {
-  return (
-    <div
-      className="
-        pointer-events-none select-none
-        relative
-        w-[clamp(280px,40vw,760px)]
-        aspect-[1/1.25]
-      "
-    >
-      <div className="absolute inset-0 rounded-lg border border-white/25 bg-white/10 backdrop-blur-[1px]" />
-      <div className="absolute right-4 top-4 text-white/70 text-xs font-semibold tracking-[0.18em]">
-        TRIANGLES SVG PLACEHOLDER
-      </div>
-      <div className="absolute left-4 bottom-4 text-white/60 text-xs">
-        Replace with exported SVG
-      </div>
-    </div>
-  )
-}
-
-/** ----------------- HERO (Mountain) ----------------- */
+/** ----------------- HERO ----------------- */
 const Hero = () => {
   const HEADER_BG = '#151f2f'
   const BAR_BG = '#121d2f'
+  const ORANGE = '#FC6421'
 
-  const BAR_HEIGHT = 80 // px
-  const SEAM_HEIGHT = 32 // px (top portion blends from header -> bar)
+  const BAR_HEIGHT = 50
+  const SEAM_HEIGHT = 32
+
+  /**
+   * TRIANGLES CONTROLS (your original)
+   */
+  const TRI_W = '78vw'
+  const TRI_H = '120vh'
+  const TRI_TOP = '.5vh'
+  const TRI_RIGHT = '-16.5vw'
+  const TRI_SHIFT_LEFT = '-16vw'
+
+  /**
+   * ✅ LBSAR WORDMARK MANUAL CONTROLS (EDIT THESE)
+   * These are the ONLY values you change to move/resize the wordmark.
+   */
+  const WM_TOP = 850 // px from top of the section
+  const WM_LEFT = 0 // px from left of the section
+  const WM_WIDTH = 760 // px width of the wordmark
+
+  // Optional: different values at a specific screen size (example: lg and up)
+  // const WM_TOP_LG = 260
+  // const WM_LEFT_LG = 60
+  // const WM_WIDTH_LG = 760
 
   return (
-    <section id="home" className="relative isolate overflow-hidden">
-      {/* Bar: solid #121d2f with a small gradient seam at the top */}
+    <section id="home" className="relative isolate overflow-visible">
+      {/* Top bar (prevents any light gap) */}
       <div
         aria-hidden="true"
         style={{
@@ -84,85 +89,127 @@ const Hero = () => {
         }}
       />
 
-      {/* Background image (explicitly behind content) */}
-      <div className="absolute inset-0 z-0" style={{ top: BAR_HEIGHT }}>
+      {/* Triangles/logo overlay (original sizing/position) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute z-[40]"
+        style={{
+          width: TRI_W,
+          height: TRI_H,
+          top: TRI_TOP,
+          right: TRI_RIGHT,
+          transform: `translateX(${TRI_SHIFT_LEFT})`,
+        }}
+      >
         <Image
-          src="/images/hets-rescue.jpg"
+          src="/images/triangles-logo.png"
           alt=""
           fill
           priority
-          sizes="100vw"
-          className="object-cover"
+          sizes="80vw"
+          className="object-contain object-top-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/15" />
       </div>
 
-      {/* Content (explicitly above background) */}
-      <div className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16">
-        <GridContainer>
-          <Grid12 className="items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]">
-            <div className="col-span-12 lg:col-span-7">
-              <h1
-                className="
-                  font-rugged text-white uppercase leading-[0.85] tracking-[0.08em]
-                  drop-shadow text-[56px] sm:text-[74px] lg:text-[96px]
-                "
-                style={{ textShadow: '0 2px 18px rgba(0,0,0,0.55)' }}
-              >
-                LBSAR
-              </h1>
+      {/* ✅ LBSAR wordmark overlay (MANUAL POSITIONING) */}
+      <div
+        className="pointer-events-none absolute z-[45]"
+        style={{
+          top: WM_TOP,
+          left: WM_LEFT,
+          width: WM_WIDTH,
+        }}
+      >
+        <Image
+          src="/images/lbsar-scratched-words.png"
+          alt="LBSAR"
+          width={1800}
+          height={650}
+          priority
+          sizes="760px"
+          className="h-auto w-full drop-shadow-[0_10px_22px_rgba(0,0,0,0.35)]"
+        />
+      </div>
 
-              <div className="mt-4 h-9 sm:h-10 w-full max-w-[520px] bg-black/35" />
-            </div>
+      {/* Hero background image */}
+      <div className="relative">
+        <div className="absolute inset-0 z-0" style={{ top: BAR_HEIGHT }}>
+          <Image
+            src="/images/hets-rescue.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/10" />
+        </div>
 
-            <div className="col-span-12 lg:col-span-5 relative">
-              <div className="hidden lg:block absolute right-[-60px] top-[-110px]">
-                <HeroTrianglesPlaceholder />
+        {/* Hero content */}
+        <div className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16">
+          <GridContainer>
+            <Grid12 className="items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]">
+              <div className="col-span-12 lg:col-span-7">
+                {/* NOTE:
+                    The wordmark is no longer inside the grid,
+                    so it won’t drift off-screen when the grid changes.
+                */}
+                <div className="mt-6 h-10 sm:h-11 w-full max-w-[560px] bg-black/35" />
               </div>
 
-              <div className="lg:hidden absolute right-[-20px] top-[-60px] scale-[0.68] origin-top-right">
-                <HeroTrianglesPlaceholder />
-              </div>
-            </div>
-          </Grid12>
-        </GridContainer>
+              <div className="col-span-12 lg:col-span-5" />
+            </Grid12>
+          </GridContainer>
+        </div>
+
+        {/* Orange band (taller + text moved down) */}
+        <section id="about" className="relative">
+          <div className="absolute inset-0" style={{ backgroundColor: ORANGE }} aria-hidden />
+
+          <div className="relative z-10">
+            {/* Taller orange band */}
+            <GridContainer className="py-20 sm:py-24 lg:py-28">
+              {/* Push text downward */}
+              <Grid12 className="gap-y-10 mt-12 sm:mt-16 lg:mt-20">
+                <p className="col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90">
+                  Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization
+                  providing search and rescue services in the Sea-to-Sky corridor. Our response area
+                  includes the village of Lions Bay, the mountains of the Howe Sound Crest, and remote
+                  wilderness terrain that reaches into the Capilano watershed. The most popular trails
+                  we support include the Howe Sound Crest Trail which leads to the iconic Lions, Mount
+                  Brunswick, Mount Harvey, Deeks Lakes, and the Tunnel Bluffs lookout trail. We also
+                  provide mutual aid assistance to SAR teams in all areas of British Columbia, and have
+                  also been requested for Canada-wide SAR assistance.
+                </p>
+
+                <p className="col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90">
+                  We assist people who are lost, missing, injured, or in distress in a wide range of
+                  environments. Incidents may involve urban searches, lost or injured hikers, or complex
+                  rescues in steep and technical terrain.
+                  <br />
+                  <br />
+                  Operating under Emergency Management and Climate Readiness (EMCR), LBSAR works closely
+                  with neighbouring search and rescue teams and other emergency services like the RCMP,
+                  Fire, and Ambulance. Our volunteers train year-round to maintain operational readiness
+                  and to respond effectively in all weather and terrain conditions.
+                </p>
+              </Grid12>
+            </GridContainer>
+          </div>
+        </section>
       </div>
     </section>
   )
 }
 
-/** ----------------- ABOUT BAND ----------------- */
-const AboutBand = () => (
-  <section id="about" className="bg-orange-600">
-    <GridContainer className="py-12 sm:py-14">
-      <Grid12 className="gap-y-8">
-        <p className="col-span-12 md:col-span-6 text-sm leading-7 text-white/90">
-          Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization providing
-          search and rescue services in the Sea-to-Sky corridor. Our response area includes the
-          village of Lions Bay, the mountains of the Howe Sound Crest, and remote wilderness terrain
-          that reaches into the Capilano watershed.
-        </p>
-
-        <p className="col-span-12 md:col-span-6 text-sm leading-7 text-white/90">
-          We assist people who are lost, missing, injured, or in distress in a wide range of
-          environments. Incidents may involve urban searches, lost or injured hikers, or complex
-          rescues in steep and technical terrain.
-        </p>
-      </Grid12>
-    </GridContainer>
-  </section>
-)
-
 /** ----------------- EMERGENCY BANNER ----------------- */
 const EmergencyBanner = () => (
   <section className="relative isolate overflow-hidden">
-    {/* Background behind content */}
     <div className="absolute inset-0 z-0" style={{ backgroundColor: '#121d2f' }}>
       <Image src="/images/lions-sunset.jpg" alt="" fill className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-black/55" />
     </div>
 
-    {/* Content above background */}
     <div className="relative z-10 py-16 sm:py-20">
       <GridContainer>
         <Grid12 className="items-end gap-y-10">
@@ -194,9 +241,8 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo />
-      <main>
+      <main className="bg-[#121d2f]">
         <Hero />
-        <AboutBand />
         <EmergencyBanner />
       </main>
     </Layout>

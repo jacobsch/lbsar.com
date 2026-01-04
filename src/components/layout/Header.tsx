@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { List, Menu } from 'react-feather'
 import { useRouter } from 'next/router'
 import UnderlineLink from '@/components/ui/links/UnderlineLink'
@@ -39,7 +39,6 @@ const DonateButton = () => (
   </a>
 )
 
-
 function useActiveHref() {
   const { asPath } = useRouter()
 
@@ -70,17 +69,12 @@ const HeaderItem = ({
       underlineMobileOnly
       className={[
         'navbar-link',
-
-        // Chakra Petch base
         'font-chakra uppercase',
         'text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]',
         'tracking-[0.14em]',
-
-        // Active state = bold + orange
         isActive
           ? 'font-bold text-orange-400'
           : 'font-normal text-white/90 hover:text-white',
-
         'transition-colors whitespace-nowrap',
       ].join(' ')}
     >
@@ -89,13 +83,20 @@ const HeaderItem = ({
   )
 }
 
-
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const isActiveHref = useActiveHref()
+  const router = useRouter()
 
   const toggleMenu = () => setIsOpen((v) => !v)
   const closeMenu = () => setIsOpen(false)
+
+  // Close mobile menu on route change (keeps things clean)
+  useEffect(() => {
+    const handle = () => setIsOpen(false)
+    router.events?.on('routeChangeStart', handle)
+    return () => router.events?.off('routeChangeStart', handle)
+  }, [router.events])
 
   return (
     <header
@@ -111,7 +112,7 @@ export default function Header() {
         {/* LEFT: Hamburger + Desktop links */}
         <div className="flex items-center gap-4">
           {/* Mobile hamburger */}
-          <div className="lg:hidden">
+          <div className="min-[1200px]:hidden">
             <button
               onClick={toggleMenu}
               className="rounded-md p-2 text-white hover:bg-white/10 transition-colors"
@@ -123,7 +124,7 @@ export default function Header() {
           </div>
 
           {/* Desktop nav links */}
-          <ul className="hidden lg:flex items-center gap-10">
+          <ul className="hidden min-[1200px]:flex items-center gap-10">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <HeaderItem
@@ -137,29 +138,28 @@ export default function Header() {
         </div>
 
         {/* RIGHT: Donate */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <DonateButton />
         </div>
 
-{/* MOBILE DROPDOWN */}
-{isOpen && (
-  <ul
-    className="absolute left-0 right-0 top-full z-[9999] w-full py-3 lg:hidden border-t border-white/10"
-    style={{ backgroundColor: HEADER_BG }}
-  >
-    {links.map(({ href, label }) => (
-      <li key={href} className="text-center py-1">
-        <HeaderItem
-          href={href}
-          label={label}
-          isActive={isActiveHref(href)}
-          onClick={closeMenu}
-        />
-      </li>
-    ))}
-  </ul>
-)}
-
+        {/* MOBILE DROPDOWN */}
+        {isOpen && (
+          <ul
+            className="absolute left-0 right-0 top-full z-[9999] w-full py-3 min-[1200px]:hidden border-t border-white/10"
+            style={{ backgroundColor: HEADER_BG }}
+          >
+            {links.map(({ href, label }) => (
+              <li key={href} className="text-center py-1">
+                <HeaderItem
+                  href={href}
+                  label={label}
+                  isActive={isActiveHref(href)}
+                  onClick={closeMenu}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </header>
   )
