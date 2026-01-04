@@ -7,23 +7,18 @@ export default function Footer() {
   const MAPS_URL = 'https://maps.app.goo.gl/hiAwfLR7ESbtfvbj6'
 
   return (
-    <footer className="w-full bg-[#121d2f] text-white font-['Chakra_Petch'] font-normal">
+    <footer className="w-full bg-[#121d2f] text-white font-primary font-normal">
       <div className="flex w-full flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        {/* Logo + Contact Info */}
         <div className="flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left">
-          {/* Logo */}
           <Image
             src="/images/lbsar-logo.png"
             alt="Lions Bay Search and Rescue Society logo"
             width={96}
             height={96}
             className="object-contain"
-            priority
           />
 
-          {/* Contact text */}
           <div className="text-lg leading-8">
-            {/* Line 1 */}
             <div className="flex flex-col items-center gap-1 lg:flex-row lg:items-baseline lg:gap-2">
               <span className="tracking-wide text-[#f3c43b]">
                 CONNECT WITH US:
@@ -33,7 +28,6 @@ export default function Footer() {
               </span>
             </div>
 
-            {/* Line 2 */}
             <div className="mt-1 text-white/80">
               <a
                 href={MAPS_URL}
@@ -57,9 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Icons */}
         <div className="flex items-center justify-center gap-6 lg:justify-end">
-          {/* Facebook */}
           <a
             href="https://www.facebook.com/LionsBaySAR/"
             target="_blank"
@@ -77,7 +69,6 @@ export default function Footer() {
             <Facebook size={36} />
           </a>
 
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/lionsbaysar/"
             target="_blank"
@@ -95,7 +86,6 @@ export default function Footer() {
             <Instagram size={36} />
           </a>
 
-          {/* X */}
           <a
             href="https://x.com/LionsBaySAR"
             target="_blank"

@@ -91,7 +91,6 @@ export default function Header() {
   const toggleMenu = () => setIsOpen((v) => !v)
   const closeMenu = () => setIsOpen(false)
 
-  // Close mobile menu on route change (keeps things clean)
   useEffect(() => {
     const handle = () => setIsOpen(false)
     router.events?.on('routeChangeStart', handle)
@@ -109,9 +108,7 @@ export default function Header() {
       }}
     >
       <nav className="relative flex w-full items-center justify-between px-4 py-4 lg:px-8 lg:py-5">
-        {/* LEFT: Hamburger + Desktop links */}
         <div className="flex items-center gap-4">
-          {/* Mobile hamburger */}
           <div className="min-[1200px]:hidden">
             <button
               onClick={toggleMenu}
@@ -123,7 +120,6 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop nav links */}
           <ul className="hidden min-[1200px]:flex items-center gap-10">
             {links.map(({ href, label }) => (
               <li key={href}>
@@ -137,12 +133,10 @@ export default function Header() {
           </ul>
         </div>
 
-        {/* RIGHT: Donate */}
         <div className="flex items-center gap-3 shrink-0">
           <DonateButton />
         </div>
 
-        {/* MOBILE DROPDOWN */}
         {isOpen && (
           <ul
             className="absolute left-0 right-0 top-full z-[9999] w-full py-3 min-[1200px]:hidden border-t border-white/10"

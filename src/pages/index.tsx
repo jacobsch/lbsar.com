@@ -195,12 +195,11 @@ const EmergencyBanner = () => (
       <div className="absolute inset-0 bg-black/55" />
     </div>
 
-    {/* Foreground: bigger min-height so nothing clips */}
+    {/* Foreground */}
     <div
       className={[
         'relative z-10',
         'py-20 sm:py-24 lg:py-28',
-        // bigger heights across breakpoints
         'min-h-[340px]',
         'sm:min-h-[480px]',
         'md:min-h-[480px]',
@@ -208,24 +207,21 @@ const EmergencyBanner = () => (
         'xl:min-h-[720px]',
       ].join(' ')}
     >
-      {/* 911 PNG: glued to the RIGHT edge of the viewport */}
+      {/* Call 911 PNG: keep your original positioning exactly */}
       <div
         className={[
           'pointer-events-none absolute z-20 right-0',
 
-          // vertical position (tuned so it sits nicely in the taller section)
           'top-[-75px]',
           'sm:top-[-80px]',
           'md:top-[-100px]',
           'lg:top-[-100px]',
 
-          // size
           'w-[260px]',
           'sm:w-[320px]',
           'md:w-[360px]',
           'lg:w-[420px]',
 
-          // pull LEFT from the right edge (safe offsets)
           'translate-x-[-110px]',
           'sm:-translate-x-[80px]',
           'md:-translate-x-[80px]',
@@ -240,10 +236,44 @@ const EmergencyBanner = () => (
           height={600}
           sizes="(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px"
           className="h-auto w-full"
+          quality={100}
         />
       </div>
 
-      {/* Optional: keep your grid for future content */}
+      {/* Bottom triangle: bottom-left, hidden on mobile, with X/Y translate knobs */}
+      <div
+        className={[
+          'pointer-events-none absolute z-20 bottom-0 left-0',
+          'hidden sm:block',
+
+          // scale smaller (you can tweak these)
+          'w-[140px]',
+          'sm:w-[170px]',
+          'md:w-[210px]',
+          'lg:w-[250px]',
+          'xl:w-[250px]',
+
+          // translate knobs (edit these values)
+          '[--bt-x:0px] [--bt-y:0px]',
+          'sm:[--bt-x:0px] sm:[--bt-y:0px]',
+          'md:[--bt-x:0px] md:[--bt-y:0px]',
+          'lg:[--bt-x:50px] lg:[--bt-y:0px]',
+        ].join(' ')}
+        style={{
+          transform: 'translate(var(--bt-x), var(--bt-y))',
+        }}
+      >
+        <Image
+          src="/images/bottom-triangles.png"
+          alt=""
+          width={1200}
+          height={1200}
+          sizes="(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px"
+          className="h-auto w-full object-contain"
+          quality={100}
+        />
+      </div>
+
       <GridContainer>
         <Grid12 className="items-end gap-y-10">
           <div className="col-span-12" />
@@ -252,7 +282,6 @@ const EmergencyBanner = () => (
     </div>
   </section>
 )
-
 
 /** ----------------- PAGE ----------------- */
 export default function HomePage() {

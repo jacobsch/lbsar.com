@@ -6,8 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
-        // ✅ Chakra Petch
+        primary: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
         chakra: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
       },
       colors: {

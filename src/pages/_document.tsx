@@ -1,15 +1,25 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang='en'>
+    <Html lang="en">
       <Head>
+        <link rel="preconnect" href="/" />
+
         <link
-          rel='preload'
-          href='/fonts/inter-var-latin.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
+          rel="preload"
+          href="/fonts/ChakraPetch-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          href="/fonts/ChakraPetch-Bold.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
         />
       </Head>
       <body>
@@ -17,5 +27,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
