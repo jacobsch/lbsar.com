@@ -52,33 +52,10 @@ const Hero = () => {
   const BAR_HEIGHT = 50
   const SEAM_HEIGHT = 32
 
-  /**
-   * TRIANGLES CONTROLS (your original)
-   */
-  const TRI_W = '78vw'
-  const TRI_H = '120vh'
-  const TRI_TOP = '.5vh'
-  const TRI_RIGHT = '-16.5vw'
-  const TRI_SHIFT_LEFT = '-16vw'
-
-  /**
-   * ✅ LBSAR WORDMARK MANUAL CONTROLS (EDIT THESE)
-   * These are the ONLY values you change to move/resize the wordmark.
-   */
-  const WM_TOP = 850 // px from top of the section
-  const WM_LEFT = 0 // px from left of the section
-  const WM_WIDTH = 760 // px width of the wordmark
-
-  // Optional: different values at a specific screen size (example: lg and up)
-  // const WM_TOP_LG = 260
-  // const WM_LEFT_LG = 60
-  // const WM_WIDTH_LG = 760
-
   return (
-    <section id="home" className="relative isolate overflow-visible">
-      {/* Top bar (prevents any light gap) */}
+    <section id='home' className='relative isolate overflow-visible'>
       <div
-        aria-hidden="true"
+        aria-hidden='true'
         style={{
           height: BAR_HEIGHT,
           background: `
@@ -89,89 +66,90 @@ const Hero = () => {
         }}
       />
 
-      {/* Triangles/logo overlay (original sizing/position) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute z-[40]"
+        className={[
+          'pointer-events-none absolute z-[40]',
+          'hidden lg:block',
+          'md:[--tri-w:700px] md:[--tri-h:700px] md:[--tri-top:0.5vh] md:[--tri-right:-14vw] md:[--tri-tx:-14vw]',
+          'lg:[--tri-w:1500px] lg:[--tri-h:1100px] lg:[--tri-top:0.20vh] lg:[--tri-right:-16.5vw] lg:[--tri-tx:-16vw]',
+        ].join(' ')}
         style={{
-          width: TRI_W,
-          height: TRI_H,
-          top: TRI_TOP,
-          right: TRI_RIGHT,
-          transform: `translateX(${TRI_SHIFT_LEFT})`,
+          width: 'var(--tri-w)',
+          height: 'var(--tri-h)',
+          top: 'var(--tri-top)',
+          right: 'var(--tri-right)',
+          transform: 'translateX(var(--tri-tx))',
         }}
       >
         <Image
-          src="/images/triangles-logo.png"
-          alt=""
+          src='/images/triangles-logo.png'
+          alt=''
           fill
           priority
-          sizes="80vw"
-          className="object-contain object-top-right"
+          sizes='(max-width: 1023px) 700px, 1500px'
+          className='object-contain object-top-right'
         />
       </div>
 
-      {/* ✅ LBSAR wordmark overlay (MANUAL POSITIONING) */}
       <div
-        className="pointer-events-none absolute z-[45]"
+        className={[
+          'pointer-events-none absolute z-[45]',
+          '[--wm-top:730px] [--wm-left:0px] [--wm-w:200px]',
+          'sm:[--wm-top:810px] sm:[--wm-left:0px] sm:[--wm-w:300px]',
+          'md:[--wm-top:800px] md:[--wm-left:0px] md:[--wm-w:350px]',
+          'lg:[--wm-top:900px] lg:[--wm-left:0px] lg:[--wm-w:500px]',
+        ].join(' ')}
         style={{
-          top: WM_TOP,
-          left: WM_LEFT,
-          width: WM_WIDTH,
+          top: 'var(--wm-top)',
+          left: 'var(--wm-left)',
+          width: 'var(--wm-w)',
         }}
       >
         <Image
-          src="/images/lbsar-scratched-words.png"
-          alt="LBSAR"
+          src='/images/lbsar-scratched-words.png'
+          alt='LBSAR'
           width={1800}
           height={650}
           priority
-          sizes="760px"
-          className="h-auto w-full drop-shadow-[0_10px_22px_rgba(0,0,0,0.35)]"
+          sizes='(max-width: 639px) 200px, (max-width: 767px) 300px, (max-width: 1023px) 350px, 500px'
+          className='h-auto w-full drop-shadow-[0_10px_22px_rgba(0,0,0,0.35)]'
         />
       </div>
 
-      {/* Hero background image */}
-      <div className="relative">
-        <div className="absolute inset-0 z-0" style={{ top: BAR_HEIGHT }}>
+      <div className='relative'>
+        <div className='absolute inset-0 z-0' style={{ top: BAR_HEIGHT }}>
           <Image
-            src="/images/hets-rescue.jpg"
-            alt=""
+            src='/images/hets-rescue.jpg'
+            alt=''
             fill
             priority
-            sizes="100vw"
-            className="object-cover"
+            fetchPriority="high"
+            sizes='100vw'
+            className='object-cover'
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/10" />
+          <div className='absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/10' />
         </div>
 
-        {/* Hero content */}
-        <div className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16">
+        <div className='relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16'>
           <GridContainer>
-            <Grid12 className="items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]">
-              <div className="col-span-12 lg:col-span-7">
-                {/* NOTE:
-                    The wordmark is no longer inside the grid,
-                    so it won’t drift off-screen when the grid changes.
-                */}
-                <div className="mt-6 h-10 sm:h-11 w-full max-w-[560px] bg-black/35" />
+            <Grid12 className='items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]'>
+              <div className='col-span-12 lg:col-span-7'>
+                <div className='mt-6 h-10 sm:h-11 w-full max-w-[560px] bg-black/35' />
               </div>
 
-              <div className="col-span-12 lg:col-span-5" />
+              <div className='col-span-12 lg:col-span-5' />
             </Grid12>
           </GridContainer>
         </div>
 
-        {/* Orange band (taller + text moved down) */}
-        <section id="about" className="relative">
-          <div className="absolute inset-0" style={{ backgroundColor: ORANGE }} aria-hidden />
+        <section id='about' className='relative'>
+          <div className='absolute inset-0' style={{ backgroundColor: ORANGE }} aria-hidden />
 
-          <div className="relative z-10">
-            {/* Taller orange band */}
-            <GridContainer className="py-20 sm:py-24 lg:py-28">
-              {/* Push text downward */}
-              <Grid12 className="gap-y-10 mt-12 sm:mt-16 lg:mt-20">
-                <p className="col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90">
+          <div className='relative z-10'>
+            <GridContainer className='py-20 sm:py-24 lg:py-28'>
+              <Grid12 className='gap-y-10 mt-12 sm:mt-16 lg:mt-20'>
+                <p className='col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90'>
                   Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization
                   providing search and rescue services in the Sea-to-Sky corridor. Our response area
                   includes the village of Lions Bay, the mountains of the Howe Sound Crest, and remote
@@ -182,7 +160,7 @@ const Hero = () => {
                   also been requested for Canada-wide SAR assistance.
                 </p>
 
-                <p className="col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90">
+                <p className='col-span-12 md:col-span-6 text-[15px] sm:text-[16px] lg:text-[20px] leading-7 sm:leading-8 text-white/90'>
                   We assist people who are lost, missing, injured, or in distress in a wide range of
                   environments. Incidents may involve urban searches, lost or injured hikers, or complex
                   rescues in steep and technical terrain.
@@ -204,44 +182,84 @@ const Hero = () => {
 
 /** ----------------- EMERGENCY BANNER ----------------- */
 const EmergencyBanner = () => (
-  <section className="relative isolate overflow-hidden">
-    <div className="absolute inset-0 z-0" style={{ backgroundColor: '#121d2f' }}>
-      <Image src="/images/lions-sunset.jpg" alt="" fill className="object-cover" sizes="100vw" />
+  <section className="relative isolate overflow-visible">
+    {/* Background */}
+    <div className="absolute inset-0 z-0 bg-[#121d2f]">
+      <Image
+        src="/images/lions-sunset.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-black/55" />
     </div>
 
-    <div className="relative z-10 py-16 sm:py-20">
+    {/* Foreground: bigger min-height so nothing clips */}
+    <div
+      className={[
+        'relative z-10',
+        'py-20 sm:py-24 lg:py-28',
+        // bigger heights across breakpoints
+        'min-h-[340px]',
+        'sm:min-h-[480px]',
+        'md:min-h-[480px]',
+        'lg:min-h-[660px]',
+        'xl:min-h-[720px]',
+      ].join(' ')}
+    >
+      {/* 911 PNG: glued to the RIGHT edge of the viewport */}
+      <div
+        className={[
+          'pointer-events-none absolute z-20 right-0',
+
+          // vertical position (tuned so it sits nicely in the taller section)
+          'top-[-75px]',
+          'sm:top-[-80px]',
+          'md:top-[-100px]',
+          'lg:top-[-100px]',
+
+          // size
+          'w-[260px]',
+          'sm:w-[320px]',
+          'md:w-[360px]',
+          'lg:w-[420px]',
+
+          // pull LEFT from the right edge (safe offsets)
+          'translate-x-[-110px]',
+          'sm:-translate-x-[80px]',
+          'md:-translate-x-[80px]',
+          'lg:-translate-x-[80px]',
+          'xl:-translate-x-[80px]',
+        ].join(' ')}
+      >
+        <Image
+          src="/images/call-911.png"
+          alt="Call 911"
+          width={1200}
+          height={600}
+          sizes="(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px"
+          className="h-auto w-full"
+        />
+      </div>
+
+      {/* Optional: keep your grid for future content */}
       <GridContainer>
         <Grid12 className="items-end gap-y-10">
-          <div className="col-span-12 md:col-span-7 md:justify-self-end">
-            <div className="max-w-xl text-right">
-              <div className="text-sm font-extrabold tracking-[0.22em] text-yellow-300">
-                SEARCH &amp; RESCUE
-              </div>
-              <div className="mt-3 text-5xl font-extrabold tracking-[0.12em] text-white sm:text-6xl">
-                NO COST
-              </div>
-              <div className="mt-4 text-sm text-white/85">If you, or someone else, needs help, call</div>
-              <div className="mt-2 flex items-end justify-end gap-3">
-                <div className="text-6xl font-black text-yellow-300 sm:text-7xl">911</div>
-                <div className="pb-2 text-sm font-bold tracking-[0.2em] text-yellow-300">
-                  IMMEDIATELY
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="col-span-12" />
         </Grid12>
       </GridContainer>
     </div>
   </section>
 )
 
+
 /** ----------------- PAGE ----------------- */
 export default function HomePage() {
   return (
     <Layout>
       <Seo />
-      <main className="bg-[#121d2f]">
+      <main className='bg-[#121d2f]' style={{ overflowX: 'hidden' }}>
         <Hero />
         <EmergencyBanner />
       </main>
