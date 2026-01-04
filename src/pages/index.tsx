@@ -1,17 +1,31 @@
-import Image from 'next/image';
-import Layout from '$/layout/Layout';
-import Seo from '$/Seo';
+import Image from 'next/image'
+import Layout from '$/layout/Layout'
+import Seo from '$/Seo'
 
 /** --------- Grid framework --------- */
-function GridContainer({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function GridContainer({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
-    <div className={`mx-auto w-full px-5 sm:px-8 lg:px-12 max-w-[1320px] 2xl:w-[1320px] ${className}`}>
+    <div
+      className={`mx-auto w-full px-5 sm:px-8 lg:px-12 max-w-[1320px] 2xl:w-[1320px] ${className}`}
+    >
       {children}
     </div>
-  );
+  )
 }
 
-function Grid12({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function Grid12({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
     <div
       className={[
@@ -22,79 +36,91 @@ function Grid12({ children, className = '' }: { children: React.ReactNode; class
     >
       {children}
     </div>
-  );
+  )
 }
 
 /** ----------------- HERO TRIANGLES PLACEHOLDER ----------------- */
 const HeroTrianglesPlaceholder = () => {
   return (
     <div
-      className='
+      className="
         pointer-events-none select-none
         relative
         w-[clamp(280px,40vw,760px)]
         aspect-[1/1.25]
-      '
+      "
     >
-      <div className='absolute inset-0 rounded-lg border border-white/25 bg-white/10 backdrop-blur-[1px]' />
-      <div className='absolute right-4 top-4 text-white/70 text-xs font-semibold tracking-[0.18em]'>
+      <div className="absolute inset-0 rounded-lg border border-white/25 bg-white/10 backdrop-blur-[1px]" />
+      <div className="absolute right-4 top-4 text-white/70 text-xs font-semibold tracking-[0.18em]">
         TRIANGLES SVG PLACEHOLDER
       </div>
-      <div className='absolute left-4 bottom-4 text-white/60 text-xs'>
+      <div className="absolute left-4 bottom-4 text-white/60 text-xs">
         Replace with exported SVG
       </div>
     </div>
-  );
-};
+  )
+}
 
-/** ----------------- HERO ----------------- */
+/** ----------------- HERO (Mountain) ----------------- */
 const Hero = () => {
+  const HEADER_BG = '#151f2f'
+  const BAR_BG = '#121d2f'
+
+  const BAR_HEIGHT = 80 // px
+  const SEAM_HEIGHT = 32 // px (top portion blends from header -> bar)
+
   return (
-    <section id='home' className='relative overflow-hidden'>
-      {/* Background image placeholder */}
-      <div className='absolute inset-0'>
+    <section id="home" className="relative isolate overflow-hidden">
+      {/* Bar: solid #121d2f with a small gradient seam at the top */}
+      <div
+        aria-hidden="true"
+        style={{
+          height: BAR_HEIGHT,
+          background: `
+            linear-gradient(to bottom, ${HEADER_BG} 0%, ${BAR_BG} 100%)
+            top / 100% ${SEAM_HEIGHT}px no-repeat,
+            ${BAR_BG}
+          `,
+        }}
+      />
+
+      {/* Background image (explicitly behind content) */}
+      <div className="absolute inset-0 z-0" style={{ top: BAR_HEIGHT }}>
         <Image
-          src='/images/hero-mountains-placeholder.jpg'
-          alt=''
+          src="/images/hets-rescue.jpg"
+          alt=""
           fill
-          className='object-cover'
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
-        <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/15' />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/15" />
       </div>
 
-      {/* Top padding kept so future Header can sit above */}
-      <div className='relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16'>
+      {/* Content (explicitly above background) */}
+      <div className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16">
         <GridContainer>
-          <Grid12 className='items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]'>
-            {/* Left: LBSAR */}
-            <div className='col-span-12 lg:col-span-7'>
+          <Grid12 className="items-end min-h-[560px] sm:min-h-[640px] lg:min-h-[740px]">
+            <div className="col-span-12 lg:col-span-7">
               <h1
-                className='
-                  font-rugged
-                  text-white
-                  uppercase
-                  leading-[0.85]
-                  tracking-[0.08em]
-                  drop-shadow
-                  text-[56px]
-                  sm:text-[74px]
-                  lg:text-[96px]
-                '
+                className="
+                  font-rugged text-white uppercase leading-[0.85] tracking-[0.08em]
+                  drop-shadow text-[56px] sm:text-[74px] lg:text-[96px]
+                "
                 style={{ textShadow: '0 2px 18px rgba(0,0,0,0.55)' }}
               >
                 LBSAR
               </h1>
 
-              <div className='mt-4 h-9 sm:h-10 w-full max-w-[520px] bg-black/35' />
+              <div className="mt-4 h-9 sm:h-10 w-full max-w-[520px] bg-black/35" />
             </div>
 
-            {/* Right: triangle artwork */}
-            <div className='col-span-12 lg:col-span-5 relative'>
-              <div className='hidden lg:block absolute right-[-60px] top-[-110px]'>
+            <div className="col-span-12 lg:col-span-5 relative">
+              <div className="hidden lg:block absolute right-[-60px] top-[-110px]">
                 <HeroTrianglesPlaceholder />
               </div>
 
-              <div className='lg:hidden absolute right-[-20px] top-[-60px] scale-[0.68] origin-top-right'>
+              <div className="lg:hidden absolute right-[-20px] top-[-60px] scale-[0.68] origin-top-right">
                 <HeroTrianglesPlaceholder />
               </div>
             </div>
@@ -102,22 +128,22 @@ const Hero = () => {
         </GridContainer>
       </div>
     </section>
-  );
-};
+  )
+}
 
 /** ----------------- ABOUT BAND ----------------- */
 const AboutBand = () => (
-  <section id='about' className='bg-orange-600'>
-    <GridContainer className='py-12 sm:py-14'>
-      <Grid12 className='gap-y-8'>
-        <p className='col-span-12 md:col-span-6 text-sm leading-7 text-white/90'>
+  <section id="about" className="bg-orange-600">
+    <GridContainer className="py-12 sm:py-14">
+      <Grid12 className="gap-y-8">
+        <p className="col-span-12 md:col-span-6 text-sm leading-7 text-white/90">
           Lions Bay Search and Rescue (LBSAR) is a volunteer emergency response organization providing
           search and rescue services in the Sea-to-Sky corridor. Our response area includes the
           village of Lions Bay, the mountains of the Howe Sound Crest, and remote wilderness terrain
           that reaches into the Capilano watershed.
         </p>
 
-        <p className='col-span-12 md:col-span-6 text-sm leading-7 text-white/90'>
+        <p className="col-span-12 md:col-span-6 text-sm leading-7 text-white/90">
           We assist people who are lost, missing, injured, or in distress in a wide range of
           environments. Incidents may involve urban searches, lost or injured hikers, or complex
           rescues in steep and technical terrain.
@@ -125,40 +151,33 @@ const AboutBand = () => (
       </Grid12>
     </GridContainer>
   </section>
-);
+)
 
 /** ----------------- EMERGENCY BANNER ----------------- */
 const EmergencyBanner = () => (
-  <section className='relative overflow-hidden'>
-    <div className='absolute inset-0'>
-      <Image
-        src='/images/forest-placeholder.jpg'
-        alt=''
-        fill
-        className='object-cover'
-      />
-      <div className='absolute inset-0 bg-black/55' />
+  <section className="relative isolate overflow-hidden">
+    {/* Background behind content */}
+    <div className="absolute inset-0 z-0" style={{ backgroundColor: '#121d2f' }}>
+      <Image src="/images/lions-sunset.jpg" alt="" fill className="object-cover" sizes="100vw" />
+      <div className="absolute inset-0 bg-black/55" />
     </div>
 
-    <div className='relative z-10 py-16 sm:py-20'>
+    {/* Content above background */}
+    <div className="relative z-10 py-16 sm:py-20">
       <GridContainer>
-        <Grid12 className='items-end gap-y-10'>
-          <div className='col-span-12 md:col-span-7 md:justify-self-end'>
-            <div className='max-w-xl text-right'>
-              <div className='text-sm font-extrabold tracking-[0.22em] text-yellow-300'>
+        <Grid12 className="items-end gap-y-10">
+          <div className="col-span-12 md:col-span-7 md:justify-self-end">
+            <div className="max-w-xl text-right">
+              <div className="text-sm font-extrabold tracking-[0.22em] text-yellow-300">
                 SEARCH &amp; RESCUE
               </div>
-              <div className='mt-3 text-5xl font-extrabold tracking-[0.12em] text-white sm:text-6xl'>
+              <div className="mt-3 text-5xl font-extrabold tracking-[0.12em] text-white sm:text-6xl">
                 NO COST
               </div>
-              <div className='mt-4 text-sm text-white/85'>
-                If you, or someone else, needs help, call
-              </div>
-              <div className='mt-2 flex items-end justify-end gap-3'>
-                <div className='text-6xl font-black text-yellow-300 sm:text-7xl'>
-                  911
-                </div>
-                <div className='pb-2 text-sm font-bold tracking-[0.2em] text-yellow-300'>
+              <div className="mt-4 text-sm text-white/85">If you, or someone else, needs help, call</div>
+              <div className="mt-2 flex items-end justify-end gap-3">
+                <div className="text-6xl font-black text-yellow-300 sm:text-7xl">911</div>
+                <div className="pb-2 text-sm font-bold tracking-[0.2em] text-yellow-300">
                   IMMEDIATELY
                 </div>
               </div>
@@ -168,7 +187,7 @@ const EmergencyBanner = () => (
       </GridContainer>
     </div>
   </section>
-);
+)
 
 /** ----------------- PAGE ----------------- */
 export default function HomePage() {
@@ -181,5 +200,5 @@ export default function HomePage() {
         <EmergencyBanner />
       </main>
     </Layout>
-  );
+  )
 }
