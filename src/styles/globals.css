@@ -70,7 +70,7 @@
   }
 
   .section {
-    @apply px-6 py-6 sm:px-8 md:px-10 lg:py-5 lg:px-12;
+    @apply px-6 py-6 sm:px-8 md:px-10 lg:px-12 lg:py-5;
   }
 }
 
@@ -86,7 +86,8 @@
   @media (prefers-reduced-motion: no-preference) {
     .animated-underline {
       transition: 0.3s ease;
-      transition-property: background-size, color, background-color, border-color;
+      transition-property: background-size, color, background-color,
+        border-color;
     }
   }
 

@@ -19,11 +19,11 @@
   color: #000000;
   background-color: rgba(244, 234, 23, 1);
   border-color: rgba(27, 67, 126, 1);
-  transition: 0.3s
+  transition: 0.3s;
 }
 
 .icon-link:hover {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: rgba(27, 67, 126, 1);
   border-color: rgba(244, 234, 23, 1);
 }

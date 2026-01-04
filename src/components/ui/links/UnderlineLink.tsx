@@ -1,11 +1,13 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 
-import clsxm from '@/lib/clsxm'
-import UnstyledLink, { UnstyledLinkProps } from '@/components/ui/links/UnstyledLink'
+import clsxm from '@/lib/clsxm';
+import UnstyledLink, {
+  UnstyledLinkProps,
+} from '@/components/ui/links/UnstyledLink';
 
 type UnderlineLinkProps = UnstyledLinkProps & {
-  underlineMobileOnly?: boolean
-}
+  underlineMobileOnly?: boolean;
+};
 
 const UnderlineLink = forwardRef<HTMLAnchorElement, UnderlineLinkProps>(
   ({ children, className, underlineMobileOnly = false, ...rest }, ref) => {
@@ -36,10 +38,10 @@ const UnderlineLink = forwardRef<HTMLAnchorElement, UnderlineLinkProps>(
       >
         {children}
       </UnstyledLink>
-    )
+    );
   }
-)
+);
 
-UnderlineLink.displayName = 'UnderlineLink'
+UnderlineLink.displayName = 'UnderlineLink';
 
-export default UnderlineLink
+export default UnderlineLink;
