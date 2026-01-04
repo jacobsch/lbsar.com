@@ -283,6 +283,73 @@ const EmergencyBanner = () => (
   </section>
 )
 
+/** ----------------- AREA MAP ----------------- */
+const AreaMapSection = () => {
+  const ORANGE = '#FC6421'
+
+  return (
+    <section
+      id="area-map"
+      className="relative w-full bg-white isolate overflow-hidden"
+    >
+      {/* Orange bar */}
+      <div
+        aria-hidden
+        className="w-full"
+        style={{ backgroundColor: ORANGE, height: 40 }}
+      />
+
+      <div className="relative">
+        {/* Wordmark */}
+        <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12 pt-6 pb-3">
+          <Image
+            src="/images/lbsar-map-word.png"
+            alt="Lions Bay Area Map"
+            width={1200}
+            height={220}
+            sizes="(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px"
+            className="h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[520px]"
+            priority={false}
+          />
+        </div>
+
+        {/* Map container with size + position controls */}
+        <div
+          className={[
+            'relative mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12 pb-10',
+
+            // size knobs (edit these)
+            '[--map-w:100%] [--map-max:920px] [--map-x:0px] [--map-y:0px]',
+            'sm:[--map-max:980px] sm:[--map-x:0px] sm:[--map-y:0px]',
+            'md:[--map-max:1040px] md:[--map-x:0px] md:[--map-y:0px]',
+            'lg:[--map-max:1120px] lg:[--map-x:0px] lg:[--map-y:0px]',
+            'xl:[--map-max:1180px] xl:[--map-x:0px] xl:[--map-y:0px]',
+          ].join(' ')}
+        >
+          <div
+            className="relative"
+            style={{
+              width: 'var(--map-w)',
+              maxWidth: 'var(--map-max)',
+              transform: 'translate(var(--map-x), var(--map-y))',
+            }}
+          >
+            <Image
+              src="/images/lbsar-map.svg"
+              alt="LBSAR Area Map"
+              width={1600}
+              height={2400}
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 1120px"
+              className="h-auto w-full bg-white"
+              style={{ transform: 'translateZ(0)' }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /** ----------------- PAGE ----------------- */
 export default function HomePage() {
   return (
@@ -291,6 +358,7 @@ export default function HomePage() {
       <main className='bg-[#121d2f]' style={{ overflowX: 'hidden' }}>
         <Hero />
         <EmergencyBanner />
+        <AreaMapSection />
       </main>
     </Layout>
   )
