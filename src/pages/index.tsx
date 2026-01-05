@@ -45,34 +45,17 @@ function Grid12({
 
 /** ----------------- HERO ----------------- */
 const Hero = () => {
-  const HEADER_BG = '#151f2f';
-  const BAR_BG = '#121d2f';
   const ORANGE = '#FC6421';
-
-  const BAR_HEIGHT = 50;
-  const SEAM_HEIGHT = 32;
 
   return (
     <section id='home' className='relative isolate overflow-visible'>
       <div
-        aria-hidden='true'
-        style={{
-          height: BAR_HEIGHT,
-          background: `
-            linear-gradient(to bottom, ${HEADER_BG} 0%, ${BAR_BG} 100%)
-            top / 100% ${SEAM_HEIGHT}px no-repeat,
-            ${BAR_BG}
-          `,
-        }}
-      />
-
-      <div
         aria-hidden
         className={[
           'pointer-events-none absolute z-[40]',
-          'hidden lg:block',
+          'hidden [@media(min-width:1070px)]:block',
           'md:[--tri-h:700px] md:[--tri-right:-14vw] md:[--tri-top:0.5vh] md:[--tri-tx:-14vw] md:[--tri-w:700px]',
-          'lg:[--tri-h:1100px] lg:[--tri-right:-16.5vw] lg:[--tri-top:0.20vh] lg:[--tri-tx:-16vw] lg:[--tri-w:1500px]',
+          'lg:[--tri-tx:-16vw] lg:[--tri-h:1500px] lg:[--tri-w:1750px] lg:[--tri-top:-50vh] lg:[--tri-right:-16vw]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -95,10 +78,10 @@ const Hero = () => {
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-left:0px] [--wm-top:730px] [--wm-w:200px]',
-          'sm:[--wm-left:0px] sm:[--wm-top:810px] sm:[--wm-w:300px]',
-          'md:[--wm-left:0px] md:[--wm-top:800px] md:[--wm-w:350px]',
-          'lg:[--wm-left:0px] lg:[--wm-top:900px] lg:[--wm-w:500px]',
+          '[--wm-w:200px] [--wm-left:10px] [--wm-top:640px]',
+          'sm:[--wm-w:300px] sm:[--wm-left:10px] sm:[--wm-top:670px]',
+          'md:[--wm-left:10px] md:[--wm-w:400px] md:[--wm-top:630px]',
+          'lg:[--wm-w:500px] lg:[--wm-left:10px] lg:[--wm-top:620px]',
         ].join(' ')}
         style={{
           top: 'var(--wm-top)',
@@ -118,7 +101,7 @@ const Hero = () => {
       </div>
 
       <div className='relative'>
-        <div className='absolute inset-0 z-0' style={{ top: BAR_HEIGHT }}>
+        <div className='absolute inset-0 z-0' style={{ height: '1000px' }}>
           <Image
             src='/images/lions.svg'
             alt=''
@@ -131,7 +114,7 @@ const Hero = () => {
           <div className='from-black/55 absolute inset-0 bg-gradient-to-b via-black/30 to-black/10' />
         </div>
 
-        <div className='relative z-10 pb-14 pt-24 sm:pt-28 lg:pb-16 lg:pt-32'>
+        <div className='relative z-10 pb-14 pt-24 sm:pt-20 lg:pb-16 lg:pt-0'>
           <GridContainer>
             <Grid12 className='min-h-[560px] items-end sm:min-h-[640px] lg:min-h-[740px]'>
               <div className='col-span-12 lg:col-span-7'>
@@ -151,7 +134,7 @@ const Hero = () => {
           />
 
           <div className='relative z-10'>
-            <GridContainer className='py-20 sm:py-24 lg:py-28'>
+            <GridContainer className='pb-20 pt-[0.1rem] sm:pb-24 sm:pt-24 lg:pb-28 lg:pt-28'>
               <Grid12 className='mt-12 gap-y-10 sm:mt-16 lg:mt-20'>
                 <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
                   Lions Bay Search and Rescue (LBSAR) is a volunteer emergency
