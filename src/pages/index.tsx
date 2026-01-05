@@ -184,6 +184,7 @@ const EmergencyBanner = () => (
         fill
         sizes='100vw'
         className='object-cover'
+        loading='lazy'
       />
       <div className='bg-black/55 absolute inset-0' />
     </div>
