@@ -120,7 +120,7 @@ const Hero = () => {
       <div className='relative'>
         <div className='absolute inset-0 z-0' style={{ top: BAR_HEIGHT }}>
           <Image
-            src='/images/hets-rescue.jpg'
+            src='/images/lions.svg'
             alt=''
             fill
             priority
@@ -246,7 +246,7 @@ const EmergencyBanner = () => (
           height={600}
           sizes='(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px'
           className='h-auto w-full'
-          quality={100}
+          quality={75}
         />
       </div>
 
@@ -280,7 +280,7 @@ const EmergencyBanner = () => (
           height={1200}
           sizes='(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px'
           className='h-auto w-full object-contain'
-          quality={100}
+          quality={75}
         />
       </div>
 
