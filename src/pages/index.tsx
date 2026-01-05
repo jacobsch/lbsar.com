@@ -196,7 +196,7 @@ const EmergencyBanner = () => (
     {/* Background */}
     <div className='absolute inset-0 z-0 bg-[#121d2f]'>
       <Image
-        src='/images/lions-sunset.jpg'
+        src='/images/trees.jpg'
         alt=''
         fill
         sizes='100vw'
