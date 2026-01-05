@@ -13,6 +13,7 @@ const links = [
   { href: '/trails', label: 'Trails' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/education', label: 'Education' },
+  { href: '/contact-us', label: 'Contact Us' },
 ] as const;
 
 const DonateButton = () => (
