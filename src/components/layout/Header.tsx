@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { List, Menu } from 'react-feather';
 import { useRouter } from 'next/router';
@@ -13,6 +15,7 @@ const links = [
   { href: '/trails', label: 'Trails' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/education', label: 'Education' },
+  { href: '/donate', label: 'Donate' },
   { href: '/contact-us', label: 'Contact Us' },
 ] as const;
 
@@ -110,7 +113,7 @@ export default function Header() {
     >
       <nav className='relative flex w-full items-center justify-between px-4 py-4 lg:px-8 lg:py-5'>
         <div className='flex items-center gap-4'>
-          <div className='min-[1330px]:hidden'>
+          <div className='min-[1500px]:hidden'>
             <button
               onClick={toggleMenu}
               className='rounded-md p-2 text-white transition-colors hover:bg-white/10'
@@ -121,7 +124,26 @@ export default function Header() {
             </button>
           </div>
 
-          <ul className='hidden items-center gap-10 min-[1330px]:flex'>
+          <ul className='hidden items-center gap-10 min-[1500px]:flex'></ul>
+          <ul className='hidden items-center gap-10 min-[1500px]:flex'>
+            {/* Logo (desktop only; disappears when hamburger appears) */}
+            <li className='flex items-center'>
+              <Link
+                href='/'
+                aria-label='Go to Home'
+                className='opacity-90 transition-opacity duration-150 hover:opacity-100'
+              >
+                <Image
+                  src='/images/header-logo.png'
+                  alt='Header Logo'
+                  width={48}
+                  height={48}
+                  priority
+                  className='h-10 w-auto'
+                />
+              </Link>
+            </li>
+
             {links.map(({ href, label }) => (
               <li key={href}>
                 <HeaderItem
@@ -134,13 +156,13 @@ export default function Header() {
           </ul>
         </div>
 
-        <div className='flex shrink-0 items-center gap-3'>
+        <div className='flex shrink-0 items-center gap-3 pr-5 lg:pr-1 min-[1500px]:pr-0'>
           <DonateButton />
         </div>
 
         {isOpen && (
           <ul
-            className='absolute left-0 right-0 top-full z-[9999] w-full border-t border-white/10 py-3 min-[1330px]:hidden'
+            className='absolute left-0 right-0 top-full z-[9999] w-full border-t border-white/10 py-3 min-[1500px]:hidden'
             style={{ backgroundColor: HEADER_BG }}
           >
             {links.map(({ href, label }) => (

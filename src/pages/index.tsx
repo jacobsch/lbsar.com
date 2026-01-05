@@ -55,7 +55,7 @@ const Hero = () => {
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
           'md:[--tri-h:700px] md:[--tri-right:-14vw] md:[--tri-top:0.5vh] md:[--tri-tx:-14vw] md:[--tri-w:700px]',
-          'lg:[--tri-tx:-16vw] lg:[--tri-h:1500px] lg:[--tri-w:1750px] lg:[--tri-top:-50vh] lg:[--tri-right:-16vw]',
+          'lg:[--tri-h:1500px] lg:[--tri-right:-16vw] lg:[--tri-top:-50vh] lg:[--tri-tx:-16vw] lg:[--tri-w:1750px]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -78,10 +78,10 @@ const Hero = () => {
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-w:200px] [--wm-left:10px] [--wm-top:640px]',
-          'sm:[--wm-w:300px] sm:[--wm-left:10px] sm:[--wm-top:670px]',
-          'md:[--wm-left:10px] md:[--wm-w:400px] md:[--wm-top:630px]',
-          'lg:[--wm-w:500px] lg:[--wm-left:10px] lg:[--wm-top:620px]',
+          '[--wm-left:10px] [--wm-top:640px] [--wm-w:200px]',
+          'sm:[--wm-left:10px] sm:[--wm-top:670px] sm:[--wm-w:300px]',
+          'md:[--wm-left:10px] md:[--wm-top:630px] md:[--wm-w:400px]',
+          'lg:[--wm-left:10px] lg:[--wm-top:620px] lg:[--wm-w:500px]',
         ].join(' ')}
         style={{
           top: 'var(--wm-top)',
@@ -134,7 +134,7 @@ const Hero = () => {
           />
 
           <div className='relative z-10'>
-            <GridContainer className='pb-20 pt-[0.1rem] sm:pb-24 sm:pt-24 lg:pb-28 lg:pt-28'>
+            <GridContainer className='lg:pb-21 pb-20 pt-[0.1rem] sm:pb-24 sm:pt-10 md:pt-3 lg:pt-10'>
               <Grid12 className='mt-12 gap-y-10 sm:mt-16 lg:mt-20'>
                 <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
                   Lions Bay Search and Rescue (LBSAR) is a volunteer emergency
