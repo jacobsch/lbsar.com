@@ -110,7 +110,7 @@ export default function Header() {
     >
       <nav className='relative flex w-full items-center justify-between px-4 py-4 lg:px-8 lg:py-5'>
         <div className='flex items-center gap-4'>
-          <div className='min-[1200px]:hidden'>
+          <div className='min-[1330px]:hidden'>
             <button
               onClick={toggleMenu}
               className='rounded-md p-2 text-white transition-colors hover:bg-white/10'
@@ -121,7 +121,7 @@ export default function Header() {
             </button>
           </div>
 
-          <ul className='hidden items-center gap-10 min-[1200px]:flex'>
+          <ul className='hidden items-center gap-10 min-[1330px]:flex'>
             {links.map(({ href, label }) => (
               <li key={href}>
                 <HeaderItem
@@ -140,7 +140,7 @@ export default function Header() {
 
         {isOpen && (
           <ul
-            className='absolute left-0 right-0 top-full z-[9999] w-full border-t border-white/10 py-3 min-[1200px]:hidden'
+            className='absolute left-0 right-0 top-full z-[9999] w-full border-t border-white/10 py-3 min-[1330px]:hidden'
             style={{ backgroundColor: HEADER_BG }}
           >
             {links.map(({ href, label }) => (
