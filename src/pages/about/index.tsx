@@ -6,8 +6,8 @@ import { VolunteerStats } from './volunteerstats';
 
 const SCRATCH_TOP = {
   mobile: '90%',
-  sm: '50%',
-  md: '85%',
+  sm: '90%',
+  md: '91%',
   lg: '94%',
 } as const;
 
@@ -33,10 +33,15 @@ export default function Layout({ children }: { children: ReactNode }) {
 
             {/* ----------------- SCRATCHED WORDS OVERLAY ----------------- */}
             <div
-              className={[
-                'pointer-events-none absolute inset-x-0 z-10 flex -translate-y-1/2 justify-center',
-                `top-[${SCRATCH_TOP.mobile}] sm:top-[${SCRATCH_TOP.sm}] md:top-[${SCRATCH_TOP.md}] lg:top-[${SCRATCH_TOP.lg}]`,
-              ].join(' ')}
+              className='scratchOverlay pointer-events-none absolute inset-x-0 z-10 flex -translate-y-1/2 justify-center'
+              style={
+                {
+                  '--scratch-top-mobile': SCRATCH_TOP.mobile,
+                  '--scratch-top-sm': SCRATCH_TOP.sm,
+                  '--scratch-top-md': SCRATCH_TOP.md,
+                  '--scratch-top-lg': SCRATCH_TOP.lg,
+                } as React.CSSProperties
+              }
             >
               <div className='flex flex-col items-center gap-4 sm:gap-5 lg:gap-6'>
                 <Image
@@ -58,6 +63,27 @@ export default function Layout({ children }: { children: ReactNode }) {
                 />
               </div>
             </div>
+
+            <style jsx>{`
+              .scratchOverlay {
+                top: var(--scratch-top-mobile);
+              }
+              @media (min-width: 640px) {
+                .scratchOverlay {
+                  top: var(--scratch-top-sm);
+                }
+              }
+              @media (min-width: 768px) {
+                .scratchOverlay {
+                  top: var(--scratch-top-md);
+                }
+              }
+              @media (min-width: 1024px) {
+                .scratchOverlay {
+                  top: var(--scratch-top-lg);
+                }
+              }
+            `}</style>
           </div>
 
           {/* ----------------- BLUE TEXT BOX ----------------- */}
@@ -72,7 +98,6 @@ export default function Layout({ children }: { children: ReactNode }) {
                 lg:px-12 lg:pb-24 lg:pt-28
               '
             >
-              {/* Logo */}
               <div className='shrink-0'>
                 <Image
                   src='/images/lbsar-logo.png'
@@ -84,7 +109,6 @@ export default function Layout({ children }: { children: ReactNode }) {
                 />
               </div>
 
-              {/* Text */}
               <p className='max-w-[820px] text-[13px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[16px]'>
                 LBSAR is over 40 members strong, and in 2025 the team responded
                 to a record 35 calls, reflecting both the growing use of the
