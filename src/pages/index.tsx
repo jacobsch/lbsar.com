@@ -125,7 +125,7 @@ const Hero = () => {
           </GridContainer>
         </div>
 
-        <section id='about' className='relative'>
+        <section id='about' className='relative -mt-2 sm:-mt-3'>
           <div
             className='absolute inset-0'
             style={{ backgroundColor: ORANGE }}
