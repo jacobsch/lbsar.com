@@ -78,8 +78,8 @@ const Hero = () => {
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-left:10px] [--wm-top:640px] [--wm-w:200px]',
-          'sm:[--wm-left:10px] sm:[--wm-top:670px] sm:[--wm-w:300px]',
+          '[--wm-left:10px] [--wm-w:200px] [--wm-top:630px]',
+          'sm:[--wm-left:10px] sm:[--wm-w:300px] sm:[--wm-top:660px]',
           'md:[--wm-left:10px] md:[--wm-top:630px] md:[--wm-w:400px]',
           'lg:[--wm-left:10px] lg:[--wm-top:620px] lg:[--wm-w:500px]',
         ].join(' ')}
