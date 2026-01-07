@@ -2,6 +2,14 @@ import Image from 'next/image';
 import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 
+import triangles_logo from '~/images/triangles-logo.png'
+import lbsar_scratched_words from '~/images/lbsar-scratched-words.png'
+import trees from '~/images/trees.jpg'
+import call_911 from '~/images/call-911.png'
+import bottom_triangles from '~/images/bottom-triangles.png'
+import lbsar_map_word from '~/images/lbsar-map-word.png'
+import lbsar_map from '~/images/lbsar-map.jpg'
+
 /** --------- Grid framework --------- */
 function GridContainer({
   children,
@@ -50,7 +58,7 @@ const Hero = () => {
   return (
     <section id='home' className='relative isolate overflow-visible'>
       <div
-        aria-hidden
+        // aria-hidden
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
@@ -66,8 +74,8 @@ const Hero = () => {
         }}
       >
         <Image
-          src='/images/triangles-logo.png'
-          alt=''
+          src={triangles_logo}
+          alt='LBSAR Logo with Triangles Pattern'
           fill
           loading='eager'
           sizes='(min-width:1070px) 700px, 0px'
@@ -90,8 +98,8 @@ const Hero = () => {
         }}
       >
         <Image
-          src='/images/lbsar-scratched-words.png'
-          alt='LBSAR'
+          src={lbsar_scratched_words}
+          alt='LBSAR scratched lettering'
           width={1800}
           height={650}
           loading='eager'
@@ -103,8 +111,8 @@ const Hero = () => {
       <div className='relative'>
         <div className='absolute inset-0 z-0' style={{ height: '1000px' }}>
           <Image
-            src='/images/lions.svg'
-            alt=''
+            src='/images/lions.svg' // TODO: fix longer load on desktop but importing the jpg is fuzzy on mobile
+            alt='Lions Mountains'
             fill
             priority
             sizes='100vw'
@@ -178,8 +186,8 @@ const EmergencyBanner = () => (
     {/* Background */}
     <div className='absolute inset-0 z-0 bg-[#121d2f]'>
       <Image
-        src='/images/trees.jpg'
-        alt=''
+        src={trees}
+        alt='Forest'
         fill
         sizes='100vw'
         className='object-cover'
@@ -223,7 +231,7 @@ const EmergencyBanner = () => (
         ].join(' ')}
       >
         <Image
-          src='/images/call-911.png'
+          src={call_911}
           alt='Call 911'
           width={1200}
           height={600}
@@ -257,8 +265,8 @@ const EmergencyBanner = () => (
         }}
       >
         <Image
-          src='/images/bottom-triangles.png'
-          alt=''
+          src={bottom_triangles}
+          alt='Triangle Pattern'
           width={1200}
           height={1200}
           sizes='(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px'
@@ -296,7 +304,7 @@ const AreaMapSection = () => {
         {/* Wordmark */}
         <div className='mx-auto w-full max-w-[1320px] px-5 pb-3 pt-6 sm:px-8 lg:px-12'>
           <Image
-            src='/images/lbsar-map-word.png'
+            src={lbsar_map_word}
             alt='Lions Bay Area Map'
             width={1200}
             height={220}
@@ -328,7 +336,7 @@ const AreaMapSection = () => {
             }}
           >
             <Image
-              src='/images/lbsar-map.svg'
+              src={lbsar_map}
               alt='LBSAR Area Map'
               width={1600}
               height={2400}
