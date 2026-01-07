@@ -323,7 +323,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div
             className='
         mx-auto max-w-[1320px]
-        px-6 pb-16 pt-10
+        px-6 pb-16 pt-16
         sm:px-8 sm:pb-20 sm:pt-10
         lg:px-12 lg:pb-24
       '
@@ -407,6 +407,75 @@ export default function Layout({ children }: { children: ReactNode }) {
                 ice axe still hangs on the wall in memory of his commitment to
                 SAR.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------- 1992 BASE ----------------- */}
+      <section className='w-full'>
+        {/* Top blue info block */}
+        <div className="w-full bg-[#121d2f] font-['Chakra_Petch'] text-white">
+          <div
+            className='
+        mx-auto grid w-full max-w-[1320px]
+        grid-cols-1 gap-8
+        px-6 py-12
+        sm:px-8 sm:py-14
+        lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
+      '
+          >
+            {/* 1992 BASE scratched words */}
+            <div className='flex justify-center lg:justify-start lg:pr-20'>
+              <Image
+                src='/images/1992-base-scratched-words.png'
+                alt='1992 Base'
+                width={520}
+                height={220}
+                sizes='(max-width: 640px) 220px, (max-width: 1024px) 300px, 420px'
+                className='h-auto w-[220px] object-contain sm:w-[280px] md:w-[320px] lg:w-[420px]'
+              />
+            </div>
+
+            {/* Paragraph */}
+            <div className='flex items-center lg:pl-20'>
+              <p className='max-w-[860px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                As the team grew, LBSAR expanded its technical capabilities and
+                operational reach. Early involvement in rigging work for Expo 86
+                helped the team develop a strong foundation in technical rope
+                rescue, a capability that remains central today. By the late
+                1980s, LBSAR was regularly working alongside neighbouring teams
+                such as Squamish and North Shore Rescue in mutual aid responses.
+                <br />
+                <br />
+                In 1992, the team established a permanent base in the Village
+                Emergency Building, sharing facilities with the Fire Department
+                and BC Ambulance Service.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Photo with bottom caption bar */}
+        <div className='relative w-full bg-[#121d2f]'>
+          <div className='relative mx-auto w-full max-w-[1400px]'>
+            <Image
+              src='/images/base.svg'
+              alt='Lions Bay Fire Hall and LBSAR base'
+              width={1600}
+              height={900}
+              sizes='100vw'
+              className='h-auto w-full object-cover'
+            />
+
+            {/* caption bar */}
+            <div className="absolute inset-x-0 bottom-0 bg-black/60 font-['Chakra_Petch']">
+              <div className='mx-auto w-full max-w-[1600px] px-6 py-3'>
+                <p className='text-[12px] leading-5 text-white/90 sm:text-[13px]'>
+                  Lions Bay Fire Hall, Ambulance, and LBSAR, 400 Centre Rd,
+                  Lions Bay, BC V0N 2E0, Canada.
+                </p>
+              </div>
             </div>
           </div>
         </div>
