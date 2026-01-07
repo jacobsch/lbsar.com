@@ -57,7 +57,7 @@ function CountUpStat({
   value,
   label,
   suffix = '',
-  duration = 2500,
+  duration = 2250,
 }: CountUpStatProps) {
   const [count, setCount] = useState(0);
   const [glow, setGlow] = useState(false);

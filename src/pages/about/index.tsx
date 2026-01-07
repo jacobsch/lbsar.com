@@ -5,10 +5,10 @@ import Header from '@/components/layout/Header';
 import { VolunteerStats } from './volunteerstats';
 
 const SCRATCH_TOP = {
-  mobile: '90%',
+  mobile: '91%',
   sm: '90%',
-  md: '91%',
-  lg: '94%',
+  md: '93%',
+  lg: '96%',
 } as const;
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -109,7 +109,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 />
               </div>
 
-              <p className='max-w-[820px] text-[13px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[16px]'>
+              <p className='max-w-[820px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
                 LBSAR is over 40 members strong, and in 2025 the team responded
                 to a record 35 calls, reflecting both the growing use of the
                 backcountry and the ongoing need for highly trained professional
@@ -144,7 +144,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             className='h-auto w-[180px] sm:w-[240px] lg:w-[280px]'
           />
 
-          <p className='max-w-[900px] text-[14px] leading-6 sm:text-[15px] sm:leading-7 lg:text-[16px]'>
+          <p className='max-w-[900px] text-[15px] leading-6 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
             The Lions Bay General Store located at 350 Centre Road Lions Bay, BC
             V0N 2E0 Canada
           </p>
@@ -180,9 +180,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         mx-auto grid max-w-[1320px]
         grid-cols-1 gap-6
         px-6 py-10
-        text-[14px] leading-6
+        text-[16px] leading-6
         sm:grid-cols-2 sm:gap-10 sm:text-[15px] sm:leading-7
-        lg:px-12 lg:py-14 lg:text-[16px]
+        lg:px-12 lg:py-14 lg:text-[20px]
       '
           >
             <p>
@@ -243,7 +243,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
           />
 
-          <p className='max-w-[940px] text-[13.5px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[18px] lg:leading-8'>
+          <p className='max-w-[940px] text-[15px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
             Over the years, as recreation in the surrounding backcountry
             increased, so did the need for organized assistance when people
             became lost or injured. In the early years, local residents often
@@ -261,13 +261,154 @@ export default function Layout({ children }: { children: ReactNode }) {
             className='h-auto w-[84vw] max-w-[400px] sm:max-w-[540px] lg:max-w-[720px]'
           />
 
-          <p className='max-w-[940px] text-[13.5px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[18px] lg:leading-8'>
+          <p className='max-w-[940px] text-[16px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
             In 1982, a devastating flood along Alberta Creek caused significant
             damage within the village and tragically claimed the lives of two
             young residents. The scale of the response highlighted the need for
             a dedicated emergency organization, leading to the formation of
             Lions Bay Search and Rescue in 1983.
           </p>
+        </div>
+      </section>
+
+      {/* ----------------- MARCEL ANDRIE FEATURE ----------------- */}
+      <section className='relative w-full overflow-hidden'>
+        {/* ---------- WHITE TOP ---------- */}
+        <div className='relative h-[140px] bg-white sm:h-[170px] lg:h-[325px]'>
+          {/* Decorative triangles */}
+          <Image
+            src='/images/marcel-triangles.png'
+            alt=''
+            aria-hidden
+            width={520}
+            height={520}
+            className='
+      pointer-events-none
+      absolute left-0 top-0
+      w-[170px]
+      sm:w-[202px]
+      lg:w-[390px]
+      xl:w-[390px]
+    '
+          />
+
+          {/* Marcel photo */}
+          <div className='absolute inset-x-0 bottom-0 z-20 flex justify-center'>
+            <Image
+              src='/images/marcel-photo.svg'
+              alt='Marcel Andrie'
+              width={260}
+              height={260}
+              className='
+      h-[150px] w-[150px]
+      translate-y-[3%]
+
+      rounded-full object-cover
+      sm:h-[200px]
+
+      sm:w-[200px] sm:translate-y-[16%]
+      min-[801px]:h-[260px]
+
+      min-[801px]:w-[260px] min-[801px]:translate-y-[45%]
+      lg:h-[400px]
+
+      lg:w-[400px] lg:translate-y-[45%]
+    '
+            />
+          </div>
+        </div>
+
+        {/* ---------- RED BODY ---------- */}
+        <div className="relative bg-[#b2092d] font-['Chakra_Petch'] text-white">
+          <div
+            className='
+        mx-auto max-w-[1320px]
+        px-6 pb-16 pt-10
+        sm:px-8 sm:pb-20 sm:pt-10
+        lg:px-12 lg:pb-24
+      '
+          >
+            {/* Headings row */}
+            <div className='lg:-mt-19 -mt-10 mb-6 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:text-left'>
+              {/* MARCEL */}
+              <div
+                className='
+    flex -translate-y-6
+    justify-center
+    max-[800px]:hidden
+
+    sm:-translate-y-[40px]
+    sm:justify-start
+
+    min-[1081px]:-translate-y-[50px]
+  '
+              >
+                <Image
+                  src='/images/marcel-scratched-words.png'
+                  alt='Marcel'
+                  width={420}
+                  height={120}
+                  sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
+                  className='
+      h-auto w-[170px]
+      object-contain
+      sm:w-[220px]
+      min-[1081px]:w-[300px]
+    '
+                />
+              </div>
+
+              {/* 1983 ANDRIE */}
+              <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
+                <Image
+                  src='/images/1983-andrie-scratched-words.png'
+                  alt='1983 Andrie'
+                  width={420}
+                  height={120}
+                  sizes='(max-width: 639px) 200px, (max-width: 1023px) 260px, 320px'
+                  className='h-auto w-[190px] object-contain sm:w-[240px] min-[1081px]:w-[300px]'
+                />
+              </div>
+            </div>
+
+            {/* Text columns */}
+            <div className='grid grid-cols-1 gap-8 text-[16px] leading-6 sm:grid-cols-2 sm:gap-12 sm:text-[15px] sm:leading-7 lg:text-[20px]'>
+              <p>
+                LBSAR was founded by local mountaineers, outdoor enthusiasts,
+                and members of the UBC Varsity Outdoors Club, under the
+                leadership of Marcel Andrie.
+                <br />
+                <br />
+                Marcel Andrie immigrated to Canada from Switzerland. He was a
+                founding member of Lions Bay Search and Rescue in the basement
+                of his home in Lions Bay. Early call outs were supported by his
+                wife Heidi in the kitchen making chilli, and his daughter Nadine
+                running phone messages.
+                <br />
+                <br />
+                On April 30, 1994, while on a GSAR training trip in Tetrahedron
+                Park with two other GSAR members and a family friend, Marcel
+                suffered a cardiac arrest and died. He was 59.
+              </p>
+
+              <p>
+                A bridge was built in his name crossing Harvey Creek on the way
+                to the Lions. This tribute is especially fitting as GSAR members
+                found crossing the creek in that location while carrying
+                equipment or an injured subject particularly difficult.
+                <br />
+                <br />
+                Marcel was happy to construct solutions to challenges found in
+                the field of GSAR. He rigged up and tested out quite a few
+                systems to move patients more smoothly and safely down the
+                mountain. He was invitational in his leadership and instigated
+                many a fun training weekend adventures. He was remarkable at
+                finding roles for anyone who wanted to help out on the team. His
+                ice axe still hangs on the wall in memory of his commitment to
+                SAR.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
