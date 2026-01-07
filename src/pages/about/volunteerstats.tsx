@@ -127,32 +127,35 @@ function CountUpStat({
 
 /* ============================
    VOLUNTEER STATS (exported)
+   - Single render (no remount on breakpoints)
    - Mobile: stacked
-   - md–lg: grid
+   - md–lg: grid (Calls spans 2 cols)
    - lg+: single row
 ============================ */
 export function VolunteerStats() {
   return (
     <section className='bg-[#0a111c]'>
       <div className='md:py-18 mx-auto max-w-6xl px-6 py-20'>
-        <div className='flex flex-col items-center gap-10 md:hidden'>
-          <CountUpStat value={6500} label='Hours' />
-          <CountUpStat value={40} label='Volunteers' />
-          <CountUpStat value={35} label='Calls' />
-        </div>
+        <div
+          className={[
+            // mobile: stacked
+            'flex flex-col items-center gap-10',
 
-        <div className='hidden grid-cols-2 place-items-center gap-x-14 gap-y-12 md:grid lg:hidden'>
+            // md–lg: grid
+            'md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 md:gap-y-12',
+
+            // lg+: single row
+            'lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-x-14 lg:gap-y-0',
+          ].join(' ')}
+        >
           <CountUpStat value={6500} label='Hours' />
           <CountUpStat value={40} label='Volunteers' />
-          <div className='col-span-2'>
+
+          {/* On md grid, make Calls centered across both columns.
+              On lg flex, it behaves as a normal item. */}
+          <div className='md:col-span-2 lg:col-span-1'>
             <CountUpStat value={35} label='Calls' />
           </div>
-        </div>
-
-        <div className='hidden items-center justify-between gap-x-14 lg:flex'>
-          <CountUpStat value={6500} label='Hours' />
-          <CountUpStat value={40} label='Volunteers' />
-          <CountUpStat value={35} label='Calls' />
         </div>
       </div>
     </section>

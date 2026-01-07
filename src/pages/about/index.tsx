@@ -122,6 +122,155 @@ export default function Layout({ children }: { children: ReactNode }) {
         <VolunteerStats />
       </main>
 
+      <section className='w-full bg-[#66051b]'>
+        <div className='mx-auto flex max-w-[1600px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
+          <Image
+            src='/images/general-store.svg'
+            alt='Lions Bay General Store'
+            width={1400}
+            height={620}
+            sizes='(max-width: 640px) 92vw, (max-width: 1280px) 1000px, 1150px'
+            className='h-auto w-full max-w-[1150px] object-contain'
+          />
+        </div>
+
+        <div className='flex flex-col items-center gap-4 px-6 pb-8 text-center font-["Chakra_Petch"] text-white'>
+          <Image
+            src='/images/history-scratched-words.png'
+            alt='History'
+            width={420}
+            height={120}
+            sizes='(max-width: 640px) 200px, 360px'
+            className='h-auto w-[180px] sm:w-[240px] lg:w-[280px]'
+          />
+
+          <p className='max-w-[900px] text-[14px] leading-6 sm:text-[15px] sm:leading-7 lg:text-[16px]'>
+            The Lions Bay General Store located at 350 Centre Road Lions Bay, BC
+            V0N 2E0 Canada
+          </p>
+        </div>
+      </section>
+
+      {/* ----------------- RED INFO + BEACH (WRAPPED) ----------------- */}
+      <section className='relative w-full overflow-hidden'>
+        {/* Decorative triangles — floats over BOTH red + beach */}
+        <Image
+          src='/images/beach-triangles.png'
+          alt=''
+          aria-hidden
+          width={800}
+          height={800}
+          className='
+    pointer-events-none
+    absolute left-0
+    top-[50px] z-[999]
+    hidden
+    w-[220px]
+    sm:top-[80px]
+    sm:w-[300px] lg:top-[140px]
+    lg:w-[380px] xl:top-[18px]
+    xl:w-[480px] min-[1700px]:block
+  '
+        />
+
+        {/* ----------------- RED INFO BOX ----------------- */}
+        <div className="relative z-10 w-full bg-[#b2092d] font-['Chakra_Petch'] text-white">
+          <div
+            className='
+        mx-auto grid max-w-[1320px]
+        grid-cols-1 gap-6
+        px-6 py-10
+        text-[14px] leading-6
+        sm:grid-cols-2 sm:gap-10 sm:text-[15px] sm:leading-7
+        lg:px-12 lg:py-14 lg:text-[16px]
+      '
+          >
+            <p>
+              Lions Bay is a small oceanside village on the eastern shore of
+              Howe Sound, located along the Sea-to-Sky Highway about 25 km
+              northwest of downtown Vancouver. Framed by steep coastal mountains
+              and ocean beaches, it is one of the Lower Mainland’s most
+              scenic—and geographically constrained— communities.
+            </p>
+
+            <p>
+              With a population of roughly 3,000 residents, Lions Bay has a
+              strong sense of community and a deep connection to the outdoors.
+              The village has a quaint general store, a fire hall with ambulance
+              service, an elementary school, and sits at the base of several
+              popular backcountry hiking routes and alpine objectives.
+            </p>
+          </div>
+        </div>
+
+        {/* ----------------- BEACH IMAGE ----------------- */}
+        <div className='relative z-10 w-full bg-[#121d2f]'>
+          <div className='mx-auto flex max-w-[1400px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
+            <Image
+              src='/images/lions-bay-beach.svg'
+              alt='Lions Bay Beach'
+              width={1400}
+              height={600}
+              sizes='(max-width: 640px) 88vw, (max-width: 1280px) 900px, 1100px'
+              className='h-auto w-full max-w-[1100px] object-contain'
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------- BROWN HISTORY BOX ----------------- */}
+      <section className='w-full bg-[#403218]'>
+        <div
+          className="
+      sm:py-15 lg:py-17 mx-auto
+      flex max-w-[1400px]
+      flex-col
+      items-center gap-6
+      px-6
+      py-11
+      text-center
+      font-['Chakra_Petch'] text-white
+      sm:gap-8 lg:gap-9
+    "
+        >
+          {/* 1982 scratched words (top) */}
+          <Image
+            src='/images/1982-scratched-words.png'
+            alt='1982'
+            width={480}
+            height={140}
+            sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
+            className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
+          />
+
+          <p className='max-w-[940px] text-[13.5px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[18px] lg:leading-8'>
+            Over the years, as recreation in the surrounding backcountry
+            increased, so did the need for organized assistance when people
+            became lost or injured. In the early years, local residents often
+            came together informally to support rescue efforts.
+          </p>
+
+          {/* CBC archive image */}
+          <Image
+            src='/images/mud-slide-cbc.svg'
+            alt=''
+            aria-hidden
+            width={760}
+            height={620}
+            sizes='(max-width: 640px) 84vw, (max-width: 1024px) 540px, 720px'
+            className='h-auto w-[84vw] max-w-[400px] sm:max-w-[540px] lg:max-w-[720px]'
+          />
+
+          <p className='max-w-[940px] text-[13.5px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[18px] lg:leading-8'>
+            In 1982, a devastating flood along Alberta Creek caused significant
+            damage within the village and tragically claimed the lives of two
+            young residents. The scale of the response highlighted the need for
+            a dedicated emergency organization, leading to the formation of
+            Lions Bay Search and Rescue in 1983.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
