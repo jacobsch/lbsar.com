@@ -457,7 +457,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
 
         {/* Photo with bottom caption bar */}
-        <div className='relative w-full bg-[#121d2f]'>
+        <div className='relative w-full bg-[#121d2f] pb-8 sm:pb-10 lg:pb-14'>
           <div className='relative mx-auto w-full max-w-[1400px]'>
             <Image
               src='/images/base.svg'
@@ -476,6 +476,84 @@ export default function Layout({ children }: { children: ReactNode }) {
                   Lions Bay, BC V0N 2E0, Canada.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------- 2024 LANDSLIDE ----------------- */}
+      <section className="w-full bg-[#403218] font-['Chakra_Petch'] text-white">
+        <div className='mx-auto w-full max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-20'>
+          {/* Title */}
+          <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
+            <Image
+              src='/images/2024-landslide-scratched-words.png'
+              alt='2024 Landslide'
+              width={900}
+              height={180}
+              sizes='(max-width: 640px) 280px, (max-width: 1024px) 520px, 760px'
+              className='h-auto w-[280px] sm:w-[520px] lg:w-[760px]'
+            />
+          </div>
+
+          {/* Row 1: image left, text right */}
+          <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-20'>
+            <div className='lg:col-span-8 lg:-ml-32'>
+              <Image
+                src='/images/landslide-2.svg'
+                alt='Landslide debris'
+                width={1200}
+                height={700}
+                sizes='(max-width: 1024px) 100vw, 960px'
+                className='h-auto w-full object-cover'
+              />
+            </div>
+
+            <div className='flex items-center lg:col-span-4 lg:pl-6'>
+              <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                <p>
+                  The community of Lions Bay continues to face environmental
+                  challenges tied to extreme weather events and flooding.
+                </p>
+
+                <p>
+                  On December 14, 2024, another tragic landslide in Battani
+                  Creek took the lives of two beloved community members and
+                  served as a stark reminder of the teams’ foundation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: text left, image right */}
+          <div className='mt-10 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-12 lg:gap-20'>
+            <div className='order-2 flex items-center lg:order-1 lg:col-span-4 lg:pr-6'>
+              <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                <p>
+                  LBSAR continues to support its community and responds to the
+                  ever increasing flood risks around the lower mainland,
+                  including most recently in supporting evacuations in
+                  Chilliwack on Dec 14, 2025.
+                </p>
+
+                <p>
+                  We continued to adapt, train, and prepare to respond to a
+                  broad range of emergencies and natural disasters,
+                  strengthening collaboration with regional partners and
+                  supporting both local and mutual-aid callouts.
+                </p>
+              </div>
+            </div>
+
+            <div className='order-1 lg:order-2 lg:col-span-8 lg:-mr-32'>
+              <Image
+                src='/images/landslide-1.svg'
+                alt='Landslide scene'
+                width={1200}
+                height={700}
+                sizes='(max-width: 1024px) 100vw, 960px'
+                className='h-auto w-full object-cover'
+              />
             </div>
           </div>
         </div>
