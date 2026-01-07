@@ -111,7 +111,7 @@ export default function Header() {
         margin: 0,
       }}
     >
-      <nav className='relative flex w-full items-center justify-between px-4 py-4 lg:px-8 lg:py-5'>
+      <nav className='relative flex w-full items-center justify-between py-4 pl-4 pr-1 lg:px-8 lg:py-5'>
         <div className='flex items-center gap-4'>
           <div className='min-[1500px]:hidden'>
             <button
