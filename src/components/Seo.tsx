@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Lions Bay SAR',
-  siteName: 'Lions Bay SAR',
+  title: 'Lions Bay Search and Rescue',
+  siteName: 'Lions Bay Search and Rescue',
   description: `Lions Bay Search and Rescue Lions Bay Search and Rescue Society operates under the umbrella of the Emergency Management Climate Readiness (EMCR). 
     Our team provides wilderness and urban search and rescue services, primarily in the area from Horseshoe Bay to Porteau Cove.`,
   url: 'https://lbsar.com', // without the trailing / at the end of url
@@ -13,7 +13,7 @@ const defaultMeta = {
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image: 'https://tsnext-tw.thcl.dev/images/large-og.png', // todo - change
+  image: 'https://tsnext-tw.thcl.dev/images/large-og.png',
 };
 
 type SeoProps = {
