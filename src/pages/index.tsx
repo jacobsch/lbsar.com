@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 
-import triangles_logo from '~/images/triangles-logo.png'
-import lbsar_scratched_words from '~/images/lbsar-scratched-words.png'
-import trees from '~/images/trees.jpg'
-import call_911 from '~/images/call-911.png'
-import bottom_triangles from '~/images/bottom-triangles.png'
-import lbsar_map_word from '~/images/lbsar-map-word.png'
-import lbsar_map from '~/images/lbsar-map.jpg'
+import triangles_logo from '~/images/triangles-logo.png';
+import lbsar_scratched_words from '~/images/lbsar-scratched-words.png';
+import trees from '~/images/trees.jpg';
+import call_911 from '~/images/call-911.png';
+import bottom_triangles from '~/images/bottom-triangles.png';
+import lbsar_map_word from '~/images/lbsar-map-word.png';
+import lbsar_map from '~/images/lbsar-map.jpg';
 
 /** --------- Grid framework --------- */
 function GridContainer({
@@ -62,8 +62,8 @@ const Hero = () => {
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
-          'md:[--tri-h:700px] md:[--tri-right:-14vw] md:[--tri-top:0.5vh] md:[--tri-tx:-14vw] md:[--tri-w:700px]',
-          'lg:[--tri-h:1500px] lg:[--tri-right:-16vw] lg:[--tri-top:-50vh] lg:[--tri-tx:-16vw] lg:[--tri-w:1750px]',
+          'lg:[--tri-h:1000px] lg:[--tri-w:1000px] lg:[--tri-tx:-9.5vw] lg:[--tri-top:-190px] lg:[--tri-right:-10vw]',
+          'xl:[--tri-h:1000px] xl:[--tri-tx:-9.5vw] xl:[--tri-w:1000px] xl:[--tri-right:-10vw] xl:[--tri-top:-190px]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -79,15 +79,15 @@ const Hero = () => {
           fill
           loading='eager'
           sizes='(min-width:1070px) 700px, 0px'
-          className='object-top-right object-contain'
+          className='object-contain object-right-top'
         />
       </div>
 
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-left:10px] [--wm-w:200px] [--wm-top:630px]',
-          'sm:[--wm-left:10px] sm:[--wm-w:300px] sm:[--wm-top:660px]',
+          '[--wm-left:10px] [--wm-top:630px] [--wm-w:200px]',
+          'sm:[--wm-left:10px] sm:[--wm-top:660px] sm:[--wm-w:300px]',
           'md:[--wm-left:10px] md:[--wm-top:630px] md:[--wm-w:400px]',
           'lg:[--wm-left:10px] lg:[--wm-top:620px] lg:[--wm-w:500px]',
         ].join(' ')}
