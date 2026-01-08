@@ -222,16 +222,16 @@ export default function Layout({ children }: { children: ReactNode }) {
       <section className='w-full bg-[#403218]'>
         <div
           className="
-      sm:py-15 lg:py-17 mx-auto
-      flex max-w-[1400px]
-      flex-col
-      items-center gap-6
-      px-6
-      py-11
-      text-center
-      font-['Chakra_Petch'] text-white
-      sm:gap-8 lg:gap-9
-    "
+            sm:py-15 lg:py-17 mx-auto
+            flex max-w-[1400px]
+            flex-col
+            items-center gap-6
+            px-6
+            py-11
+            text-center
+            font-['Chakra_Petch'] text-white
+            sm:gap-8 lg:gap-9
+          "
         >
           {/* 1982 scratched words (top) */}
           <Image
@@ -283,13 +283,13 @@ export default function Layout({ children }: { children: ReactNode }) {
             width={520}
             height={520}
             className='
-      pointer-events-none
-      absolute left-0 top-0
-      w-[170px]
-      sm:w-[202px]
-      lg:w-[390px]
-      xl:w-[390px]
-    '
+              pointer-events-none
+              absolute left-0 top-0
+              w-[170px]
+              sm:w-[202px]
+              lg:w-[390px]
+              xl:w-[390px]
+            '
           />
 
           {/* Marcel photo */}
@@ -300,20 +300,20 @@ export default function Layout({ children }: { children: ReactNode }) {
               width={260}
               height={260}
               className='
-      h-[150px] w-[150px]
-      translate-y-[3%]
+                h-[150px] w-[150px]
+                translate-y-[3%]
 
-      rounded-full object-cover
-      sm:h-[200px]
+                rounded-full object-cover
+                sm:h-[200px]
 
-      sm:w-[200px] sm:translate-y-[16%]
-      min-[801px]:h-[260px]
+                sm:w-[200px] sm:translate-y-[16%]
+                min-[801px]:h-[260px]
 
-      min-[801px]:w-[260px] min-[801px]:translate-y-[45%]
-      lg:h-[400px]
+                min-[801px]:w-[260px] min-[801px]:translate-y-[45%]
+                lg:h-[400px]
 
-      lg:w-[400px] lg:translate-y-[45%]
-    '
+                lg:w-[400px] lg:translate-y-[45%]
+              '
             />
           </div>
         </div>
@@ -322,26 +322,26 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="relative bg-[#b2092d] font-['Chakra_Petch'] text-white">
           <div
             className='
-        mx-auto max-w-[1320px]
-        px-6 pb-16 pt-16
-        sm:px-8 sm:pb-20 sm:pt-10
-        lg:px-12 lg:pb-24
-      '
+              mx-auto max-w-[1320px]
+              px-6 pb-16 pt-16
+              sm:px-8 sm:pb-20 sm:pt-10
+              lg:px-12 lg:pb-24
+            '
           >
             {/* Headings row */}
             <div className='lg:-mt-19 -mt-10 mb-6 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:text-left'>
               {/* MARCEL */}
               <div
                 className='
-    flex -translate-y-6
-    justify-center
-    max-[800px]:hidden
+                  flex -translate-y-6
+                  justify-center
+                  max-[800px]:hidden
 
-    sm:-translate-y-[40px]
-    sm:justify-start
+                  sm:-translate-y-[40px]
+                  sm:justify-start
 
-    min-[1081px]:-translate-y-[50px]
-  '
+                  min-[1081px]:-translate-y-[50px]
+                '
               >
                 <Image
                   src='/images/marcel-scratched-words.png'
@@ -350,11 +350,11 @@ export default function Layout({ children }: { children: ReactNode }) {
                   height={120}
                   sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
                   className='
-      h-auto w-[170px]
-      object-contain
-      sm:w-[220px]
-      min-[1081px]:w-[300px]
-    '
+                    h-auto w-[170px]
+                    object-contain
+                    sm:w-[220px]
+                    min-[1081px]:w-[300px]
+                  '
                 />
               </div>
 
@@ -418,12 +418,12 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="w-full bg-[#121d2f] font-['Chakra_Petch'] text-white">
           <div
             className='
-        mx-auto grid w-full max-w-[1320px]
-        grid-cols-1 gap-8
-        px-6 py-12
-        sm:px-8 sm:py-14
-        lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
-      '
+              mx-auto grid w-full max-w-[1320px]
+              grid-cols-1 gap-8
+              px-6 py-12
+              sm:px-8 sm:py-14
+              lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
+            '
           >
             {/* 1992 BASE scratched words */}
             <div className='flex justify-center lg:justify-start lg:pr-20'>
