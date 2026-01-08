@@ -132,7 +132,7 @@ function CountUpStat({
    - md–lg: grid (Calls spans 2 cols)
    - lg+: single row
 ============================ */
-export function VolunteerStats() {
+export default function VolunteerStats() {
   return (
     <section className='bg-[#0a111c]'>
       <div className='md:py-18 mx-auto max-w-6xl px-6 py-20'>

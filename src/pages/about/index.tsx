@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
-import { VolunteerStats } from './volunteerstats';
+import VolunteerStats from '@/components/VolunteerStats';
 
 const SCRATCH_TOP = {
   mobile: '91%',
