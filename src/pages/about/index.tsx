@@ -4,6 +4,26 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import VolunteerStats from '@/components/VolunteerStats';
 
+import teamphoto from '~/images/teamphoto.svg';
+import lbsarScratchedWords from '~/images/lbsar-scratched-words.png';
+import team2026ScratchedWords from '~/images/team-2026-scratched-words.png';
+import lbsarLogo from '~/images/lbsar-logo.png';
+import generalStore from '~/images/general-store.svg';
+import historyScratchedWords from '~/images/history-scratched-words.png';
+import beachTriangles from '~/images/beach-triangles.png';
+import lionsBayBeach from '~/images/lions-bay-beach.svg';
+import scratched1982 from '~/images/1982-scratched-words.png';
+import mudSlideCbc from '~/images/mud-slide-cbc.svg';
+import marcelTriangles from '~/images/marcel-triangles.png';
+import marcelPhoto from '~/images/marcel-photo.svg';
+import marcelScratchedWords from '~/images/marcel-scratched-words.png';
+import andrie1983ScratchedWords from '~/images/1983-andrie-scratched-words.png';
+import base1992ScratchedWords from '~/images/1992-base-scratched-words.png';
+import basePhoto from '~/images/base.svg';
+import landslide2024Title from '~/images/2024-landslide-scratched-words.png';
+import landslide2 from '~/images/landslide-2.svg';
+import landslide1 from '~/images/landslide-1.svg';
+
 const SCRATCH_TOP = {
   mobile: '91%',
   sm: '90%',
@@ -23,7 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <section className='relative w-full bg-[#121d2f]'>
           <div className='relative aspect-[3/1] w-full'>
             <Image
-              src='/images/teamphoto.svg'
+              src={teamphoto}
               alt='LBSAR Team'
               fill
               sizes='100vw'
@@ -45,7 +65,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             >
               <div className='flex flex-col items-center gap-4 sm:gap-5 lg:gap-6'>
                 <Image
-                  src='/images/lbsar-scratched-words.png'
+                  src={lbsarScratchedWords}
                   alt='LBSAR'
                   width={420}
                   height={120}
@@ -54,7 +74,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 />
 
                 <Image
-                  src='/images/team-2026-scratched-words.png'
+                  src={team2026ScratchedWords}
                   alt='Team 2026'
                   width={420}
                   height={120}
@@ -100,7 +120,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             >
               <div className='shrink-0'>
                 <Image
-                  src='/images/lbsar-logo.png'
+                  src={lbsarLogo}
                   alt='LBSAR Logo'
                   width={180}
                   height={180}
@@ -125,7 +145,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <section className='w-full bg-[#66051b]'>
         <div className='mx-auto flex max-w-[1600px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
           <Image
-            src='/images/general-store.svg'
+            src={generalStore}
             alt='Lions Bay General Store'
             width={1400}
             height={620}
@@ -136,7 +156,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         <div className='flex flex-col items-center gap-4 px-6 pb-8 text-center font-["Chakra_Petch"] text-white'>
           <Image
-            src='/images/history-scratched-words.png'
+            src={historyScratchedWords}
             alt='History'
             width={420}
             height={120}
@@ -155,7 +175,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <section className='relative w-full overflow-hidden'>
         {/* Decorative triangles — floats over BOTH red + beach */}
         <Image
-          src='/images/beach-triangles.png'
+          src={beachTriangles}
           alt=''
           aria-hidden
           width={800}
@@ -207,7 +227,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className='relative z-10 w-full bg-[#121d2f]'>
           <div className='mx-auto flex max-w-[1400px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
             <Image
-              src='/images/lions-bay-beach.svg'
+              src={lionsBayBeach}
               alt='Lions Bay Beach'
               width={1400}
               height={600}
@@ -235,7 +255,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           {/* 1982 scratched words (top) */}
           <Image
-            src='/images/1982-scratched-words.png'
+            src={scratched1982}
             alt='1982'
             width={480}
             height={140}
@@ -252,7 +272,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
           {/* CBC archive image */}
           <Image
-            src='/images/mud-slide-cbc.svg'
+            src={mudSlideCbc}
             alt=''
             aria-hidden
             width={760}
@@ -277,7 +297,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className='relative h-[140px] bg-white sm:h-[170px] lg:h-[325px]'>
           {/* Decorative triangles */}
           <Image
-            src='/images/marcel-triangles.png'
+            src={marcelTriangles}
             alt=''
             aria-hidden
             width={520}
@@ -295,7 +315,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           {/* Marcel photo */}
           <div className='absolute inset-x-0 bottom-0 z-20 flex justify-center'>
             <Image
-              src='/images/marcel-photo.svg'
+              src={marcelPhoto}
               alt='Marcel Andrie'
               width={260}
               height={260}
@@ -344,7 +364,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 '
               >
                 <Image
-                  src='/images/marcel-scratched-words.png'
+                  src={marcelScratchedWords}
                   alt='Marcel'
                   width={420}
                   height={120}
@@ -361,7 +381,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               {/* 1983 ANDRIE */}
               <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
                 <Image
-                  src='/images/1983-andrie-scratched-words.png'
+                  src={andrie1983ScratchedWords}
                   alt='1983 Andrie'
                   width={420}
                   height={120}
@@ -428,7 +448,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* 1992 BASE scratched words */}
             <div className='flex justify-center lg:justify-start lg:pr-20'>
               <Image
-                src='/images/1992-base-scratched-words.png'
+                src={base1992ScratchedWords}
                 alt='1992 Base'
                 width={520}
                 height={220}
@@ -460,7 +480,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className='relative w-full bg-[#121d2f] pb-8 sm:pb-10 lg:pb-14'>
           <div className='relative mx-auto w-full max-w-[1400px]'>
             <Image
-              src='/images/base.svg'
+              src={basePhoto}
               alt='Lions Bay Fire Hall and LBSAR base'
               width={1600}
               height={900}
@@ -487,7 +507,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           {/* Title */}
           <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
             <Image
-              src='/images/2024-landslide-scratched-words.png'
+              src={landslide2024Title}
               alt='2024 Landslide'
               width={900}
               height={180}
@@ -500,7 +520,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-20'>
             <div className='lg:col-span-8 lg:-ml-32'>
               <Image
-                src='/images/landslide-2.svg'
+                src={landslide2}
                 alt='Landslide debris'
                 width={1200}
                 height={700}
@@ -547,7 +567,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
             <div className='order-1 lg:order-2 lg:col-span-8 lg:-mr-32'>
               <Image
-                src='/images/landslide-1.svg'
+                src={landslide1}
                 alt='Landslide scene'
                 width={1200}
                 height={700}
