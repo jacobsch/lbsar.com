@@ -62,8 +62,8 @@ const Hero = () => {
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
-          'lg:[--tri-h:1000px] lg:[--tri-w:1000px] lg:[--tri-tx:-9.5vw] lg:[--tri-top:-190px] lg:[--tri-right:-10vw]',
-          'xl:[--tri-h:1000px] xl:[--tri-tx:-9.5vw] xl:[--tri-w:1000px] xl:[--tri-right:-10vw] xl:[--tri-top:-190px]',
+          'lg:[--tri-right:-10vw] lg:[--tri-tx:-9.5vw] lg:[--tri-h:800px] lg:[--tri-w:800px] lg:[--tri-top:-0px]',
+          'xl:[--tri-h:800px] xl:[--tri-right:-10vw] xl:[--tri-w:800px] xl:[--tri-tx:-10vw] xl:[--tri-top:-0px]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -86,7 +86,7 @@ const Hero = () => {
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-left:10px] [--wm-top:630px] [--wm-w:200px]',
+          '[--wm-left:10px] [--wm-w:200px] [--wm-top:520px]',
           'sm:[--wm-left:10px] sm:[--wm-top:660px] sm:[--wm-w:300px]',
           'md:[--wm-left:10px] md:[--wm-top:630px] md:[--wm-w:400px]',
           'lg:[--wm-left:10px] lg:[--wm-top:620px] lg:[--wm-w:500px]',
@@ -208,26 +208,32 @@ const EmergencyBanner = () => (
         'xl:min-h-[720px]',
       ].join(' ')}
     >
-      {/* Call 911 PNG: keep your original positioning exactly */}
+      {/* Call 911 PNG */}
       <div
         className={[
-          'pointer-events-none absolute right-0 z-20',
+          'pointer-events-none absolute z-20',
 
+          // MOBILE: centered
+          'left-1/2 -translate-x-1/2',
+
+          // DESKTOP
+          'sm:left-auto sm:right-0',
+          'sm:-translate-x-[80px]',
+          'md:-translate-x-[80px]',
+          'lg:-translate-x-[80px]',
+          'xl:-translate-x-[80px]',
+
+          // vertical positioning
           'top-[-75px]',
           'sm:top-[-80px]',
           'md:top-[-100px]',
           'lg:top-[-100px]',
 
+          // sizing
           'w-[260px]',
           'sm:w-[320px]',
           'md:w-[360px]',
           'lg:w-[420px]',
-
-          'translate-x-[-110px]',
-          'sm:-translate-x-[80px]',
-          'md:-translate-x-[80px]',
-          'lg:-translate-x-[80px]',
-          'xl:-translate-x-[80px]',
         ].join(' ')}
       >
         <Image
