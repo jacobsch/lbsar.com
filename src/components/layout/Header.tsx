@@ -5,6 +5,8 @@ import { List, Menu, ChevronDown } from 'react-feather';
 import { useRouter } from 'next/router';
 import UnderlineLink from '@/components/ui/links/UnderlineLink';
 
+import headerLogo from '~/images/header-logo.png';
+
 const HEADER_BG = '#151f2f';
 
 const links = [
@@ -224,10 +226,8 @@ export default function Header() {
                 className='opacity-90 transition-opacity duration-150 hover:opacity-100'
               >
                 <Image
-                  src='/images/header-logo.png'
+                  src={headerLogo}
                   alt='Header Logo'
-                  width={48}
-                  height={48}
                   priority
                   className='h-10 w-auto'
                 />

@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Facebook, Instagram } from 'react-feather';
 
+import lbsarLogo from '~/images/lbsar-logo.png';
+
 export default function Footer() {
   const SOCIAL_BLUE = '#1854f1';
   const SOCIAL_BLUE_HOVER = '#0f43c9';
@@ -11,7 +13,7 @@ export default function Footer() {
       <div className='flex w-full flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8'>
         <div className='flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left'>
           <Image
-            src='/images/lbsar-logo.png'
+            src={lbsarLogo}
             alt='Lions Bay Search and Rescue Society logo'
             width={96}
             height={96}
