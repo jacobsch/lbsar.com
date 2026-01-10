@@ -107,7 +107,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           {/* ----------------- BLUE TEXT BOX ----------------- */}
-          <div className="flex w-full justify-center bg-[#121d2f] font-['Chakra_Petch'] text-white">
+          <div className='font-primary flex w-full justify-center bg-[#121d2f] text-white'>
             <div
               className='
                 mx-auto flex w-full max-w-[1320px]
@@ -154,7 +154,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           />
         </div>
 
-        <div className='flex flex-col items-center gap-4 px-6 pb-8 text-center font-["Chakra_Petch"] text-white'>
+        <div className='font-primary flex flex-col items-center gap-4 px-6 pb-8 text-center text-white'>
           <Image
             src={historyScratchedWords}
             alt='History'
@@ -194,7 +194,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
 
         {/* ----------------- RED INFO BOX ----------------- */}
-        <div className="relative z-10 w-full bg-[#b2092d] font-['Chakra_Petch'] text-white">
+        <div className='font-primary relative z-10 w-full bg-[#b2092d] text-white'>
           <div
             className='
         mx-auto grid max-w-[1320px]
@@ -241,17 +241,17 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* ----------------- BROWN HISTORY BOX ----------------- */}
       <section className='w-full bg-[#403218]'>
         <div
-          className="
-            sm:py-15 lg:py-17 mx-auto
-            flex max-w-[1400px]
-            flex-col
-            items-center gap-6
+          className='
+            sm:py-15 lg:py-17 font-primary
+            mx-auto flex
+            max-w-[1400px]
+            flex-col items-center
+            gap-6
             px-6
             py-11
-            text-center
-            font-['Chakra_Petch'] text-white
+            text-center text-white
             sm:gap-8 lg:gap-9
-          "
+          '
         >
           {/* 1982 scratched words (top) */}
           <Image
@@ -339,7 +339,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
 
         {/* ---------- RED BODY ---------- */}
-        <div className="relative bg-[#b2092d] font-['Chakra_Petch'] text-white">
+        <div className='font-primary relative bg-[#b2092d] text-white'>
           <div
             className='
               mx-auto max-w-[1320px]
@@ -435,7 +435,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* ----------------- 1992 BASE ----------------- */}
       <section className='w-full'>
         {/* Top blue info block */}
-        <div className="w-full bg-[#121d2f] font-['Chakra_Petch'] text-white">
+        <div className='font-primary w-full bg-[#121d2f] text-white'>
           <div
             className='
               mx-auto grid w-full max-w-[1320px]
@@ -489,7 +489,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             />
 
             {/* caption bar */}
-            <div className="absolute inset-x-0 bottom-0 bg-black/60 font-['Chakra_Petch']">
+            <div className='font-primary absolute inset-x-0 bottom-0 bg-black/60'>
               <div className='mx-auto w-full max-w-[1600px] px-6 py-3'>
                 <p className='text-[12px] leading-5 text-white/90 sm:text-[13px]'>
                   Lions Bay Fire Hall, Ambulance, and LBSAR, 400 Centre Rd,
@@ -502,7 +502,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </section>
 
       {/* ----------------- 2024 LANDSLIDE ----------------- */}
-      <section className="w-full bg-[#403218] font-['Chakra_Petch'] text-white">
+      <section className='font-primary w-full bg-[#403218] text-white'>
         <div className='mx-auto w-full max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-20'>
           {/* Title */}
           <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>

@@ -3,29 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  /* Chakra Petch */
-  @font-face {
-    font-family: 'Chakra Petch';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/ChakraPetch-Regular.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Chakra Petch';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('/fonts/ChakraPetch-Bold.ttf') format('truetype');
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: var(--font-chakra), system-ui, sans-serif;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
   }
