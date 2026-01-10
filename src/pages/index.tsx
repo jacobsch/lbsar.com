@@ -156,7 +156,7 @@ const Hero = () => {
             <GridContainer
               className={[
                 // bottom padding (leave generous)
-                'pb-10 sm:pb-10 md:pb-28 lg:pb-32',
+                'sm:pb-13 pb-14 md:pb-28 lg:pb-32',
 
                 // TOP PADDING — this is what you want to tune
                 'pt-3',
