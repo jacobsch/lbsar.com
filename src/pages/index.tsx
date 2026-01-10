@@ -53,7 +53,7 @@ function Grid12({
 
 /** ----------------- HERO ----------------- */
 const Hero = () => {
-  const ORANGE = '#FC6421';
+  const ORANGE = '#f26529';
 
   return (
     <section id='home' className='relative isolate overflow-visible'>
@@ -312,7 +312,7 @@ const EmergencyBanner = () => (
 
 /** ----------------- AREA MAP ----------------- */
 const AreaMapSection = () => {
-  const ORANGE = '#FC6421';
+  const ORANGE = '#f26529';
 
   return (
     <section
