@@ -142,7 +142,10 @@ const Hero = () => {
           </GridContainer>
         </div>
 
-        <section id='about' className='relative -mt-2 sm:-mt-3'>
+        <section
+          id='about'
+          className='relative -mt-28 sm:-mt-2 md:-mt-2 lg:-mt-2'
+        >
           <div
             className='absolute inset-0'
             style={{ backgroundColor: ORANGE }}
@@ -150,7 +153,18 @@ const Hero = () => {
           />
 
           <div className='relative z-10'>
-            <GridContainer className='lg:pb-21 pb-20 pt-[0.1rem] sm:pb-24 sm:pt-10 md:pt-3 lg:pt-10'>
+            <GridContainer
+              className={[
+                // bottom padding (leave generous)
+                'pb-10 sm:pb-10 md:pb-28 lg:pb-32',
+
+                // TOP PADDING — this is what you want to tune
+                'pt-3',
+                'sm:pt-1',
+                'md:pt-10',
+                'lg:pt-20',
+              ].join(' ')}
+            >
               <Grid12 className='mt-12 gap-y-10 sm:mt-16 lg:mt-20'>
                 <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
                   Lions Bay Search and Rescue (LBSAR) is a volunteer emergency
