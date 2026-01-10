@@ -58,7 +58,6 @@ const Hero = () => {
   return (
     <section id='home' className='relative isolate overflow-visible'>
       <div
-        // aria-hidden
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
@@ -155,10 +154,8 @@ const Hero = () => {
           <div className='relative z-10'>
             <GridContainer
               className={[
-                // bottom padding (leave generous)
                 'sm:pb-13 pb-14 md:pb-28 lg:pb-32',
 
-                // TOP PADDING — this is what you want to tune
                 'pt-3',
                 'sm:pt-1',
                 'md:pt-10',
@@ -276,14 +273,14 @@ const EmergencyBanner = () => (
           'pointer-events-none absolute bottom-0 left-0 z-20',
           'hidden sm:block',
 
-          // scale smaller (you can tweak these)
+          // scale smaller
           'w-[140px]',
           'sm:w-[170px]',
           'md:w-[210px]',
           'lg:w-[250px]',
           'xl:w-[250px]',
 
-          // translate knobs (edit these values)
+          // translate knobs
           '[--bt-x:0px] [--bt-y:0px]',
           'sm:[--bt-x:0px] sm:[--bt-y:0px]',
           'md:[--bt-x:0px] md:[--bt-y:0px]',
@@ -348,7 +345,7 @@ const AreaMapSection = () => {
           className={[
             'relative mx-auto w-full max-w-[1320px] px-5 pb-10 sm:px-8 lg:px-12',
 
-            // size knobs (edit these)
+            // size knobs
             '[--map-max:920px] [--map-w:100%] [--map-x:0px] [--map-y:0px]',
             'sm:[--map-max:980px] sm:[--map-x:0px] sm:[--map-y:0px]',
             'md:[--map-max:1040px] md:[--map-x:0px] md:[--map-y:0px]',
