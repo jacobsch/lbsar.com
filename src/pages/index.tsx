@@ -119,7 +119,7 @@ const Hero = () => {
           ].join(' ')}
         >
           <Image
-            src='/images/lions.svg' // TODO: fix longer load on desktop but importing the jpg is fuzzy on mobile
+            src='/images/lions.svg'
             alt='Lions Mountains'
             fill
             priority
