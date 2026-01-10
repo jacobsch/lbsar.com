@@ -90,7 +90,7 @@ const HeaderItem = ({
         'tracking-[0.14em]',
         isActive
           ? 'font-bold text-orange-400'
-          : 'font-normal text-white/90 hover:text-white',
+          : 'font-normal text-white/90 hover:text-white/50',
         'whitespace-nowrap transition-colors',
         'inline-flex items-center justify-center',
       ].join(' ')}
@@ -260,7 +260,7 @@ export default function Header() {
                           'tracking-[0.14em]',
                           rescueIsActive
                             ? 'font-bold text-orange-400'
-                            : 'font-normal text-white/90 hover:text-white',
+                            : 'font-normal text-white/90 hover:text-white/50',
                           'whitespace-nowrap transition-colors',
                           'inline-flex items-center justify-center',
                         ].join(' ')}
@@ -279,7 +279,7 @@ export default function Header() {
                         aria-label='Toggle Rescue Specialties dropdown'
                         aria-haspopup='menu'
                         aria-expanded={isOpenDrop}
-                        className='rounded-md p-0.5 text-white/90 transition-colors hover:bg-white/10 hover:text-white'
+                        className='rounded-md p-0.5 text-white/90 transition-colors hover:bg-white/10 hover:text-white/50'
                       >
                         <ChevronDown
                           className={[
@@ -323,7 +323,7 @@ export default function Header() {
                                   'block px-4 py-2',
                                   isActiveHref(item.href)
                                     ? 'font-bold text-orange-400'
-                                    : 'font-normal text-white/90 hover:text-white',
+                                    : 'font-normal text-white/90 hover:text-white/50',
                                   'transition-colors',
                                 ].join(' ')}
                               >
@@ -388,7 +388,7 @@ export default function Header() {
                           aria-label='Toggle Rescue Specialties dropdown'
                           aria-haspopup='menu'
                           aria-expanded={isOpenDrop}
-                          className='rounded-md p-2 text-white/90 transition-colors hover:bg-white/10 hover:text-white'
+                          className='rounded-md p-2 text-white/90 transition-colors hover:bg-white/10 hover:text-white/50'
                         >
                           <ChevronDown
                             className={[
@@ -424,7 +424,7 @@ export default function Header() {
                                   'block px-2 py-2',
                                   isActiveHref(item.href)
                                     ? 'font-bold text-orange-400'
-                                    : 'font-normal text-white/90 hover:text-white',
+                                    : 'font-normal text-white/90 hover:text-white/50',
                                   'transition-colors',
                                 ].join(' ')}
                               >
