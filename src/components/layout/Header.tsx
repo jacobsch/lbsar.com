@@ -39,7 +39,7 @@ const DonateButton = () => (
     target='_blank'
     rel='noreferrer'
     className='
-      font-chakra inline-flex items-center
+      font-primary inline-flex items-center
       justify-center
       whitespace-nowrap
       rounded-xl bg-[#fc6421]
@@ -87,7 +87,7 @@ const HeaderItem = ({
       underlineMobileOnly
       className={[
         'navbar-link',
-        'font-chakra uppercase',
+        'font-primary uppercase',
         'text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]',
         'tracking-[0.14em]',
         isActive
@@ -254,7 +254,7 @@ export default function Header() {
                         underlineMobileOnly
                         className={[
                           'navbar-link',
-                          'font-chakra uppercase',
+                          'font-primary uppercase',
                           'pr-1',
                           'text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]',
                           'tracking-[0.14em]',
@@ -317,7 +317,7 @@ export default function Header() {
                                 href={item.href}
                                 onClick={closeAllDropdowns}
                                 className={[
-                                  'font-chakra uppercase',
+                                  'font-primary uppercase',
                                   'tracking-[0.14em]',
                                   'text-[13px] sm:text-[14px] md:text-[14px]',
                                   'block px-4 py-2',
@@ -418,7 +418,7 @@ export default function Header() {
                                   closeMenu();
                                 }}
                                 className={[
-                                  'font-chakra uppercase',
+                                  'font-primary uppercase',
                                   'tracking-[0.14em]',
                                   'text-[13px] sm:text-[14px]',
                                   'block px-2 py-2',

@@ -1,5 +1,5 @@
 .container-heading {
-  font-family: 'Roboto Thin', sans-serif;
+  font-family: var(--font-chakra), system-ui, sans-serif;
 }
 
 @keyframes gradient {

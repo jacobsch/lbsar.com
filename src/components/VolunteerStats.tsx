@@ -101,7 +101,7 @@ function CountUpStat({
         <span
           className={[
             'relative inline-block',
-            "font-['Chakra_Petch'] font-extrabold",
+            'font-primary font-extrabold',
             'tabular-nums leading-none text-white',
             'text-[52px] md:text-[60px]',
             '[text-shadow:0_0_0.6px_rgba(255,255,255,0.55)]',
@@ -117,7 +117,7 @@ function CountUpStat({
           {suffix}
         </span>
 
-        <span className="font-['Chakra_Petch'] text-[15px] font-extrabold uppercase tracking-widest text-[#febd29] md:text-[16px]">
+        <span className='font-primary text-[15px] font-extrabold uppercase tracking-widest text-[#febd29] md:text-[16px]'>
           {label}
         </span>
       </div>
