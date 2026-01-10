@@ -62,8 +62,8 @@ const Hero = () => {
         className={[
           'pointer-events-none absolute z-[40]',
           'hidden [@media(min-width:1070px)]:block',
-          'lg:[--tri-right:-10vw] lg:[--tri-tx:-9.5vw] lg:[--tri-h:800px] lg:[--tri-w:800px] lg:[--tri-top:-0px]',
-          'xl:[--tri-h:800px] xl:[--tri-right:-10vw] xl:[--tri-w:800px] xl:[--tri-tx:-10vw] xl:[--tri-top:-0px]',
+          'lg:[--tri-h:800px] lg:[--tri-right:-10vw] lg:[--tri-top:-0px] lg:[--tri-tx:-9.5vw] lg:[--tri-w:800px]',
+          'xl:[--tri-h:800px] xl:[--tri-right:-10vw] xl:[--tri-top:-0px] xl:[--tri-tx:-10vw] xl:[--tri-w:800px]',
         ].join(' ')}
         style={{
           width: 'var(--tri-w)',
@@ -86,7 +86,7 @@ const Hero = () => {
       <div
         className={[
           'pointer-events-none absolute z-[45]',
-          '[--wm-left:10px] [--wm-w:200px] [--wm-top:520px]',
+          '[--wm-left:10px] [--wm-top:520px] [--wm-w:200px]',
           'sm:[--wm-left:10px] sm:[--wm-top:660px] sm:[--wm-w:300px]',
           'md:[--wm-left:10px] md:[--wm-top:630px] md:[--wm-w:400px]',
           'lg:[--wm-left:10px] lg:[--wm-top:620px] lg:[--wm-w:500px]',
@@ -109,7 +109,16 @@ const Hero = () => {
       </div>
 
       <div className='relative'>
-        <div className='absolute inset-0 z-0' style={{ height: '1000px' }}>
+        <div
+          className={[
+            'absolute inset-0 z-0',
+
+            'h-[705px]',
+            'sm:h-[850px]',
+            'md:h-[900px]',
+            'lg:h-[1000px]',
+          ].join(' ')}
+        >
           <Image
             src='/images/lions.svg' // TODO: fix longer load on desktop but importing the jpg is fuzzy on mobile
             alt='Lions Mountains'
