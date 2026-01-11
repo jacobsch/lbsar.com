@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
 import Image from 'next/image';
-import rescue_mountain from '~/images/rescue-mountain.png';
+import rescue_mountain from '~/images/rescue-mountain.jpg';
 import pick_axe from '~/images/pick-axe.svg';
 import rope from '~/images/rope.svg';
 import helicopter from '~/images/helicopter.svg';
