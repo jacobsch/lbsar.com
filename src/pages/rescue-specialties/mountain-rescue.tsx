@@ -6,6 +6,9 @@ import Seo from '@/components/Seo';
 import mountain_rescue_photo from '~/images/mountain-rescue-1.png';
 import mountain_rescue_scratched_words from '~/images/mountain-rescue-scratched-words.png';
 import pick_axe from '~/images/pick-axe.svg';
+import class4ScratchedWords from '~/images/class-4-scratched-words.png';
+import exposureScratchedWords from '~/images/exposure-scratched-words.png';
+import class4ExposedPhoto from '~/images/class-4-exposed-photo.jpeg';
 
 const BG = '#151f2f';
 const ACCENT = '#febd29';
@@ -72,18 +75,18 @@ export default function MountainRescuePage() {
                     'relative flex w-full flex-col items-center',
 
                     // WORDMARK variables (px + scale)
-                    '[--word-h:260px] [--word-x:-8px] [--word-y:-24px] [--word-scale:.90]',
+                    '[--word-h:260px] [--word-scale:.90] [--word-x:-8px] [--word-y:-24px]',
                     'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:-8px] sm:[--word-y:-20px]',
-                    'md:[--word-h:360px] md:[--word-x:-8px] md:[--word-y:-130px] md:[--word-scale:1.15]',
-                    'lg:[--word-x:-8px] lg:[--word-h:500px] lg:[--word-y:-180px] lg:[--word-scale:1.1]',
+                    'md:[--word-h:360px] md:[--word-scale:1.15] md:[--word-x:-8px] md:[--word-y:-130px]',
+                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-x:-8px] lg:[--word-y:-180px]',
                     'xl:[--word-x:[-20px] xl:[--word-h:400px] xl:[--word-scale:1] xl:[--word-y:-80px]',
 
                     // PICKAXE variables (px + scale + size)
                     '[--axe-scale:1] [--axe-size:140px] [--axe-x:0px] [--axe-y:-30px]',
                     'sm:[--axe-scale:1] sm:[--axe-size:150px] sm:[--axe-x:0px] sm:[--axe-y:-12px]',
-                    'md:[--axe-scale:1] md:[--axe-x:0px] md:[--axe-size:200px] md:[--axe-y:-170px]',
-                    'lg:[--axe-x:0px] lg:[--axe-y:-250px] lg:[--axe-scale:1.05] lg:[--axe-size:160px]',
-                    'xl:[--axe-size:205px] xl:[--axe-x:0px] xl:[--axe-scale:1.25] xl:[--axe-y:-60px]',
+                    'md:[--axe-scale:1] md:[--axe-size:200px] md:[--axe-x:0px] md:[--axe-y:-170px]',
+                    'lg:[--axe-scale:1.05] lg:[--axe-size:160px] lg:[--axe-x:0px] lg:[--axe-y:-250px]',
+                    'xl:[--axe-scale:1.25] xl:[--axe-size:205px] xl:[--axe-x:0px] xl:[--axe-y:-60px]',
                   ].join(' ')}
                 >
                   {/* WORDMARK */}
@@ -114,14 +117,12 @@ export default function MountainRescuePage() {
                     }}
                   >
                     <PickAxeIcon
-                      // CSS var returns like "140px" → parse to number
                       sizePx={parseInt(
                         (getComputedStyle !== undefined
                           ? '140'
                           : '140') as string
                       )}
                     />
-                    {/* NOTE: size is set below via inline style wrapper so it always reacts */}
                     <span
                       aria-hidden='true'
                       className='absolute inset-0'
@@ -129,14 +130,12 @@ export default function MountainRescuePage() {
                     />
                   </div>
 
-                  {/* Real pickaxe render with var-based size */}
                   <div
                     className='pointer-events-none -mt-[9999px] h-0 w-0 overflow-hidden'
                     aria-hidden='true'
                   />
                 </div>
 
-                {/* ✅ Pickaxe size driven by CSS var (reacts instantly) */}
                 <div className='-mt-0 flex w-full justify-center'>
                   <span
                     className='inline-flex'
@@ -173,9 +172,74 @@ export default function MountainRescuePage() {
                 </div>
               </div>
             </div>
-            {/* END RIGHT */}
           </div>
         </section>
+        <div className='h-[8px] w-full bg-white' />
+
+        {/* =========================
+            SECTION 2 — CLASS 4 / EXPOSURE
+            ========================= */}
+
+        <section className='w-full'>
+          <div className='grid min-h-[900px] grid-cols-1 md:min-h-[1100px] md:grid-cols-[0.85fr_1.15fr] lg:min-h-[1200px]'>
+            <div
+              className='relative flex flex-col items-center px-6 pb-20 pt-24 sm:px-10 sm:pt-28 md:px-12 md:pt-32 lg:px-14 lg:pt-48'
+              style={{ backgroundColor: '#fc6421' }}
+            >
+              <div className='relative flex w-full max-w-[560px] justify-center px-2 sm:px-3'>
+                <Image
+                  src={class4ScratchedWords}
+                  alt='Class 4'
+                  className='h-auto w-full scale-[1.0] object-contain sm:scale-[1.06] md:scale-[1.1] lg:scale-[1.12]'
+                />
+              </div>
+
+              <div className='mt-24 w-full max-w-[560px] space-y-10 text-white/95 sm:mt-28 md:mt-32 lg:mt-36'>
+                <p className='text-[15px] leading-relaxed sm:text-[16px] lg:text-[20px]'>
+                  Lions Bay Search and Rescue combines strong mountaineering
+                  foundations with technical rope rescue to respond to falls,
+                  lost or injured hikers, climbers, and other mountain-related
+                  emergencies.
+                </p>
+
+                <p className='text-[15px] leading-relaxed sm:text-[16px] lg:text-[20px]'>
+                  Operations frequently take place in Class 4 and Class 5
+                  terrain, on rock, ice, and snow, and may involve long approach
+                  times, exposure, and complex evacuations.
+                </p>
+              </div>
+
+              <p className='mt-28 w-full max-w-[560px] text-[12px] leading-relaxed text-white/90 sm:mt-36 sm:text-[13px] lg:mt-44 lg:text-[14px]'>
+                <span className='font-semibold' style={{ color: ACCENT }}>
+                  Rescue:
+                </span>{' '}
+                Mount Brunswick. Exposed class 4 terrain. Doug Brown (LBSAR
+                doctor), Maria Masiar (LBSAR Mountain Rescue)
+              </p>
+            </div>
+
+            <div className='relative h-full min-h-[420px]'>
+              <div className='absolute inset-0 overflow-hidden'>
+                <Image
+                  src={class4ExposedPhoto}
+                  alt='Exposed class 4 terrain'
+                  fill
+                  sizes='(max-width: 768px) 100vw, 60vw'
+                  className='object-cover object-center'
+                />
+              </div>
+
+              <div className='pointer-events-none absolute inset-x-0 bottom-[5px] px-3 sm:bottom-[8px] sm:px-4 md:bottom-[10px] md:px-7 lg:px-11'>
+                <Image
+                  src={exposureScratchedWords}
+                  alt='Exposure'
+                  className='block h-auto w-full -translate-x-[6px] scale-[0.96] object-contain sm:scale-[0.99] md:-translate-x-[8px] md:scale-[1.02]'
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className='h-[8px] w-full bg-white' />
       </main>
     </Layout>
   );
