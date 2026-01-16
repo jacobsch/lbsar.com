@@ -75,14 +75,14 @@ export default function RopeRescuePage() {
                     'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-y:0px] sm:[--word-x:0px]',
                     'md:[--word-h:360px] md:[--word-scale:0.8] md:[--word-y:-90px] md:[--word-x:0px]',
                     'lg:[--word-h:500px] lg:[--word-y:-100px] lg:[--word-scale:0.9] lg:[--word-x:0px]',
-                    'xl:[--word-h:400px] xl:[--word-scale:1.0] xl:[--word-y:0px] xl:[--word-x:0px]',
+                    'xl:[--word-h:400px] xl:[--word-y:0px] xl:[--word-x:0px] xl:[--word-scale:0.9]',
 
                     // ROPE variables (px + scale + size)
                     '[--rope-scale:1] [--rope-size:140px] [--rope-x:0px] [--rope-y:-10px]',
                     'sm:[--rope-scale:1] sm:[--rope-size:150px] sm:[--rope-x:0px] sm:[--rope-y:30px]',
                     'md:[--rope-scale:1] md:[--rope-size:200px] md:[--rope-x:0px] md:[--rope-y:-100px]',
                     'lg:[--rope-size:160px] lg:[--rope-x:0px] lg:[--rope-scale:1.3] lg:[--rope-y:-100px]',
-                    'xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-scale:1.5] xl:[--rope-y:150px]',
+                    'xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-scale:1.5] xl:[--rope-y:125px]',
                   ].join(' ')}
                 >
                   <div
