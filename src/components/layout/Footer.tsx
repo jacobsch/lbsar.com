@@ -10,7 +10,6 @@ export default function Footer() {
 
   return (
     <>
-      {/* White bar directly above footer (stationary, in normal flow) */}
       <div className='h-[8px] w-full bg-white' />
 
       <footer className='font-primary w-full bg-[#121d2f] font-normal text-white'>
