@@ -11,6 +11,8 @@ import exposureScratchedWords from '~/images/exposure-scratched-words.png';
 import class4ExposedPhoto from '~/images/class-4-exposed-photo.jpeg';
 import skypilotPhoto from '~/images/skypilot-photo.jpg';
 import mountainRescueTriangles from '~/images/mountain-rescue-triangles.png';
+import mountainRescueImageBlock from '~/images/mountain-rescue-image-block.png';
+import harveySunset from '~/images/harvey-sunset.png';
 
 const BG = '#151f2f';
 const ACCENT = '#febd29';
@@ -114,13 +116,7 @@ export default function MountainRescuePage() {
                         'translate(var(--axe-x), var(--axe-y)) scale(var(--axe-scale))',
                     }}
                   >
-                    <PickAxeIcon
-                      sizePx={parseInt(
-                        (getComputedStyle !== undefined
-                          ? '140'
-                          : '140') as string
-                      )}
-                    />
+                    <PickAxeIcon sizePx={140} />
                     <span
                       aria-hidden='true'
                       className='absolute inset-0'
@@ -244,8 +240,8 @@ export default function MountainRescuePage() {
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
-    SECTION 3 — MULTI-DISCIPLINE / SKYPILOT
-    ========================= */}
+            SECTION 3 — SKYPILOT
+            ========================= */}
 
         <section className='w-full'>
           {/* PHOTO BLOCK */}
@@ -259,7 +255,6 @@ export default function MountainRescuePage() {
               className='object-cover object-center'
             />
 
-            {/* TRIANGLES — LEFT OVERLAY (LARGER) */}
             <div className='pointer-events-none absolute left-0 top-0 z-10 w-[160px] sm:w-[190px] md:w-[230px] lg:w-[270px] xl:w-[320px]'>
               <Image
                 src={mountainRescueTriangles}
@@ -269,7 +264,6 @@ export default function MountainRescuePage() {
             </div>
           </div>
 
-          {/* TEXT BLOCK (SEPARATE — NO OVERLAP) */}
           <div
             className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14'
             style={{ backgroundColor: '#151f2f' }}
@@ -285,6 +279,38 @@ export default function MountainRescuePage() {
               </p>
             </div>
           </div>
+        </section>
+        <div className='h-[8px] w-full bg-white' />
+
+        {/* =========================
+            SECTION — IMAGE BLOCK
+            ========================= */}
+
+        <section className='w-full bg-white'>
+          <div className='px-6 sm:px-8 md:px-10 lg:px-12'>
+            <div className='mx-auto flex w-full max-w-[1400px] -translate-x-[7px] justify-center'>
+              <Image
+                src={mountainRescueImageBlock}
+                alt='Mountain rescue'
+                className='h-auto w-full object-contain'
+                sizes='100vw'
+              />
+            </div>
+          </div>
+        </section>
+        <div className='h-[8px] w-full bg-white' />
+
+        {/* =========================
+            SECTION — IMAGE ONLY
+            ========================= */}
+
+        <section className='w-full bg-white'>
+          <Image
+            src={harveySunset}
+            alt='Mountain rescue'
+            className='h-auto w-full object-contain'
+            sizes='100vw'
+          />
         </section>
       </main>
     </Layout>
