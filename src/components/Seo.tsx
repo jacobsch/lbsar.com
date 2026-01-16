@@ -40,7 +40,9 @@ export default function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  const ogImageAbs = `${meta.url}${meta.image}`;
+  const ogImageAbs = meta.image.startsWith('http')
+    ? meta.image
+    : `${meta.url}${meta.image}`;
 
   return (
     <Head>

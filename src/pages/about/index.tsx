@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 import VolunteerStats from '@/components/VolunteerStats';
 
 import teamphoto from '~/images/teamphoto.svg';
@@ -31,14 +31,12 @@ const SCRATCH_TOP = {
   lg: '96%',
 } as const;
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function AboutUsPage() {
   return (
-    <div className='min-h-screen w-full'>
-      <Header />
+    <Layout>
+      <Seo templateTitle='About Us' />
 
-      <main className='flex-1 pt-[72px] lg:pt-[80px]'>
-        {children}
-
+      <div className='min-h-screen w-full'>
         {/* ----------------- TEAM PHOTO (FULL WIDTH, FIXED RATIO) ----------------- */}
         <section className='relative w-full bg-[#121d2f]'>
           <div className='relative aspect-[3/1] w-full'>
@@ -60,7 +58,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   '--scratch-top-sm': SCRATCH_TOP.sm,
                   '--scratch-top-md': SCRATCH_TOP.md,
                   '--scratch-top-lg': SCRATCH_TOP.lg,
-                } as React.CSSProperties
+                } as CSSProperties
               }
             >
               <div className='flex flex-col items-center gap-4 sm:gap-5 lg:gap-6'>
@@ -140,47 +138,46 @@ export default function Layout({ children }: { children: ReactNode }) {
         </section>
 
         <VolunteerStats />
-      </main>
 
-      <section className='w-full bg-[#66051b]'>
-        <div className='mx-auto flex max-w-[1600px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
+        <section className='w-full bg-[#66051b]'>
+          <div className='mx-auto flex max-w-[1600px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
+            <Image
+              src={generalStore}
+              alt='Lions Bay General Store'
+              width={1400}
+              height={620}
+              sizes='(max-width: 640px) 92vw, (max-width: 1280px) 1000px, 1150px'
+              className='h-auto w-full max-w-[1150px] object-contain'
+            />
+          </div>
+
+          <div className='font-primary flex flex-col items-center gap-4 px-6 pb-8 text-center text-white'>
+            <Image
+              src={historyScratchedWords}
+              alt='History'
+              width={420}
+              height={120}
+              sizes='(max-width: 640px) 200px, 360px'
+              className='h-auto w-[180px] sm:w-[240px] lg:w-[280px]'
+            />
+
+            <p className='max-w-[900px] text-[15px] leading-6 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
+              The Lions Bay General Store located at 350 Centre Road Lions Bay,
+              BC V0N 2E0 Canada
+            </p>
+          </div>
+        </section>
+
+        {/* ----------------- RED INFO + BEACH (WRAPPED) ----------------- */}
+        <section className='relative w-full overflow-hidden'>
+          {/* Decorative triangles — floats over BOTH red + beach */}
           <Image
-            src={generalStore}
-            alt='Lions Bay General Store'
-            width={1400}
-            height={620}
-            sizes='(max-width: 640px) 92vw, (max-width: 1280px) 1000px, 1150px'
-            className='h-auto w-full max-w-[1150px] object-contain'
-          />
-        </div>
-
-        <div className='font-primary flex flex-col items-center gap-4 px-6 pb-8 text-center text-white'>
-          <Image
-            src={historyScratchedWords}
-            alt='History'
-            width={420}
-            height={120}
-            sizes='(max-width: 640px) 200px, 360px'
-            className='h-auto w-[180px] sm:w-[240px] lg:w-[280px]'
-          />
-
-          <p className='max-w-[900px] text-[15px] leading-6 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
-            The Lions Bay General Store located at 350 Centre Road Lions Bay, BC
-            V0N 2E0 Canada
-          </p>
-        </div>
-      </section>
-
-      {/* ----------------- RED INFO + BEACH (WRAPPED) ----------------- */}
-      <section className='relative w-full overflow-hidden'>
-        {/* Decorative triangles — floats over BOTH red + beach */}
-        <Image
-          src={beachTriangles}
-          alt=''
-          aria-hidden
-          width={800}
-          height={800}
-          className='
+            src={beachTriangles}
+            alt=''
+            aria-hidden
+            width={800}
+            height={800}
+            className='
     pointer-events-none
     absolute left-0
     top-[50px] z-[999]
@@ -191,12 +188,12 @@ export default function Layout({ children }: { children: ReactNode }) {
     lg:w-[380px] xl:top-[18px]
     xl:w-[480px] min-[1700px]:block
   '
-        />
+          />
 
-        {/* ----------------- RED INFO BOX ----------------- */}
-        <div className='font-primary relative z-10 w-full bg-[#b2092d] text-white'>
-          <div
-            className='
+          {/* ----------------- RED INFO BOX ----------------- */}
+          <div className='font-primary relative z-10 w-full bg-[#b2092d] text-white'>
+            <div
+              className='
         mx-auto grid max-w-[1320px]
         grid-cols-1 gap-6
         px-6 py-10
@@ -204,44 +201,44 @@ export default function Layout({ children }: { children: ReactNode }) {
         sm:grid-cols-2 sm:gap-10 sm:text-[15px] sm:leading-7
         lg:px-12 lg:py-14 lg:text-[20px]
       '
-          >
-            <p>
-              Lions Bay is a small oceanside village on the eastern shore of
-              Howe Sound, located along the Sea-to-Sky Highway about 25 km
-              northwest of downtown Vancouver. Framed by steep coastal mountains
-              and ocean beaches, it is one of the Lower Mainland’s most
-              scenic—and geographically constrained— communities.
-            </p>
+            >
+              <p>
+                Lions Bay is a small oceanside village on the eastern shore of
+                Howe Sound, located along the Sea-to-Sky Highway about 25 km
+                northwest of downtown Vancouver. Framed by steep coastal
+                mountains and ocean beaches, it is one of the Lower Mainland’s
+                most scenic—and geographically constrained— communities.
+              </p>
 
-            <p>
-              With a population of roughly 3,000 residents, Lions Bay has a
-              strong sense of community and a deep connection to the outdoors.
-              The village has a quaint general store, a fire hall with ambulance
-              service, an elementary school, and sits at the base of several
-              popular backcountry hiking routes and alpine objectives.
-            </p>
+              <p>
+                With a population of roughly 3,000 residents, Lions Bay has a
+                strong sense of community and a deep connection to the outdoors.
+                The village has a quaint general store, a fire hall with
+                ambulance service, an elementary school, and sits at the base of
+                several popular backcountry hiking routes and alpine objectives.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* ----------------- BEACH IMAGE ----------------- */}
-        <div className='relative z-10 w-full bg-[#121d2f]'>
-          <div className='mx-auto flex max-w-[1400px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
-            <Image
-              src={lionsBayBeach}
-              alt='Lions Bay Beach'
-              width={1400}
-              height={600}
-              sizes='(max-width: 640px) 88vw, (max-width: 1280px) 900px, 1100px'
-              className='h-auto w-full max-w-[1100px] object-contain'
-            />
+          {/* ----------------- BEACH IMAGE ----------------- */}
+          <div className='relative z-10 w-full bg-[#121d2f]'>
+            <div className='mx-auto flex max-w-[1400px] justify-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12'>
+              <Image
+                src={lionsBayBeach}
+                alt='Lions Bay Beach'
+                width={1400}
+                height={600}
+                sizes='(max-width: 640px) 88vw, (max-width: 1280px) 900px, 1100px'
+                className='h-auto w-full max-w-[1100px] object-contain'
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ----------------- BROWN HISTORY BOX ----------------- */}
-      <section className='w-full bg-[#403218]'>
-        <div
-          className='
+        {/* ----------------- BROWN HISTORY BOX ----------------- */}
+        <section className='w-full bg-[#403218]'>
+          <div
+            className='
             sm:py-15 lg:py-17 font-primary
             mx-auto flex
             max-w-[1400px]
@@ -252,57 +249,57 @@ export default function Layout({ children }: { children: ReactNode }) {
             text-center text-white
             sm:gap-8 lg:gap-9
           '
-        >
-          {/* 1982 scratched words (top) */}
-          <Image
-            src={scratched1982}
-            alt='1982'
-            width={480}
-            height={140}
-            sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
-            className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
-          />
+          >
+            {/* 1982 scratched words (top) */}
+            <Image
+              src={scratched1982}
+              alt='1982'
+              width={480}
+              height={140}
+              sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
+              className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
+            />
 
-          <p className='max-w-[940px] text-[15px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
-            Over the years, as recreation in the surrounding backcountry
-            increased, so did the need for organized assistance when people
-            became lost or injured. In the early years, local residents often
-            came together informally to support rescue efforts.
-          </p>
+            <p className='max-w-[940px] text-[15px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+              Over the years, as recreation in the surrounding backcountry
+              increased, so did the need for organized assistance when people
+              became lost or injured. In the early years, local residents often
+              came together informally to support rescue efforts.
+            </p>
 
-          {/* CBC archive image */}
-          <Image
-            src={mudSlideCbc}
-            alt=''
-            aria-hidden
-            width={760}
-            height={620}
-            sizes='(max-width: 640px) 84vw, (max-width: 1024px) 540px, 720px'
-            className='h-auto w-[84vw] max-w-[400px] sm:max-w-[540px] lg:max-w-[720px]'
-          />
+            {/* CBC archive image */}
+            <Image
+              src={mudSlideCbc}
+              alt=''
+              aria-hidden
+              width={760}
+              height={620}
+              sizes='(max-width: 640px) 84vw, (max-width: 1024px) 540px, 720px'
+              className='h-auto w-[84vw] max-w-[400px] sm:max-w-[540px] lg:max-w-[720px]'
+            />
 
-          <p className='max-w-[940px] text-[16px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
-            In 1982, a devastating flood along Alberta Creek caused significant
-            damage within the village and tragically claimed the lives of two
-            young residents. The scale of the response highlighted the need for
-            a dedicated emergency organization, leading to the formation of
-            Lions Bay Search and Rescue in 1983.
-          </p>
-        </div>
-      </section>
+            <p className='max-w-[940px] text-[16px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+              In 1982, a devastating flood along Alberta Creek caused
+              significant damage within the village and tragically claimed the
+              lives of two young residents. The scale of the response
+              highlighted the need for a dedicated emergency organization,
+              leading to the formation of Lions Bay Search and Rescue in 1983.
+            </p>
+          </div>
+        </section>
 
-      {/* ----------------- MARCEL ANDRIE FEATURE ----------------- */}
-      <section className='relative w-full overflow-hidden'>
-        {/* ---------- WHITE TOP ---------- */}
-        <div className='relative h-[140px] bg-white sm:h-[170px] lg:h-[325px]'>
-          {/* Decorative triangles */}
-          <Image
-            src={marcelTriangles}
-            alt=''
-            aria-hidden
-            width={520}
-            height={520}
-            className='
+        {/* ----------------- MARCEL ANDRIE FEATURE ----------------- */}
+        <section className='relative w-full overflow-hidden'>
+          {/* ---------- WHITE TOP ---------- */}
+          <div className='relative h-[140px] bg-white sm:h-[170px] lg:h-[325px]'>
+            {/* Decorative triangles */}
+            <Image
+              src={marcelTriangles}
+              alt=''
+              aria-hidden
+              width={520}
+              height={520}
+              className='
               pointer-events-none
               absolute left-0 top-0
               w-[170px]
@@ -310,16 +307,16 @@ export default function Layout({ children }: { children: ReactNode }) {
               lg:w-[390px]
               xl:w-[390px]
             '
-          />
+            />
 
-          {/* Marcel photo */}
-          <div className='absolute inset-x-0 bottom-0 z-20 flex justify-center'>
-            <Image
-              src={marcelPhoto}
-              alt='Marcel Andrie'
-              width={260}
-              height={260}
-              className='
+            {/* Marcel photo */}
+            <div className='absolute inset-x-0 bottom-0 z-20 flex justify-center'>
+              <Image
+                src={marcelPhoto}
+                alt='Marcel Andrie'
+                width={260}
+                height={260}
+                className='
                 h-[150px] w-[150px]
                 translate-y-[3%]
 
@@ -334,25 +331,25 @@ export default function Layout({ children }: { children: ReactNode }) {
 
                 lg:w-[400px] lg:translate-y-[45%]
               '
-            />
+              />
+            </div>
           </div>
-        </div>
 
-        {/* ---------- RED BODY ---------- */}
-        <div className='font-primary relative bg-[#b2092d] text-white'>
-          <div
-            className='
+          {/* ---------- RED BODY ---------- */}
+          <div className='font-primary relative bg-[#b2092d] text-white'>
+            <div
+              className='
               mx-auto max-w-[1320px]
               px-6 pb-16 pt-16
               sm:px-8 sm:pb-20 sm:pt-10
               lg:px-12 lg:pb-24
             '
-          >
-            {/* Headings row */}
-            <div className='lg:-mt-19 -mt-10 mb-6 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:text-left'>
-              {/* MARCEL */}
-              <div
-                className='
+            >
+              {/* Headings row */}
+              <div className='lg:-mt-19 -mt-10 mb-6 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:text-left'>
+                {/* MARCEL */}
+                <div
+                  className='
                   flex -translate-y-6
                   justify-center
                   max-[800px]:hidden
@@ -362,224 +359,225 @@ export default function Layout({ children }: { children: ReactNode }) {
 
                   min-[1081px]:-translate-y-[50px]
                 '
-              >
-                <Image
-                  src={marcelScratchedWords}
-                  alt='Marcel'
-                  width={420}
-                  height={120}
-                  sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
-                  className='
+                >
+                  <Image
+                    src={marcelScratchedWords}
+                    alt='Marcel'
+                    width={420}
+                    height={120}
+                    sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
+                    className='
                     h-auto w-[170px]
                     object-contain
                     sm:w-[220px]
                     min-[1081px]:w-[300px]
                   '
-                />
+                  />
+                </div>
+
+                {/* 1983 ANDRIE */}
+                <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
+                  <Image
+                    src={andrie1983ScratchedWords}
+                    alt='1983 Andrie'
+                    width={420}
+                    height={120}
+                    sizes='(max-width: 639px) 200px, (max-width: 1023px) 260px, 320px'
+                    className='h-auto w-[190px] object-contain sm:w-[240px] min-[1081px]:w-[300px]'
+                  />
+                </div>
               </div>
 
-              {/* 1983 ANDRIE */}
-              <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
-                <Image
-                  src={andrie1983ScratchedWords}
-                  alt='1983 Andrie'
-                  width={420}
-                  height={120}
-                  sizes='(max-width: 639px) 200px, (max-width: 1023px) 260px, 320px'
-                  className='h-auto w-[190px] object-contain sm:w-[240px] min-[1081px]:w-[300px]'
-                />
+              {/* Text columns */}
+              <div className='grid grid-cols-1 gap-8 text-[16px] leading-6 sm:grid-cols-2 sm:gap-12 sm:text-[15px] sm:leading-7 lg:text-[20px]'>
+                <p>
+                  LBSAR was founded by local mountaineers, outdoor enthusiasts,
+                  and members of the UBC Varsity Outdoors Club, under the
+                  leadership of Marcel Andrie.
+                  <br />
+                  <br />
+                  Marcel Andrie immigrated to Canada from Switzerland. He was a
+                  founding member of Lions Bay Search and Rescue in the basement
+                  of his home in Lions Bay. Early call outs were supported by
+                  his wife Heidi in the kitchen making chilli, and his daughter
+                  Nadine running phone messages.
+                  <br />
+                  <br />
+                  On April 30, 1994, while on a GSAR training trip in
+                  Tetrahedron Park with two other GSAR members and a family
+                  friend, Marcel suffered a cardiac arrest and died. He was 59.
+                </p>
+
+                <p>
+                  A bridge was built in his name crossing Harvey Creek on the
+                  way to the Lions. This tribute is especially fitting as GSAR
+                  members found crossing the creek in that location while
+                  carrying equipment or an injured subject particularly
+                  difficult.
+                  <br />
+                  <br />
+                  Marcel was happy to construct solutions to challenges found in
+                  the field of GSAR. He rigged up and tested out quite a few
+                  systems to move patients more smoothly and safely down the
+                  mountain. He was invitational in his leadership and instigated
+                  many a fun training weekend adventures. He was remarkable at
+                  finding roles for anyone who wanted to help out on the team.
+                  His ice axe still hangs on the wall in memory of his
+                  commitment to SAR.
+                </p>
               </div>
-            </div>
-
-            {/* Text columns */}
-            <div className='grid grid-cols-1 gap-8 text-[16px] leading-6 sm:grid-cols-2 sm:gap-12 sm:text-[15px] sm:leading-7 lg:text-[20px]'>
-              <p>
-                LBSAR was founded by local mountaineers, outdoor enthusiasts,
-                and members of the UBC Varsity Outdoors Club, under the
-                leadership of Marcel Andrie.
-                <br />
-                <br />
-                Marcel Andrie immigrated to Canada from Switzerland. He was a
-                founding member of Lions Bay Search and Rescue in the basement
-                of his home in Lions Bay. Early call outs were supported by his
-                wife Heidi in the kitchen making chilli, and his daughter Nadine
-                running phone messages.
-                <br />
-                <br />
-                On April 30, 1994, while on a GSAR training trip in Tetrahedron
-                Park with two other GSAR members and a family friend, Marcel
-                suffered a cardiac arrest and died. He was 59.
-              </p>
-
-              <p>
-                A bridge was built in his name crossing Harvey Creek on the way
-                to the Lions. This tribute is especially fitting as GSAR members
-                found crossing the creek in that location while carrying
-                equipment or an injured subject particularly difficult.
-                <br />
-                <br />
-                Marcel was happy to construct solutions to challenges found in
-                the field of GSAR. He rigged up and tested out quite a few
-                systems to move patients more smoothly and safely down the
-                mountain. He was invitational in his leadership and instigated
-                many a fun training weekend adventures. He was remarkable at
-                finding roles for anyone who wanted to help out on the team. His
-                ice axe still hangs on the wall in memory of his commitment to
-                SAR.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ----------------- 1992 BASE ----------------- */}
-      <section className='w-full'>
-        {/* Top blue info block */}
-        <div className='font-primary w-full bg-[#121d2f] text-white'>
-          <div
-            className='
+        {/* ----------------- 1992 BASE ----------------- */}
+        <section className='w-full'>
+          {/* Top blue info block */}
+          <div className='font-primary w-full bg-[#121d2f] text-white'>
+            <div
+              className='
               mx-auto grid w-full max-w-[1320px]
               grid-cols-1 gap-8
               px-6 py-12
               sm:px-8 sm:py-14
               lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
             '
-          >
-            {/* 1992 BASE scratched words */}
-            <div className='flex justify-center lg:justify-start lg:pr-20'>
-              <Image
-                src={base1992ScratchedWords}
-                alt='1992 Base'
-                width={520}
-                height={220}
-                sizes='(max-width: 640px) 220px, (max-width: 1024px) 300px, 420px'
-                className='h-auto w-[220px] object-contain sm:w-[280px] md:w-[320px] lg:w-[420px]'
-              />
-            </div>
+            >
+              {/* 1992 BASE scratched words */}
+              <div className='flex justify-center lg:justify-start lg:pr-20'>
+                <Image
+                  src={base1992ScratchedWords}
+                  alt='1992 Base'
+                  width={520}
+                  height={220}
+                  sizes='(max-width: 640px) 220px, (max-width: 1024px) 300px, 420px'
+                  className='h-auto w-[220px] object-contain sm:w-[280px] md:w-[320px] lg:w-[420px]'
+                />
+              </div>
 
-            {/* Paragraph */}
-            <div className='flex items-center lg:pl-20'>
-              <p className='max-w-[860px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
-                As the team grew, LBSAR expanded its technical capabilities and
-                operational reach. Early involvement in rigging work for Expo 86
-                helped the team develop a strong foundation in technical rope
-                rescue, a capability that remains central today. By the late
-                1980s, LBSAR was regularly working alongside neighbouring teams
-                such as Squamish and North Shore Rescue in mutual aid responses.
-                <br />
-                <br />
-                In 1992, the team established a permanent base in the Village
-                Emergency Building, sharing facilities with the Fire Department
-                and BC Ambulance Service.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Photo with bottom caption bar */}
-        <div className='relative w-full bg-[#121d2f] pb-8 sm:pb-10 lg:pb-14'>
-          <div className='relative mx-auto w-full max-w-[1400px]'>
-            <Image
-              src={basePhoto}
-              alt='Lions Bay Fire Hall and LBSAR base'
-              width={1600}
-              height={900}
-              sizes='100vw'
-              className='h-auto w-full object-cover'
-            />
-
-            {/* caption bar */}
-            <div className='font-primary absolute inset-x-0 bottom-0 bg-black/60'>
-              <div className='mx-auto w-full max-w-[1600px] px-6 py-3'>
-                <p className='text-[12px] leading-5 text-white/90 sm:text-[13px]'>
-                  Lions Bay Fire Hall, Ambulance, and LBSAR, 400 Centre Rd,
-                  Lions Bay, BC V0N 2E0, Canada.
+              {/* Paragraph */}
+              <div className='flex items-center lg:pl-20'>
+                <p className='max-w-[860px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                  As the team grew, LBSAR expanded its technical capabilities
+                  and operational reach. Early involvement in rigging work for
+                  Expo 86 helped the team develop a strong foundation in
+                  technical rope rescue, a capability that remains central
+                  today. By the late 1980s, LBSAR was regularly working
+                  alongside neighbouring teams such as Squamish and North Shore
+                  Rescue in mutual aid responses.
+                  <br />
+                  <br />
+                  In 1992, the team established a permanent base in the Village
+                  Emergency Building, sharing facilities with the Fire
+                  Department and BC Ambulance Service.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ----------------- 2024 LANDSLIDE ----------------- */}
-      <section className='font-primary w-full bg-[#403218] text-white'>
-        <div className='mx-auto w-full max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-20'>
-          {/* Title */}
-          <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
-            <Image
-              src={landslide2024Title}
-              alt='2024 Landslide'
-              width={900}
-              height={180}
-              sizes='(max-width: 640px) 280px, (max-width: 1024px) 520px, 760px'
-              className='h-auto w-[280px] sm:w-[520px] lg:w-[760px]'
-            />
-          </div>
-
-          {/* Row 1: image left, text right */}
-          <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-20'>
-            <div className='lg:col-span-8 lg:-ml-32'>
+          {/* Photo with bottom caption bar */}
+          <div className='relative w-full bg-[#121d2f] pb-8 sm:pb-10 lg:pb-14'>
+            <div className='relative mx-auto w-full max-w-[1400px]'>
               <Image
-                src={landslide2}
-                alt='Landslide debris'
-                width={1200}
-                height={700}
-                sizes='(max-width: 1024px) 100vw, 960px'
+                src={basePhoto}
+                alt='Lions Bay Fire Hall and LBSAR base'
+                width={1600}
+                height={900}
+                sizes='100vw'
                 className='h-auto w-full object-cover'
               />
-            </div>
 
-            <div className='flex items-center lg:col-span-4 lg:pl-6'>
-              <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
-                <p>
-                  The community of Lions Bay continues to face environmental
-                  challenges tied to extreme weather events and flooding.
-                </p>
-
-                <p>
-                  On December 14, 2024, another tragic landslide in Battani
-                  Creek took the lives of two beloved community members and
-                  served as a stark reminder of the teams’ foundation.
-                </p>
+              {/* caption bar */}
+              <div className='font-primary absolute inset-x-0 bottom-0 bg-black/60'>
+                <div className='mx-auto w-full max-w-[1600px] px-6 py-3'>
+                  <p className='text-[12px] leading-5 text-white/90 sm:text-[13px]'>
+                    Lions Bay Fire Hall, Ambulance, and LBSAR, 400 Centre Rd,
+                    Lions Bay, BC V0N 2E0, Canada.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Row 2: text left, image right */}
-          <div className='mt-10 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-12 lg:gap-20'>
-            <div className='order-2 flex items-center lg:order-1 lg:col-span-4 lg:pr-6'>
-              <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
-                <p>
-                  LBSAR continues to support its community and responds to the
-                  ever increasing flood risks around the lower mainland,
-                  including most recently in supporting evacuations in
-                  Chilliwack on Dec 14, 2025.
-                </p>
-
-                <p>
-                  We continued to adapt, train, and prepare to respond to a
-                  broad range of emergencies and natural disasters,
-                  strengthening collaboration with regional partners and
-                  supporting both local and mutual-aid callouts.
-                </p>
-              </div>
-            </div>
-
-            <div className='order-1 lg:order-2 lg:col-span-8 lg:-mr-32'>
+        {/* ----------------- 2024 LANDSLIDE ----------------- */}
+        <section className='font-primary w-full bg-[#403218] text-white'>
+          <div className='mx-auto w-full max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-20'>
+            {/* Title */}
+            <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
               <Image
-                src={landslide1}
-                alt='Landslide scene'
-                width={1200}
-                height={700}
-                sizes='(max-width: 1024px) 100vw, 960px'
-                className='h-auto w-full object-cover'
+                src={landslide2024Title}
+                alt='2024 Landslide'
+                width={900}
+                height={180}
+                sizes='(max-width: 640px) 280px, (max-width: 1024px) 520px, 760px'
+                className='h-auto w-[280px] sm:w-[520px] lg:w-[760px]'
               />
             </div>
-          </div>
-        </div>
-      </section>
 
-      <Footer />
-    </div>
+            {/* Row 1: image left, text right */}
+            <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-20'>
+              <div className='lg:col-span-8 lg:-ml-32'>
+                <Image
+                  src={landslide2}
+                  alt='Landslide debris'
+                  width={1200}
+                  height={700}
+                  sizes='(max-width: 1024px) 100vw, 960px'
+                  className='h-auto w-full object-cover'
+                />
+              </div>
+
+              <div className='flex items-center lg:col-span-4 lg:pl-6'>
+                <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                  <p>
+                    The community of Lions Bay continues to face environmental
+                    challenges tied to extreme weather events and flooding.
+                  </p>
+
+                  <p>
+                    On December 14, 2024, another tragic landslide in Battani
+                    Creek took the lives of two beloved community members and
+                    served as a stark reminder of the teams’ foundation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: text left, image right */}
+            <div className='mt-10 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-12 lg:gap-20'>
+              <div className='order-2 flex items-center lg:order-1 lg:col-span-4 lg:pr-6'>
+                <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
+                  <p>
+                    LBSAR continues to support its community and responds to the
+                    ever increasing flood risks around the lower mainland,
+                    including most recently in supporting evacuations in
+                    Chilliwack on Dec 14, 2025.
+                  </p>
+
+                  <p>
+                    We continued to adapt, train, and prepare to respond to a
+                    broad range of emergencies and natural disasters,
+                    strengthening collaboration with regional partners and
+                    supporting both local and mutual-aid callouts.
+                  </p>
+                </div>
+              </div>
+
+              <div className='order-1 lg:order-2 lg:col-span-8 lg:-mr-32'>
+                <Image
+                  src={landslide1}
+                  alt='Landslide scene'
+                  width={1200}
+                  height={700}
+                  sizes='(max-width: 1024px) 100vw, 960px'
+                  className='h-auto w-full object-cover'
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 }

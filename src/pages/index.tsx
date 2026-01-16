@@ -56,7 +56,7 @@ const Hero = () => {
   const ORANGE = '#f26529';
 
   return (
-    <section id='home' className='relative isolate overflow-visible'>
+    <section id='home' className='relative isolate w-full overflow-visible'>
       <div
         className={[
           'pointer-events-none absolute z-[40]',
@@ -203,7 +203,7 @@ const Hero = () => {
 
 /** ----------------- EMERGENCY BANNER ----------------- */
 const EmergencyBanner = () => (
-  <section className='relative isolate overflow-visible'>
+  <section className='relative isolate w-full overflow-visible'>
     {/* Background */}
     <div className='absolute inset-0 z-0 bg-[#121d2f]'>
       <Image
@@ -384,11 +384,11 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo />
-      <main className='bg-[#121d2f]' style={{ overflowX: 'hidden' }}>
+      <div className='overflow-x-hidden bg-[#121d2f]'>
         <Hero />
         <EmergencyBanner />
         <AreaMapSection />
-      </main>
+      </div>
     </Layout>
   );
 }
