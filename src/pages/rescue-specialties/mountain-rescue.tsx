@@ -44,7 +44,7 @@ export default function MountainRescuePage() {
     <Layout>
       <Seo templateTitle='Mountain Rescue' />
 
-      <main
+      <div
         className='w-screen overflow-x-hidden'
         style={{ backgroundColor: BG }}
       >
@@ -130,17 +130,7 @@ export default function MountainRescuePage() {
                   />
                 </div>
 
-                <div className='-mt-0 flex w-full justify-center'>
-                  <span
-                    className='inline-flex'
-                    style={{
-                      transform:
-                        'translate(var(--axe-x), var(--axe-y)) scale(var(--axe-scale))',
-                    }}
-                  >
-                    <PickAxeIcon sizePx={Number(String('0'))} />
-                  </span>
-                </div>
+                <div className='-mt-0 flex w-full justify-center'></div>
 
                 <div className='mt-[400px] w-full max-w-[640px] px-6 text-left sm:mt-[450px] sm:px-0 md:mt-[400px] lg:mt-[500px] xl:mt-[600px]'>
                   <p className='text-[15px] leading-relaxed text-white sm:text-[16px] lg:text-[20px]'>
@@ -312,7 +302,7 @@ export default function MountainRescuePage() {
             sizes='100vw'
           />
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }
