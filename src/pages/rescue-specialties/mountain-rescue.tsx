@@ -44,10 +44,7 @@ export default function MountainRescuePage() {
     <Layout>
       <Seo templateTitle='Mountain Rescue' />
 
-      <div
-        className='w-screen overflow-x-hidden'
-        style={{ backgroundColor: BG }}
-      >
+      <div className='w-full overflow-x-hidden' style={{ backgroundColor: BG }}>
         <section className='w-full'>
           <div className='grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr]'>
             <div className='w-full'>
@@ -232,32 +229,31 @@ export default function MountainRescuePage() {
         {/* =========================
             SECTION 3 — SKYPILOT
             ========================= */}
-
-        <section className='w-full'>
+        <section className='w-full' style={{ backgroundColor: '#151f2f' }}>
           {/* PHOTO BLOCK */}
-          <div className='relative h-[560px] sm:h-[680px] md:h-[800px] lg:h-[920px]'>
-            <Image
-              src={skypilotPhoto}
-              alt='Mountain rescue specialists in alpine terrain'
-              fill
-              priority
-              sizes='100vw'
-              className='object-cover object-center'
-            />
-
-            <div className='pointer-events-none absolute left-0 top-0 z-10 w-[160px] sm:w-[190px] md:w-[230px] lg:w-[270px] xl:w-[320px]'>
+          <div className='relative mx-auto w-full max-w-[1400px] px-6 pt-12 sm:px-10 sm:pt-16 md:px-14 md:pt-20'>
+            <div className='relative h-[360px] -translate-x-[2px] overflow-hidden sm:h-[420px] sm:translate-x-0 md:h-[480px] lg:h-[520px]'>
               <Image
-                src={mountainRescueTriangles}
-                alt=''
-                className='h-auto w-full object-contain'
+                src={skypilotPhoto}
+                alt='Mountain rescue specialists in alpine terrain'
+                fill
+                sizes='100vw'
+                className='object-cover object-center'
               />
+
+              {/* Triangles */}
+              <div className='pointer-events-none absolute left-0 top-0 z-10 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[210px] xl:w-[240px]'>
+                <Image
+                  src={mountainRescueTriangles}
+                  alt=''
+                  className='h-auto w-full object-contain'
+                />
+              </div>
             </div>
           </div>
 
-          <div
-            className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14'
-            style={{ backgroundColor: '#151f2f' }}
-          >
+          {/* TEXT BLOCK */}
+          <div className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14'>
             <div className='mx-auto w-full max-w-[980px]'>
               <p className='text-[15px] leading-relaxed text-white sm:text-[16px] lg:text-[20px]'>
                 Mountain Rescue specialists are trained and proficient in a wide
@@ -270,6 +266,7 @@ export default function MountainRescuePage() {
             </div>
           </div>
         </section>
+
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
@@ -291,16 +288,18 @@ export default function MountainRescuePage() {
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
-            SECTION — IMAGE ONLY
+                  IMAGE ONLY
             ========================= */}
 
-        <section className='w-full bg-white'>
-          <Image
-            src={harveySunset}
-            alt='Mountain rescue'
-            className='h-auto w-full object-contain'
-            sizes='100vw'
-          />
+        <section className='w-full' style={{ backgroundColor: '#151f2f' }}>
+          <div className='flex items-center justify-center px-6 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14'>
+            <Image
+              src={harveySunset}
+              alt='Mountain rescue'
+              sizes='100vw'
+              className='h-auto w-full max-w-[1200px] object-contain'
+            />
+          </div>
         </section>
       </div>
     </Layout>
