@@ -163,7 +163,7 @@ const Hero = () => {
                 'lg:pt-20',
               ].join(' ')}
             >
-              <Grid12 className='mt-12 gap-y-10 sm:mt-16 lg:mt-20'>
+              <Grid12 className='lg:mt-18 mt-12 gap-y-10 sm:mt-16'>
                 <p className='col-span-12 text-[15px] leading-7 text-white/90 sm:text-[16px] sm:leading-8 md:col-span-6 lg:text-[20px]'>
                   Lions Bay Search and Rescue (LBSAR) is a volunteer emergency
                   response organization providing search and rescue services in
