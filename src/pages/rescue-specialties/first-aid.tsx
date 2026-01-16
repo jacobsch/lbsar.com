@@ -1,19 +1,10 @@
-import { ReactNode } from 'react';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function FirstAidPage() {
   return (
-    <div className='min-h-screen w-full'>
-      <Header />
-
-      {/* Offset content for fixed header height:
-          - mobile ≈ 72px (py-4)
-          - lg+   ≈ 80px (py-5)
-      */}
-      <main className='flex-1 pt-[72px] lg:pt-[80px]'>{children}</main>
-
-      <Footer />
-    </div>
+    <Layout>
+      <Seo templateTitle='First Aid' />
+    </Layout>
   );
 }

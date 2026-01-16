@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import type { ReactNode, CSSProperties } from 'react';
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
 
 import Image from 'next/image';
 import rescue_mountain from '~/images/rescue-mountain.jpg';
@@ -231,7 +231,7 @@ const specialties: Specialty[] = [
 function RescueSpecialtiesSection() {
   const router = useRouter();
 
-  const accentStyle: React.CSSProperties & Record<string, string> = {
+  const accentStyle: CSSProperties & Record<string, string> = {
     '--accent': ACCENT,
   };
 
@@ -330,12 +330,12 @@ function RescueSpecialtiesSection() {
   );
 }
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function RescueSpecialtiesPage() {
   return (
-    <div className='min-h-screen w-full' style={{ backgroundColor: BG }}>
-      <Header />
+    <Layout>
+      <Seo templateTitle='Rescue Specialties' />
 
-      <main className='flex-1 pt-[72px] lg:pt-[80px]'>
+      <div style={{ backgroundColor: BG }}>
         {/* ---------- HERO IMAGE ---------- */}
         <div className='relative aspect-[1.5/1] w-full sm:aspect-[2/1] lg:aspect-[2.75/1]'>
           <Image
@@ -347,7 +347,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             className='object-cover'
           />
 
-          {/* Bottom-centered scratched words overlay */}
           <div className='pointer-events-none absolute inset-x-0 bottom-[-46px] flex justify-center sm:bottom-[-61px] lg:bottom-[-80px]'>
             <Image
               src={rescue_specialties_words}
@@ -357,11 +356,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        {children}
         <RescueSpecialtiesSection />
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </Layout>
   );
 }
