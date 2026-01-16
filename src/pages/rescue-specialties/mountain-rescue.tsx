@@ -186,7 +186,7 @@ export default function MountainRescuePage() {
               className='relative flex flex-col items-center px-6 pb-20 pt-24 sm:px-10 sm:pt-28 md:px-12 md:pt-32 lg:px-14 lg:pt-48'
               style={{ backgroundColor: '#fc6421' }}
             >
-              <div className='relative flex w-full max-w-[560px] justify-center px-2 sm:px-3'>
+              <div className='relative flex w-full max-w-[560px] -translate-x-[6px] justify-center px-2 sm:translate-x-0 sm:px-3'>
                 <Image
                   src={class4ScratchedWords}
                   alt='Class 4'
@@ -209,7 +209,12 @@ export default function MountainRescuePage() {
                 </p>
               </div>
 
-              <p className='mt-28 w-full max-w-[560px] text-[12px] leading-relaxed text-white/90 sm:mt-36 sm:text-[13px] lg:mt-44 lg:text-[14px]'>
+              <p
+                className='mt-28 w-full max-w-[560px] text-[12px] leading-relaxed text-white/90
+                sm:mt-44 sm:text-[13px]
+                md:mt-72
+                lg:mt-72 lg:text-[14px]'
+              >
                 <span className='font-semibold' style={{ color: ACCENT }}>
                   Rescue:
                 </span>{' '}
