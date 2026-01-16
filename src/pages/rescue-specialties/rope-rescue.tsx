@@ -71,18 +71,18 @@ export default function RopeRescuePage() {
                     'relative flex w-full flex-col items-center',
 
                     // WORDMARK variables (px + scale)
-                    '[--word-h:260px] [--word-scale:.90] [--word-x:-8px] [--word-y:-24px]',
-                    'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:-8px] sm:[--word-y:-20px]',
-                    'md:[--word-h:360px] md:[--word-scale:1.15] md:[--word-x:-8px] md:[--word-y:-130px]',
-                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-x:-8px] lg:[--word-y:-40px]',
-                    'xl:[--word-x:[-20px] xl:[--word-h:400px] xl:[--word-scale:1.0] xl:[--word-y:20px]',
+                    '[--word-h:260px] [--word-scale:.80] [--word-y:-15px] [--word-x:0px]',
+                    'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-y:0px] sm:[--word-x:0px]',
+                    'md:[--word-h:360px] md:[--word-scale:0.8] md:[--word-y:-90px] md:[--word-x:0px]',
+                    'lg:[--word-h:500px] lg:[--word-y:-100px] lg:[--word-scale:0.9] lg:[--word-x:0px]',
+                    'xl:[--word-h:400px] xl:[--word-scale:1.0] xl:[--word-y:0px] xl:[--word-x:0px]',
 
                     // ROPE variables (px + scale + size)
-                    '[--rope-scale:1] [--rope-size:140px] [--rope-x:0px] [--rope-y:-30px]',
-                    'sm:[--rope-scale:1] sm:[--rope-size:150px] sm:[--rope-x:0px] sm:[--rope-y:-12px]',
-                    'md:[--rope-scale:1] md:[--rope-size:200px] md:[--rope-x:0px] md:[--rope-y:-170px]',
-                    'lg:[--rope-scale:1.05] lg:[--rope-size:160px] lg:[--rope-x:0px] lg:[--rope-y:-250px]',
-                    'xl:[--rope-scale:1.25] xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-y:-60px]',
+                    '[--rope-scale:1] [--rope-size:140px] [--rope-x:0px] [--rope-y:-10px]',
+                    'sm:[--rope-scale:1] sm:[--rope-size:150px] sm:[--rope-x:0px] sm:[--rope-y:30px]',
+                    'md:[--rope-scale:1] md:[--rope-size:200px] md:[--rope-x:0px] md:[--rope-y:-100px]',
+                    'lg:[--rope-size:160px] lg:[--rope-x:0px] lg:[--rope-scale:1.3] lg:[--rope-y:-100px]',
+                    'xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-scale:1.5] xl:[--rope-y:150px]',
                   ].join(' ')}
                 >
                   <div
@@ -126,7 +126,7 @@ export default function RopeRescuePage() {
 
                 <div className='-mt-0 flex w-full justify-center'></div>
 
-                <div className='mx-auto mt-[400px] w-full max-w-[640px] px-6 text-left sm:mt-[450px] sm:px-0 md:mt-[400px] lg:mt-[500px] xl:mt-[700px]'>
+                <div className='mx-auto mt-[450px] w-full max-w-[640px] px-6 text-left sm:mt-[500px] sm:px-0 md:mt-[500px] lg:mt-[700px] xl:mt-[850px]'>
                   <p className='leading-relroped text-[15px] text-white sm:text-[16px] lg:text-[20px]'>
                     Many search and rescue incidents in Lions Bay involve steep
                     slopes, cliffs, gullies, and drainage features.{' '}
@@ -138,7 +138,7 @@ export default function RopeRescuePage() {
                     evacuations in complex terrain.
                   </p>
 
-                  <p className='leading-relroped mt-20 text-[12px] text-white sm:mt-[30px] sm:text-[13px] lg:mt-[200px] lg:text-[14px]'>
+                  <p className='leading-relroped mt-20 text-[12px] text-white sm:mt-[80px] sm:text-[13px] lg:mt-[200px] lg:text-[14px]'>
                     <span className='font-semibold' style={{ color: ACCENT }}>
                       Training Exercise:{' '}
                     </span>
