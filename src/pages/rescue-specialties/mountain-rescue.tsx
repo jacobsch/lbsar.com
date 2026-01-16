@@ -9,6 +9,8 @@ import pick_axe from '~/images/pick-axe.svg';
 import class4ScratchedWords from '~/images/class-4-scratched-words.png';
 import exposureScratchedWords from '~/images/exposure-scratched-words.png';
 import class4ExposedPhoto from '~/images/class-4-exposed-photo.jpeg';
+import skypilotPhoto from '~/images/skypilot-photo.jpg';
+import mountainRescueTriangles from '~/images/mountain-rescue-triangles.png';
 
 const BG = '#151f2f';
 const ACCENT = '#febd29';
@@ -46,7 +48,6 @@ export default function MountainRescuePage() {
       >
         <section className='w-full'>
           <div className='grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr]'>
-            {/* LEFT — PHOTO */}
             <div className='w-full'>
               <Image
                 src={mountain_rescue_photo}
@@ -57,7 +58,6 @@ export default function MountainRescuePage() {
               />
             </div>
 
-            {/* RIGHT — CONTENT */}
             <div className='relative' style={{ backgroundColor: BG }}>
               <div
                 className={[
@@ -89,7 +89,6 @@ export default function MountainRescuePage() {
                     'xl:[--axe-scale:1.25] xl:[--axe-size:205px] xl:[--axe-x:0px] xl:[--axe-y:-60px]',
                   ].join(' ')}
                 >
-                  {/* WORDMARK */}
                   <div
                     className='relative w-full'
                     style={{ height: 'var(--word-h)' } as React.CSSProperties}
@@ -108,7 +107,6 @@ export default function MountainRescuePage() {
                     />
                   </div>
 
-                  {/* PICK-AXE */}
                   <div
                     className='relative flex w-full justify-center'
                     style={{
@@ -148,7 +146,6 @@ export default function MountainRescuePage() {
                   </span>
                 </div>
 
-                {/* TEXT */}
                 <div className='mt-[400px] w-full max-w-[640px] px-6 text-left sm:mt-[450px] sm:px-0 md:mt-[400px] lg:mt-[500px] xl:mt-[600px]'>
                   <p className='text-[15px] leading-relaxed text-white sm:text-[16px] lg:text-[20px]'>
                     <span className='font-semibold' style={{ color: ACCENT }}>
@@ -245,6 +242,50 @@ export default function MountainRescuePage() {
           </div>
         </section>
         <div className='h-[8px] w-full bg-white' />
+
+        {/* =========================
+    SECTION 3 — MULTI-DISCIPLINE / SKYPILOT
+    ========================= */}
+
+        <section className='w-full'>
+          {/* PHOTO BLOCK */}
+          <div className='relative h-[560px] sm:h-[680px] md:h-[800px] lg:h-[920px]'>
+            <Image
+              src={skypilotPhoto}
+              alt='Mountain rescue specialists in alpine terrain'
+              fill
+              priority
+              sizes='100vw'
+              className='object-cover object-center'
+            />
+
+            {/* TRIANGLES — LEFT OVERLAY (LARGER) */}
+            <div className='pointer-events-none absolute left-0 top-0 z-10 w-[160px] sm:w-[190px] md:w-[230px] lg:w-[270px] xl:w-[320px]'>
+              <Image
+                src={mountainRescueTriangles}
+                alt=''
+                className='h-auto w-full object-contain'
+              />
+            </div>
+          </div>
+
+          {/* TEXT BLOCK (SEPARATE — NO OVERLAP) */}
+          <div
+            className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14'
+            style={{ backgroundColor: '#151f2f' }}
+          >
+            <div className='mx-auto w-full max-w-[980px]'>
+              <p className='text-[15px] leading-relaxed text-white sm:text-[16px] lg:text-[20px]'>
+                Mountain Rescue specialists are trained and proficient in a wide
+                range of disciplines, including exposed terrain travel,
+                climbing, crevasse rescue, companion rescue, avalanche rescue,
+                and advanced wilderness medical care. These members are
+                multi-disciplined and are certified by ACMG guides to operate
+                safely in technical alpine environments.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );
