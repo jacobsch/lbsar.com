@@ -9,6 +9,20 @@ type UnderlineLinkProps = UnstyledLinkProps & {
   underlineMobileOnly?: boolean;
 };
 
+const BASE_CLASSES = 'custom-link inline-flex items-center font-medium';
+
+const FOCUS_CLASSES =
+  'focus-visible:ring-primary-500 focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-offset-2';
+
+const UNDERLINE_CLASSES =
+  'animated-underline border-b border-[#1b437e] hover:border-[#1b437e00]';
+
+const DISABLE_UNDERLINE_DESKTOP = [
+  'min-[1450px]:[background-image:none!important]',
+  'min-[1450px]:[background-size:0_0!important]',
+  'min-[1450px]:border-b-0',
+];
+
 const UnderlineLink = forwardRef<HTMLAnchorElement, UnderlineLinkProps>(
   ({ children, className, underlineMobileOnly = false, ...rest }, ref) => {
     return (
@@ -16,22 +30,10 @@ const UnderlineLink = forwardRef<HTMLAnchorElement, UnderlineLinkProps>(
         ref={ref}
         {...rest}
         className={clsxm(
-          'custom-link inline-flex items-center font-medium',
-          'focus-visible:ring-primary-500 focus:outline-none focus-visible:rounded focus-visible:ring focus-visible:ring-offset-2',
-
-          underlineMobileOnly
-            ? [
-                // underline ON below desktop breakpoint
-                'animated-underline border-b border-blue-700 hover:border-black/0',
-
-                // underline OFF at desktop breakpoint (>=1449px)
-                'min-[1449px]:[background-image:none!important] min-[1449px]:[background-size:0_0!important]',
-                'min-[1449px]:!border-b-0',
-              ]
-            : [
-                'animated-underline border-b border-blue-700 hover:border-black/0',
-              ],
-
+          BASE_CLASSES,
+          FOCUS_CLASSES,
+          UNDERLINE_CLASSES,
+          underlineMobileOnly && DISABLE_UNDERLINE_DESKTOP,
           className
         )}
       >
