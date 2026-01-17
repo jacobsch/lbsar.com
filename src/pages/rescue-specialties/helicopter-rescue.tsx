@@ -79,6 +79,8 @@ export default function HelicopterRescuePage() {
         </div>
       </section>
 
+      <div className='h-[8px] w-full bg-white' />
+
       {/* =========================
               HELICOPTER ACCESS
           ========================= */}
