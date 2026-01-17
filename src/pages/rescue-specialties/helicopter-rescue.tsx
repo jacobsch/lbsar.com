@@ -51,10 +51,10 @@ export default function HelicopterRescuePage() {
           <span
             aria-hidden='true'
             className='inline-block h-[88px]
-        w-[88px] flex-shrink-0
-        sm:h-[110px] sm:w-[110px]
-        md:h-[135px] md:w-[135px]
-        lg:h-[150px] lg:w-[150px]'
+              w-[88px] flex-shrink-0
+              sm:h-[110px] sm:w-[110px]
+              md:h-[135px] md:w-[135px]
+              lg:h-[150px] lg:w-[150px]'
             style={{
               backgroundColor: '#febd29',
               WebkitMaskImage: `url(${helicopter.src})`,
@@ -84,7 +84,6 @@ export default function HelicopterRescuePage() {
           ========================= */}
       <section className='w-full'>
         <div className='grid grid-cols-1 min-[944px]:h-[85vh] min-[944px]:grid-cols-[1fr_560px]'>
-          {/* LEFT (yellow text) */}
           <div
             className='flex items-center justify-center bg-[#febd29]
               px-6 py-12
@@ -121,7 +120,6 @@ export default function HelicopterRescuePage() {
             </div>
           </div>
 
-          {/* RIGHT (photo) with a border divider */}
           <div className='relative min-h-[52vh] overflow-hidden bg-black min-[944px]:h-full min-[944px]:border-l-[8px] min-[944px]:border-white'>
             <Image
               src={brentTalonPhoto}
@@ -146,14 +144,14 @@ export default function HelicopterRescuePage() {
           {/* TEXT */}
           <div
             className='
-            mx-auto w-full px-4 pb-4 pt-10 min-[500px]:pb-1 min-[556px]:pb-6
-            min-[577px]:pb-10
-            sm:px-6
+              mx-auto w-full px-4 pb-4 pt-10 min-[500px]:pb-1 min-[556px]:pb-6
+              min-[577px]:pb-10
+              sm:px-6
 
-            sm:pt-10 min-[645px]:pb-6
-            md:px-10 md:pt-10
-            min-[944px]:px-10 min-[944px]:py-20
-            lg:px-14 lg:py-16'
+              sm:pt-10 min-[645px]:pb-6
+              md:px-10 md:pt-10
+              min-[944px]:px-10 min-[944px]:py-20
+              lg:px-14 lg:py-16'
           >
             <div className='mx-auto max-w-[92ch] text-left'>
               <p
@@ -175,11 +173,11 @@ export default function HelicopterRescuePage() {
           {/* PHOTO */}
           <div
             className='relative h-[46vh] w-full
-    overflow-hidden sm:h-[50vh] md:h-[54vh]
-    min-[944px]:mx-auto min-[944px]:mt-6
-    min-[944px]:h-[56vh]
-    min-[944px]:max-w-7xl min-[944px]:px-6
-    min-[944px]:pt-6 lg:h-[60vh]'
+              overflow-hidden sm:h-[50vh] md:h-[54vh]
+              min-[944px]:mx-auto min-[944px]:mt-6
+              min-[944px]:h-[56vh]
+              min-[944px]:max-w-7xl min-[944px]:px-6
+              min-[944px]:pt-6 lg:h-[60vh]'
           >
             <Image
               src={longLinePhoto}
