@@ -72,18 +72,18 @@ export default function RopeRescuePage() {
                     'relative flex w-full flex-col items-center',
 
                     // WORDMARK variables (px + scale)
-                    '[--word-h:260px] [--word-scale:.80] [--word-y:-15px] [--word-x:0px]',
-                    'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-y:0px] sm:[--word-x:0px]',
-                    'md:[--word-h:360px] md:[--word-scale:0.8] md:[--word-y:-90px] md:[--word-x:0px]',
-                    'lg:[--word-h:500px] lg:[--word-y:-100px] lg:[--word-scale:0.9] lg:[--word-x:0px]',
-                    'xl:[--word-h:400px] xl:[--word-y:0px] xl:[--word-x:0px] xl:[--word-scale:0.9]',
+                    '[--word-h:260px] [--word-scale:.80] [--word-x:0px] [--word-y:-15px]',
+                    'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:0px] sm:[--word-y:0px]',
+                    'md:[--word-h:360px] md:[--word-scale:0.8] md:[--word-x:0px] md:[--word-y:-90px]',
+                    'lg:[--word-h:500px] lg:[--word-scale:0.9] lg:[--word-x:0px] lg:[--word-y:-100px]',
+                    'xl:[--word-h:400px] xl:[--word-scale:0.9] xl:[--word-x:0px] xl:[--word-y:0px]',
 
                     // ROPE variables (px + scale + size)
                     '[--rope-scale:1] [--rope-size:140px] [--rope-x:0px] [--rope-y:-10px]',
                     'sm:[--rope-scale:1] sm:[--rope-size:150px] sm:[--rope-x:0px] sm:[--rope-y:30px]',
                     'md:[--rope-scale:1] md:[--rope-size:200px] md:[--rope-x:0px] md:[--rope-y:-100px]',
-                    'lg:[--rope-size:160px] lg:[--rope-x:0px] lg:[--rope-scale:1.3] lg:[--rope-y:-100px]',
-                    'xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-scale:1.5] xl:[--rope-y:125px]',
+                    'lg:[--rope-scale:1.3] lg:[--rope-size:160px] lg:[--rope-x:0px] lg:[--rope-y:-100px]',
+                    'xl:[--rope-scale:1.5] xl:[--rope-size:205px] xl:[--rope-x:0px] xl:[--rope-y:125px]',
                   ].join(' ')}
                 >
                   <div
@@ -167,7 +167,6 @@ export default function RopeRescuePage() {
               'md:min-h-[1280px] lg:min-h-[1460px] xl:min-h-[1680px]',
             ].join(' ')}
           >
-            {/* TOP LEFT: TEXT BOX */}
             <div className='order-3 flex items-center justify-center bg-[#2e431b] px-10 pb-10 pt-10 text-white sm:pb-10 sm:pt-10 md:order-1 md:pt-0'>
               <p className='max-w-[36ch] text-left text-[15px] leading-[1.7] md:text-[16px] lg:text-[20px]'>
                 Lions Bay Search and Rescue maintains proficiency in both
@@ -180,7 +179,6 @@ export default function RopeRescuePage() {
               </p>
             </div>
 
-            {/* TOP RIGHT: PHOTO */}
             <div className='relative order-2 h-[380px] overflow-hidden sm:h-[460px] md:order-2 md:h-full'>
               <Image
                 src={ropeRescue2}
@@ -191,7 +189,6 @@ export default function RopeRescuePage() {
               />
             </div>
 
-            {/* BOTTOM LEFT: PHOTO*/}
             <div className='relative order-4 h-[380px] overflow-hidden sm:h-[460px] md:order-3 md:h-full'>
               <Image
                 src={ropeRescue3}
@@ -202,9 +199,7 @@ export default function RopeRescuePage() {
               />
             </div>
 
-            {/* BOTTOM RIGHT: WORDMARK + TEXT */}
             <div className='order-1 flex flex-col items-center justify-center bg-[#2e431b] px-10 pb-20 pt-14 text-white md:order-4 md:pb-28 md:pt-20 lg:pb-36 lg:pt-28 xl:pb-36'>
-              {/* Wordmark */}
               <div className='w-full max-w-[560px]'>
                 <Image
                   src={dcttrsWords}
@@ -215,7 +210,6 @@ export default function RopeRescuePage() {
                 />
               </div>
 
-              {/* Body copy */}
               <div className='mt-8 max-w-[62ch] space-y-6 text-left'>
                 <p className='text-[15px] leading-[1.8] md:text-[16px] lg:text-[20px]'>
                   Rescue teams utilize a combination of natural and artificial
@@ -255,7 +249,6 @@ export default function RopeRescuePage() {
             ====================== */}
         <section className='w-full' style={{ backgroundColor: '#392e29' }}>
           <div className='relative w-full'>
-            {/* Image container */}
             <div className='flex h-[360px] items-center justify-center px-6 pt-10 sm:h-[420px] sm:px-10 sm:pt-14 md:h-[480px] md:pt-16 lg:h-[540px] lg:pt-20'>
               <Image
                 src={ropeRescue4}
@@ -265,7 +258,6 @@ export default function RopeRescuePage() {
               />
             </div>
 
-            {/* Bottom caption bar */}
             <div
               className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-16 md:py-14'
               style={{ backgroundColor: '#392e29' }}
