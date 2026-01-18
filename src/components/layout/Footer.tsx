@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Facebook, Instagram } from 'react-feather';
 
 import lbsarLogo from '~/images/lbsar-logo.png';
@@ -15,13 +16,19 @@ export default function Footer() {
       <footer className='font-primary w-full bg-[#121d2f] font-normal text-white'>
         <div className='flex w-full flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8'>
           <div className='flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left'>
-            <Image
-              src={lbsarLogo}
-              alt='Lions Bay Search and Rescue Society logo'
-              width={96}
-              height={96}
-              className='object-contain'
-            />
+            <Link
+              href='/'
+              aria-label='Go to Lions Bay Search and Rescue home page'
+              className='inline-flex'
+            >
+              <Image
+                src={lbsarLogo}
+                alt='Lions Bay Search and Rescue Society logo'
+                width={96}
+                height={96}
+                className='cursor-pointer object-contain'
+              />
+            </Link>
 
             <div className='text-lg leading-8'>
               <div className='flex flex-col items-center gap-1 lg:flex-row lg:items-baseline lg:gap-2'>
