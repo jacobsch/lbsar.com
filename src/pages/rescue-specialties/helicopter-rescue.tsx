@@ -26,7 +26,7 @@ export default function HelicopterRescuePage() {
             className='object-cover object-center'
           />
 
-          <div className='pointer-events-none absolute bottom-[-3px] left-[0px]'>
+          <div className='pointer-events-none absolute bottom-[-1px] left-0 w-[80%] sm:bottom-[-1px] sm:w-[75%] md:bottom-[-1px] md:w-[80%] lg:bottom-[-3px] lg:w-[50%]'>
             <Image
               src={helicopterRescueWords}
               alt='Helicopter Rescue'
