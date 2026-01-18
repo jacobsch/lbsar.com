@@ -41,8 +41,8 @@ export default function AvalancheRescuePage() {
       </section>
 
       {/* =========================
-    SECTION 2 — AVALANCHE INFO
-    ========================= */}
+              AVALANCHE INFO
+          ========================= */}
       <section className='w-full'>
         <div className='grid w-full grid-cols-1 md:min-h-[760px] md:grid-cols-[1.35fr_8px_1.25fr] lg:min-h-[820px] xl:min-h-[900px]'>
           <div className='flex items-center justify-center bg-[#b2092d] px-6 py-12 sm:px-8 md:px-10 lg:px-12'>
