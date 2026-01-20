@@ -3,16 +3,16 @@ import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import mountain_rescue_photo from '~/images/mountain-rescue-1.png';
-import mountain_rescue_scratched_words from '~/images/mountain-rescue-scratched-words.png';
-import pick_axe from '~/images/pick-axe.svg';
-import class4ScratchedWords from '~/images/class-4-scratched-words.png';
-import exposureScratchedWords from '~/images/exposure-scratched-words.png';
-import class4ExposedPhoto from '~/images/class-4-exposed-photo.jpeg';
-import skypilotPhoto from '~/images/skypilot-photo.jpg';
-import mountainRescueTriangles from '~/images/mountain-rescue-triangles.png';
-import mountainRescueImageBlock from '~/images/mountain-rescue-image-block.png';
-import harveySunset from '~/images/harvey-sunset.png';
+import mountain_rescue_photo from '~/images/rescue-specialties/mountain-rescue/mountain-rescue-1.png';
+import mountain_rescue_scratched_words from '~/images/rescue-specialties/mountain-rescue/mountain-rescue-scratched-words.png';
+import pick_axe from '~/images/rescue-specialties/pick-axe.svg';
+import class4ScratchedWords from '~/images/rescue-specialties/mountain-rescue/class-4-scratched-words.png';
+import exposureScratchedWords from '~/images/rescue-specialties/mountain-rescue/exposure-scratched-words.png';
+import class4ExposedPhoto from '~/images/rescue-specialties/mountain-rescue/class-4-exposed-photo.jpeg';
+import skypilotPhoto from '~/images/rescue-specialties/mountain-rescue/skypilot-photo.jpg';
+import mountainRescueTriangles from '~/images/rescue-specialties/mountain-rescue/mountain-rescue-triangles.png';
+import mountainRescueImageBlock from '~/images/rescue-specialties/mountain-rescue/mountain-rescue-image-block.png';
+import harveySunset from '~/images/rescue-specialties/mountain-rescue/harvey-sunset.png';
 
 const BG = '#151f2f';
 const ACCENT = '#febd29';
