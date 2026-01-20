@@ -128,6 +128,13 @@ export default function PrivacyPage() {
               </p>
 
               <p className='mt-4'>
+                Where required by applicable law, our lawful basis for
+                processing personal information includes consent, compliance
+                with legal obligations, and legitimate interests related to
+                operating, improving, and securing our website.
+              </p>
+
+              <p className='mt-4'>
                 We do not sell, rent, or trade personal information, and we do
                 not use personal data for advertising or marketing purposes.
               </p>
@@ -164,6 +171,13 @@ export default function PrivacyPage() {
                 unauthorized access, disclosure, or misuse. Information is
                 retained only for as long as necessary to fulfill the purposes
                 for which it was collected or as required by law.
+              </p>
+
+              <p className='mt-4'>
+                Website analytics data and contact information submitted through
+                our website are retained for up to 14 months and are then
+                securely deleted, unless a longer retention period is required
+                by law or necessary for record-keeping or legal purposes.
               </p>
 
               <p className='mt-4'>
@@ -207,8 +221,8 @@ export default function PrivacyPage() {
 
               <p className='mt-4'>
                 We aim to keep this Privacy Policy clear and accessible. If you
-                require this information in an alternative format, please
-                contact us.
+                require this information in an alternative format due to
+                accessibility needs, please contact us.
               </p>
             </section>
 
@@ -238,6 +252,18 @@ export default function PrivacyPage() {
                 that platform in accordance with its own privacy policy. Lions
                 Bay Search and Rescue does not collect, store, or process
                 payment information.
+              </p>
+            </section>
+            <section>
+              <h2 className='font-primary mb-3 text-xl font-semibold'>
+                Emergency Communications
+              </h2>
+
+              <p>
+                This website and its contact methods are not monitored for
+                emergency situations. If you require immediate assistance or are
+                reporting an emergency, please call 911 or contact local
+                emergency services.
               </p>
             </section>
 
