@@ -1,13 +1,59 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 import { Facebook, Instagram } from 'react-feather';
 
 import lbsarLogo from '~/images/lbsar-logo.png';
 
 export default function Footer() {
+  const router = useRouter();
+  const pendingHomeTopRef = useRef(false);
+
   const SOCIAL_BLUE = '#1854f1';
   const SOCIAL_BLUE_HOVER = '#0f43c9';
   const MAPS_URL = 'https://maps.app.goo.gl/hiAwfLR7ESbtfvbj6';
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
+    const onDone = () => {
+      if (!pendingHomeTopRef.current) return;
+      pendingHomeTopRef.current = false;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        });
+      });
+    };
+
+    router.events?.on('routeChangeComplete', onDone);
+    return () => router.events?.off('routeChangeComplete', onDone);
+  }, [router.events]);
+
+  const goHomeTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const currentPath = router.asPath.split('?')[0].split('#')[0];
+
+    if (currentPath === '/') return;
+
+    pendingHomeTopRef.current = true;
+
+    router.push('/', undefined, { scroll: false });
+  };
 
   return (
     <>
@@ -18,8 +64,10 @@ export default function Footer() {
           <div className='flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left'>
             <Link
               href='/'
+              scroll={false}
               aria-label='Go to Lions Bay Search and Rescue home page'
               className='inline-flex'
+              onClick={goHomeTop}
             >
               <Image
                 src={lbsarLogo}

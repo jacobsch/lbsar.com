@@ -268,7 +268,6 @@ const EmergencyBanner = () => (
         />
       </div>
 
-      {/* Bottom triangle: bottom-left, hidden on mobile, with X/Y translate knobs */}
       <div
         className={[
           'pointer-events-none absolute bottom-0 left-0 z-20',
@@ -320,44 +319,50 @@ const AreaMapSection = () => {
       id='area-map'
       className='relative isolate w-full overflow-hidden bg-white'
     >
-      {/* Orange bar */}
       <div
         aria-hidden
         className='w-full'
         style={{ backgroundColor: ORANGE, height: 40 }}
       />
 
-      <div className='relative'>
-        {/* Wordmark */}
+      <div
+        className={[
+          'relative',
+
+          // shared knobs
+          '[--map-max:920px] [--map-x:0px] [--map-y:0px]',
+          'sm:[--map-x:0px] sm:[--map-y:0px] sm:[--map-max:975px]',
+          'md:[--map-x:0px] md:[--map-y:0px] md:[--map-max:975px]',
+          'lg:[--map-x:0px] lg:[--map-y:0px] lg:[--map-max:1040px]',
+          'xl:[--map-x:0px] xl:[--map-y:0px] xl:[--map-max:1040px]',
+        ].join(' ')}
+      >
         <div className='mx-auto w-full max-w-[1320px] px-5 pb-3 pt-6 sm:px-8 lg:px-12'>
-          <Image
-            src={lbsar_map_word}
-            alt='Lions Bay Area Map'
-            width={1200}
-            height={220}
-            sizes='(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px'
-            className='h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[520px]'
-            loading='lazy'
-          />
+          <div
+            className='relative mx-auto'
+            style={{
+              width: '100%',
+              maxWidth: 'var(--map-max)',
+              transform: 'translate(var(--map-x), 0px)',
+            }}
+          >
+            <Image
+              src={lbsar_map_word}
+              alt='Lions Bay Area Map'
+              width={1200}
+              height={220}
+              sizes='(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px'
+              className='h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[520px]'
+              loading='lazy'
+            />
+          </div>
         </div>
 
-        {/* Map container with size + position controls */}
-        <div
-          className={[
-            'relative mx-auto w-full max-w-[1320px] px-5 pb-10 sm:px-8 lg:px-12',
-
-            // size knobs
-            '[--map-max:920px] [--map-w:100%] [--map-x:0px] [--map-y:0px]',
-            'sm:[--map-max:980px] sm:[--map-x:0px] sm:[--map-y:0px]',
-            'md:[--map-max:1040px] md:[--map-x:0px] md:[--map-y:0px]',
-            'lg:[--map-max:1120px] lg:[--map-x:0px] lg:[--map-y:0px]',
-            'xl:[--map-max:1180px] xl:[--map-x:0px] xl:[--map-y:0px]',
-          ].join(' ')}
-        >
+        <div className='relative mx-auto w-full max-w-[1320px] px-5 pb-10 sm:px-8 lg:px-12'>
           <div
-            className='relative'
+            className='relative mx-auto'
             style={{
-              width: 'var(--map-w)',
+              width: '100%',
               maxWidth: 'var(--map-max)',
               transform: 'translate(var(--map-x), var(--map-y))',
             }}

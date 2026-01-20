@@ -61,7 +61,7 @@ export default function AboutUsPage() {
                 } as CSSProperties
               }
             >
-              <div className='flex flex-col items-center gap-4 sm:gap-5 lg:gap-6'>
+              <div className='flex flex-col items-center gap-2 sm:gap-5 lg:gap-6'>
                 <Image
                   src={lbsarScratchedWords}
                   alt='LBSAR'
@@ -110,7 +110,7 @@ export default function AboutUsPage() {
               className='
                 mx-auto flex w-full max-w-[1320px]
                 flex-col items-center gap-6
-                px-6 pb-16 pt-20
+                px-6 pb-16 pt-[60px]
                 text-center
                 sm:flex-row sm:justify-center sm:gap-8 sm:px-8 sm:pb-20 sm:pt-24 sm:text-left
                 lg:px-12 lg:pb-24 lg:pt-28
@@ -127,7 +127,7 @@ export default function AboutUsPage() {
                 />
               </div>
 
-              <p className='max-w-[820px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
+              <p className='max-w-[820px] pt-[19px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px]'>
                 LBSAR is over 40 members strong, and in 2025 the team responded
                 to a record 35 calls, reflecting both the growing use of the
                 backcountry and the ongoing need for highly trained professional
@@ -146,8 +146,8 @@ export default function AboutUsPage() {
               alt='Lions Bay General Store'
               width={1400}
               height={620}
-              sizes='(max-width: 640px) 92vw, (max-width: 1280px) 1000px, 1150px'
-              className='h-auto w-full max-w-[1150px] object-contain'
+              sizes='(max-width: 640px) 92vw, (max-width: 1024px) 900px, 980px'
+              className='h-auto w-full max-w-[980px] object-contain lg:max-w-[900px] xl:max-w-[860px]'
             />
           </div>
 
@@ -170,7 +170,6 @@ export default function AboutUsPage() {
 
         {/* ----------------- RED INFO + BEACH (WRAPPED) ----------------- */}
         <section className='relative w-full overflow-hidden'>
-          {/* Decorative triangles — floats over BOTH red + beach */}
           <Image
             src={beachTriangles}
             alt=''
@@ -178,29 +177,29 @@ export default function AboutUsPage() {
             width={800}
             height={800}
             className='
-    pointer-events-none
-    absolute left-0
-    top-[50px] z-[999]
-    hidden
-    w-[220px]
-    sm:top-[80px]
-    sm:w-[300px] lg:top-[140px]
-    lg:w-[380px] xl:top-[18px]
-    xl:w-[480px] min-[1700px]:block
-  '
+              pointer-events-none
+              absolute left-0
+              top-[50px] z-[999]
+              hidden
+              w-[220px]
+              sm:top-[80px]
+              sm:w-[300px] lg:top-[140px]
+              lg:w-[380px] xl:top-[18px]
+              xl:w-[480px] min-[1700px]:block
+            '
           />
 
           {/* ----------------- RED INFO BOX ----------------- */}
           <div className='font-primary relative z-10 w-full bg-[#b2092d] text-white'>
             <div
               className='
-        mx-auto grid max-w-[1320px]
-        grid-cols-1 gap-6
-        px-6 py-10
-        text-[16px] leading-6
-        sm:grid-cols-2 sm:gap-10 sm:text-[15px] sm:leading-7
-        lg:px-12 lg:py-14 lg:text-[20px]
-      '
+                mx-auto grid max-w-[1320px]
+                grid-cols-1 gap-6
+                px-6 py-10
+                text-[16px] leading-6
+                sm:grid-cols-2 sm:gap-10 sm:text-[15px] sm:leading-7
+                lg:px-12 lg:py-14 lg:text-[20px]
+              '
             >
               <p>
                 Lions Bay is a small oceanside village on the eastern shore of
@@ -229,7 +228,7 @@ export default function AboutUsPage() {
                 width={1400}
                 height={600}
                 sizes='(max-width: 640px) 88vw, (max-width: 1280px) 900px, 1100px'
-                className='h-auto w-full max-w-[1100px] object-contain'
+                className='h-auto w-full max-w-[1100px] object-contain lg:max-w-[900px] xl:max-w-[860px]'
               />
             </div>
           </div>
@@ -250,15 +249,16 @@ export default function AboutUsPage() {
             sm:gap-8 lg:gap-9
           '
           >
-            {/* 1982 scratched words (top) */}
-            <Image
-              src={scratched1982}
-              alt='1982'
-              width={480}
-              height={140}
-              sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
-              className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
-            />
+            <div className='flex w-full justify-center'>
+              <Image
+                src={scratched1982}
+                alt='1982'
+                width={480}
+                height={140}
+                sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
+                className='h-auto w-[180px] sm:w-[300px] lg:w-[400px] xl:w-[440px]'
+              />
+            </div>
 
             <p className='max-w-[940px] text-[15px] leading-6 text-white/90 sm:text-[15px] sm:leading-7 lg:text-[20px] lg:leading-8'>
               Over the years, as recreation in the surrounding backcountry
@@ -267,7 +267,6 @@ export default function AboutUsPage() {
               came together informally to support rescue efforts.
             </p>
 
-            {/* CBC archive image */}
             <Image
               src={mudSlideCbc}
               alt=''
@@ -290,9 +289,7 @@ export default function AboutUsPage() {
 
         {/* ----------------- MARCEL ANDRIE FEATURE ----------------- */}
         <section className='relative w-full overflow-hidden'>
-          {/* ---------- WHITE TOP ---------- */}
           <div className='relative h-[140px] bg-white sm:h-[170px] lg:h-[325px]'>
-            {/* Decorative triangles */}
             <Image
               src={marcelTriangles}
               alt=''
@@ -300,16 +297,15 @@ export default function AboutUsPage() {
               width={520}
               height={520}
               className='
-              pointer-events-none
-              absolute left-0 top-0
-              w-[170px]
-              sm:w-[202px]
-              lg:w-[390px]
-              xl:w-[390px]
-            '
+                pointer-events-none
+                absolute left-0 top-0
+                w-[170px]
+                sm:w-[202px]
+                lg:w-[390px]
+                xl:w-[390px]
+              '
             />
 
-            {/* Marcel photo */}
             <div className='absolute inset-x-0 bottom-0 z-20 flex justify-center'>
               <Image
                 src={marcelPhoto}
@@ -317,20 +313,20 @@ export default function AboutUsPage() {
                 width={260}
                 height={260}
                 className='
-                h-[150px] w-[150px]
-                translate-y-[3%]
+                  h-[150px] w-[150px]
+                  translate-y-[3%]
 
-                rounded-full object-cover
-                sm:h-[200px]
+                  rounded-full object-cover
+                  sm:h-[200px]
 
-                sm:w-[200px] sm:translate-y-[16%]
-                min-[801px]:h-[260px]
+                  sm:w-[200px] sm:translate-y-[16%]
+                  min-[801px]:h-[260px]
 
-                min-[801px]:w-[260px] min-[801px]:translate-y-[45%]
-                lg:h-[400px]
+                  min-[801px]:w-[260px] min-[801px]:translate-y-[45%]
+                  lg:h-[400px]
 
-                lg:w-[400px] lg:translate-y-[45%]
-              '
+                  lg:w-[400px] lg:translate-y-[45%]
+                '
               />
             </div>
           </div>
@@ -339,26 +335,24 @@ export default function AboutUsPage() {
           <div className='font-primary relative bg-[#b2092d] text-white'>
             <div
               className='
-              mx-auto max-w-[1320px]
-              px-6 pb-16 pt-16
-              sm:px-8 sm:pb-20 sm:pt-10
-              lg:px-12 lg:pb-24
-            '
+                mx-auto max-w-[1320px]
+                px-6 pb-16 pt-16
+                sm:px-8 sm:pb-20 sm:pt-10
+                lg:px-12 lg:pb-24
+              '
             >
-              {/* Headings row */}
               <div className='lg:-mt-19 -mt-10 mb-6 grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:text-left'>
-                {/* MARCEL */}
                 <div
                   className='
-                  flex -translate-y-6
-                  justify-center
-                  max-[800px]:hidden
+                    flex -translate-y-6
+                    justify-center
+                    max-[800px]:hidden
 
-                  sm:-translate-y-[40px]
-                  sm:justify-start
+                    sm:-translate-y-[40px]
+                    sm:justify-start
 
-                  min-[1081px]:-translate-y-[50px]
-                '
+                    min-[1081px]:-translate-y-[50px]
+                  '
                 >
                   <Image
                     src={marcelScratchedWords}
@@ -367,11 +361,11 @@ export default function AboutUsPage() {
                     height={120}
                     sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
                     className='
-                    h-auto w-[170px]
-                    object-contain
-                    sm:w-[220px]
-                    min-[1081px]:w-[300px]
-                  '
+                      h-auto w-[170px]
+                      object-contain
+                      sm:w-[220px]
+                      min-[1081px]:w-[300px]
+                    '
                   />
                 </div>
 
@@ -388,7 +382,6 @@ export default function AboutUsPage() {
                 </div>
               </div>
 
-              {/* Text columns */}
               <div className='grid grid-cols-1 gap-8 text-[16px] leading-6 sm:grid-cols-2 sm:gap-12 sm:text-[15px] sm:leading-7 lg:text-[20px]'>
                 <p>
                   LBSAR was founded by local mountaineers, outdoor enthusiasts,
@@ -432,19 +425,17 @@ export default function AboutUsPage() {
 
         {/* ----------------- 1992 BASE ----------------- */}
         <section className='w-full'>
-          {/* Top blue info block */}
           <div className='font-primary w-full bg-[#121d2f] text-white'>
             <div
               className='
-              mx-auto grid w-full max-w-[1320px]
-              grid-cols-1 gap-8
-              px-6 py-12
-              sm:px-8 sm:py-14
-              lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
-            '
+                mx-auto grid w-full max-w-[1320px]
+                grid-cols-1 gap-8
+                px-6 py-12
+                sm:px-8 sm:py-14
+                lg:grid-cols-[420px_1fr] lg:gap-12 lg:px-12 lg:py-20
+              '
             >
-              {/* 1992 BASE scratched words */}
-              <div className='flex justify-center lg:justify-start lg:pr-20'>
+              <div className='flex w-full justify-center lg:justify-start lg:pr-20'>
                 <Image
                   src={base1992ScratchedWords}
                   alt='1992 Base'
@@ -455,7 +446,6 @@ export default function AboutUsPage() {
                 />
               </div>
 
-              {/* Paragraph */}
               <div className='flex items-center lg:pl-20'>
                 <p className='max-w-[860px] text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>
                   As the team grew, LBSAR expanded its technical capabilities
@@ -475,7 +465,6 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          {/* Photo with bottom caption bar */}
           <div className='relative w-full bg-[#121d2f] pb-8 sm:pb-10 lg:pb-14'>
             <div className='relative mx-auto w-full max-w-[1400px]'>
               <Image
@@ -487,7 +476,6 @@ export default function AboutUsPage() {
                 className='h-auto w-full object-cover'
               />
 
-              {/* caption bar */}
               <div className='font-primary absolute inset-x-0 bottom-0 bg-black/60'>
                 <div className='mx-auto w-full max-w-[1600px] px-6 py-3'>
                   <p className='text-[12px] leading-5 text-white/90 sm:text-[13px]'>
@@ -503,7 +491,6 @@ export default function AboutUsPage() {
         {/* ----------------- 2024 LANDSLIDE ----------------- */}
         <section className='font-primary w-full bg-[#403218] text-white'>
           <div className='mx-auto w-full max-w-[1400px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-20'>
-            {/* Title */}
             <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
               <Image
                 src={landslide2024Title}
@@ -515,7 +502,6 @@ export default function AboutUsPage() {
               />
             </div>
 
-            {/* Row 1: image left, text right */}
             <div className='grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-20'>
               <div className='lg:col-span-8 lg:-ml-32'>
                 <Image
@@ -544,7 +530,6 @@ export default function AboutUsPage() {
               </div>
             </div>
 
-            {/* Row 2: text left, image right */}
             <div className='mt-10 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-12 lg:gap-20'>
               <div className='order-2 flex items-center lg:order-1 lg:col-span-4 lg:pr-6'>
                 <div className='space-y-6 text-[15px] leading-6 text-white/90 sm:text-[16px] sm:leading-7 lg:text-[20px] lg:leading-8'>

@@ -7,13 +7,9 @@ type CountUpStatProps = {
   duration?: number;
 };
 
-/* ============================
-   TRIANGLE MARK (orange) + glow
-============================ */
 function TriangleMark({ glow }: { glow: boolean }) {
   return (
     <span className='relative inline-flex items-center justify-center'>
-      {/* glow ring */}
       <span
         className={[
           'absolute inset-[-12px] rounded-full',
@@ -24,7 +20,6 @@ function TriangleMark({ glow }: { glow: boolean }) {
         aria-hidden='true'
       />
 
-      {/* triangle */}
       <svg
         width='30'
         height='30'
@@ -50,9 +45,6 @@ function TriangleMark({ glow }: { glow: boolean }) {
   );
 }
 
-/* ============================
-   COUNT UP STAT (internal)
-============================ */
 function CountUpStat({
   value,
   label,
@@ -105,12 +97,6 @@ function CountUpStat({
             'tabular-nums leading-none text-white',
             'text-[52px] md:text-[60px]',
             '[text-shadow:0_0_0.6px_rgba(255,255,255,0.55)]',
-            "before:pointer-events-none before:absolute before:inset-0 before:content-['']",
-            'before:opacity-25 before:mix-blend-overlay',
-            'before:bg-[repeating-linear-gradient(-20deg,rgba(255,255,255,0.45)_0_1px,rgba(255,255,255,0)_1px_6px)]',
-            "after:pointer-events-none after:absolute after:inset-0 after:content-['']",
-            'after:opacity-15 after:mix-blend-overlay',
-            'after:bg-[radial-gradient(rgba(255,255,255,0.9)_0.5px,transparent_0.6px)] after:[background-size:6px_6px]',
           ].join(' ')}
         >
           {count.toLocaleString()}
@@ -125,34 +111,20 @@ function CountUpStat({
   );
 }
 
-/* ============================
-   VOLUNTEER STATS (exported)
-   - Single render (no remount on breakpoints)
-   - Mobile: stacked
-   - md–lg: grid (Calls spans 2 cols)
-   - lg+: single row
-============================ */
 export default function VolunteerStats() {
   return (
     <section className='bg-[#0a111c]'>
       <div className='md:py-18 mx-auto max-w-6xl px-6 py-20'>
         <div
           className={[
-            // mobile: stacked
             'flex flex-col items-center gap-10',
-
-            // md–lg: grid
             'md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 md:gap-y-12',
-
-            // lg+: single row
             'lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-x-14 lg:gap-y-0',
           ].join(' ')}
         >
           <CountUpStat value={6500} label='Hours' />
           <CountUpStat value={40} label='Volunteers' />
 
-          {/* On md grid, make Calls centered across both columns.
-              On lg flex, it behaves as a normal item. */}
           <div className='md:col-span-2 lg:col-span-1'>
             <CountUpStat value={35} label='Calls' />
           </div>
