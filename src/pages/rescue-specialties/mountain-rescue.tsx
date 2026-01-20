@@ -74,36 +74,39 @@ export default function MountainRescuePage() {
                     'relative flex w-full flex-col items-center',
 
                     // WORDMARK variables (px + scale)
-                    '[--word-h:260px] [--word-scale:.90] [--word-x:-8px] [--word-y:-24px]',
+                    '[--word-h:260px] [--word-scale:.90] [--word-y:-24px] [--word-x:-0px]',
                     'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:-8px] sm:[--word-y:-20px]',
                     'md:[--word-h:360px] md:[--word-scale:1.15] md:[--word-x:-8px] md:[--word-y:-130px]',
-                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-x:-8px] lg:[--word-y:-180px]',
-                    'xl:[--word-x:[-20px] xl:[--word-h:400px] xl:[--word-scale:1] xl:[--word-y:-80px]',
+                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-y:-180px] lg:[--word-x:-0px]',
+                    'xl:[--word-h:400px] xl:[--word-scale:1] xl:[--word-y:-80px] xl:[--word-x:-0px]',
 
                     // PICKAXE variables (px + scale + size)
-                    '[--axe-scale:1] [--axe-size:140px] [--axe-x:0px] [--axe-y:-30px]',
+                    '[--axe-scale:1] [--axe-size:140px] [--axe-x:0px] [--axe-y:-50px]',
                     'sm:[--axe-scale:1] sm:[--axe-size:150px] sm:[--axe-x:0px] sm:[--axe-y:-12px]',
                     'md:[--axe-scale:1] md:[--axe-size:200px] md:[--axe-x:0px] md:[--axe-y:-170px]',
                     'lg:[--axe-scale:1.05] lg:[--axe-size:160px] lg:[--axe-x:0px] lg:[--axe-y:-250px]',
                     'xl:[--axe-scale:1.25] xl:[--axe-size:205px] xl:[--axe-x:0px] xl:[--axe-y:-60px]',
                   ].join(' ')}
                 >
-                  <div
-                    className='relative w-full'
-                    style={{ height: 'var(--word-h)' } as React.CSSProperties}
-                  >
-                    <Image
-                      src={mountain_rescue_scratched_words}
-                      alt='Mountain Rescue'
-                      fill
-                      priority
-                      sizes='100vw'
-                      className='object-contain object-center'
-                      style={{
-                        transform:
-                          'translate(var(--word-x), var(--word-y)) scale(var(--word-scale))',
-                      }}
-                    />
+                  {/* WORDMARK */}
+                  <div className='w-full px-6 sm:px-10 md:px-0'>
+                    <div
+                      className='relative mx-auto w-full max-w-[560px] md:max-w-none'
+                      style={{ height: 'var(--word-h)' } as React.CSSProperties}
+                    >
+                      <Image
+                        src={mountain_rescue_scratched_words}
+                        alt='Mountain Rescue'
+                        fill
+                        priority
+                        sizes='100vw'
+                        className='object-contain object-center'
+                        style={{
+                          transform:
+                            'translate(var(--word-x), var(--word-y)) scale(var(--word-scale))',
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div
@@ -166,7 +169,7 @@ export default function MountainRescuePage() {
               className='relative flex flex-col items-center px-6 pb-20 pt-24 sm:px-10 sm:pt-28 md:px-12 md:pt-32 lg:px-14 lg:pt-48'
               style={{ backgroundColor: '#fc6421' }}
             >
-              <div className='relative flex w-full max-w-[560px] -translate-x-[6px] justify-center px-2 sm:translate-x-0 sm:px-3'>
+              <div className='relative flex w-full max-w-[560px] translate-x-0 justify-center px-2 sm:-translate-x-[6px] sm:px-3'>
                 <Image
                   src={class4ScratchedWords}
                   alt='Class 4'
@@ -174,7 +177,7 @@ export default function MountainRescuePage() {
                 />
               </div>
 
-              <div className='mt-24 w-full max-w-[560px] space-y-10 text-white/95 sm:mt-28 md:mt-32 lg:mt-36'>
+              <div className='mx-auto mt-24 w-full max-w-[560px] space-y-10 text-white/95 sm:mt-28 md:mt-32 lg:mt-36'>
                 <p className='text-[15px] leading-relaxed sm:text-[16px] lg:text-[20px]'>
                   Lions Bay Search and Rescue combines strong mountaineering
                   foundations with technical rope rescue to respond to falls,
@@ -218,7 +221,7 @@ export default function MountainRescuePage() {
                 <Image
                   src={exposureScratchedWords}
                   alt='Exposure'
-                  className='block h-auto w-full -translate-x-[6px] scale-[0.96] object-contain sm:scale-[0.99] md:-translate-x-[8px] md:scale-[1.02]'
+                  className='block h-auto w-full translate-x-0 scale-[0.96] object-contain sm:-translate-x-[6px] sm:scale-[0.99] md:-translate-x-[8px] md:scale-[1.02]'
                 />
               </div>
             </div>
@@ -232,7 +235,7 @@ export default function MountainRescuePage() {
         <section className='w-full' style={{ backgroundColor: '#151f2f' }}>
           {/* PHOTO BLOCK */}
           <div className='relative mx-auto w-full max-w-[1400px] px-6 pt-12 sm:px-10 sm:pt-16 md:px-14 md:pt-20'>
-            <div className='relative h-[360px] -translate-x-[2px] overflow-hidden sm:h-[420px] sm:translate-x-0 md:h-[480px] lg:h-[520px]'>
+            <div className='relative h-[360px] translate-x-0 overflow-hidden sm:h-[420px] sm:-translate-x-[2px] md:h-[480px] lg:h-[520px]'>
               <Image
                 src={skypilotPhoto}
                 alt='Mountain rescue specialists in alpine terrain'
@@ -275,7 +278,7 @@ export default function MountainRescuePage() {
 
         <section className='w-full bg-white'>
           <div className='px-6 sm:px-8 md:px-10 lg:px-12'>
-            <div className='mx-auto flex w-full max-w-[1400px] -translate-x-[7px] justify-center'>
+            <div className='mx-auto flex w-full max-w-[1400px] translate-x-0 justify-center sm:-translate-x-[7px]'>
               <Image
                 src={mountainRescueImageBlock}
                 alt='Mountain rescue'

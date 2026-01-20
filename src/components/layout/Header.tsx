@@ -152,13 +152,26 @@ export default function Header() {
     return rescueSpecialtiesPages.some(({ href }) => path === href);
   }, [router.asPath]);
 
-  // close on route change
   useEffect(() => {
     router.events?.on('routeChangeStart', closeEverything);
     return () => router.events?.off('routeChangeStart', closeEverything);
   }, [router.events]);
 
-  // ✅ close on click/tap outside
+  useEffect(() => {
+    const handleDone = () => {
+      closeEverything();
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        });
+      });
+    };
+
+    router.events?.on('routeChangeComplete', handleDone);
+    return () => router.events?.off('routeChangeComplete', handleDone);
+  }, [router.events]);
+
   useEffect(() => {
     const onDocDown = (e: MouseEvent | TouchEvent) => {
       if (!isOpen && !openDropdown) return;
@@ -180,7 +193,6 @@ export default function Header() {
     };
   }, [isOpen, openDropdown]);
 
-  // ✅ close on Escape
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -222,7 +234,12 @@ export default function Header() {
             <li className='flex items-center'>
               <Link
                 href='/'
+                scroll={true}
                 aria-label='Go to Home'
+                onClick={() => {
+                  closeEverything();
+                  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                }}
                 className='opacity-90 transition-opacity duration-150 hover:opacity-100'
               >
                 <Image
@@ -315,7 +332,15 @@ export default function Header() {
                             <li key={item.href}>
                               <Link
                                 href={item.href}
-                                onClick={closeAllDropdowns}
+                                scroll={true}
+                                onClick={() => {
+                                  closeAllDropdowns();
+                                  window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: 'auto',
+                                  });
+                                }}
                                 className={[
                                   'font-primary uppercase',
                                   'tracking-[0.14em]',
@@ -351,7 +376,7 @@ export default function Header() {
           </ul>
         </div>
 
-        <div className='flex shrink-0 items-center gap-3 pr-5 lg:pr-1 min-[1450px]:pr-0'>
+        <div className='flex shrink-0 items-center gap-3 pr-1 sm:pr-1 md:pr-1 lg:pr-1 min-[1450px]:pr-0'>
           <DonateButton />
         </div>
 
@@ -375,6 +400,11 @@ export default function Header() {
                           onClick={() => {
                             closeAllDropdowns();
                             closeMenu();
+                            window.scrollTo({
+                              top: 0,
+                              left: 0,
+                              behavior: 'auto',
+                            });
                           }}
                         />
 
@@ -413,9 +443,15 @@ export default function Header() {
                             <li key={item.href}>
                               <Link
                                 href={item.href}
+                                scroll={true}
                                 onClick={() => {
                                   closeAllDropdowns();
                                   closeMenu();
+                                  window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: 'auto',
+                                  });
                                 }}
                                 className={[
                                   'font-primary uppercase',
@@ -448,6 +484,7 @@ export default function Header() {
                     onClick={() => {
                       closeAllDropdowns();
                       closeMenu();
+                      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
                     }}
                   />
                 </li>
