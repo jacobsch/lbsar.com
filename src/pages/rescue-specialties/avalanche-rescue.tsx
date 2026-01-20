@@ -3,15 +3,15 @@ import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import avalancheMainPhoto from '~/images/avalanche-main.jpg';
-import avalancheScratchedWords from '~/images/avalanche-scratched-words.png';
-import reccoHeliPhoto from '~/images/recco-heli.jpg';
-import avalancheIcon from '~/images/avalanche.svg';
-import avalancheTeamPhoto from '~/images/avalanche-team.jpg';
-import avalancheProbing from '~/images/avalanche-probing.jpg';
-import reccoHandheld from '~/images/recco-handheld.jpg';
-import reccoScratchedWords from '~/images/recco-scratched-words.png';
-import avalancheThree from '~/images/avalanche-three.jpg';
+import avalancheMainPhoto from '~/images/rescue-specialties/avalanche-rescue/avalanche-main.jpg';
+import avalancheScratchedWords from '~/images/rescue-specialties/avalanche-rescue/avalanche-scratched-words.png';
+import reccoHeliPhoto from '~/images/rescue-specialties/avalanche-rescue/recco-heli.jpg';
+import avalancheIcon from '~/images/rescue-specialties/avalanche.svg';
+import avalancheTeamPhoto from '~/images/rescue-specialties/avalanche-rescue/avalanche-team.jpg';
+import avalancheProbing from '~/images/rescue-specialties/avalanche-rescue/avalanche-probing.jpg';
+import reccoHandheld from '~/images/rescue-specialties/avalanche-rescue/recco-handheld.jpg';
+import reccoScratchedWords from '~/images/rescue-specialties/avalanche-rescue/recco-scratched-words.png';
+import avalancheThree from '~/images/rescue-specialties/avalanche-rescue/avalanche-three.jpg';
 
 export default function AvalancheRescuePage() {
   return (

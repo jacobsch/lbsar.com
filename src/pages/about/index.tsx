@@ -4,25 +4,25 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import VolunteerStats from '@/components/VolunteerStats';
 
-import teamphoto from '~/images/teamphoto.svg';
+import teamphoto from '~/images/about/teamphoto.svg';
 import lbsarScratchedWords from '~/images/lbsar-scratched-words.png';
-import team2026ScratchedWords from '~/images/team-2026-scratched-words.png';
+import team2026ScratchedWords from '~/images/about/team-2026-scratched-words.png';
 import lbsarLogo from '~/images/lbsar-logo.png';
-import generalStore from '~/images/general-store.svg';
-import historyScratchedWords from '~/images/history-scratched-words.png';
-import beachTriangles from '~/images/beach-triangles.png';
-import lionsBayBeach from '~/images/lions-bay-beach.svg';
-import scratched1982 from '~/images/1982-scratched-words.png';
-import mudSlideCbc from '~/images/mud-slide-cbc.svg';
-import marcelTriangles from '~/images/marcel-triangles.png';
-import marcelPhoto from '~/images/marcel-photo.svg';
-import marcelScratchedWords from '~/images/marcel-scratched-words.png';
-import andrie1983ScratchedWords from '~/images/1983-andrie-scratched-words.png';
-import base1992ScratchedWords from '~/images/1992-base-scratched-words.png';
-import basePhoto from '~/images/base.svg';
-import landslide2024Title from '~/images/2024-landslide-scratched-words.png';
-import landslide2 from '~/images/landslide-2.svg';
-import landslide1 from '~/images/landslide-1.svg';
+import generalStore from '~/images/about/general-store.svg';
+import historyScratchedWords from '~/images/about/history-scratched-words.png';
+import beachTriangles from '~/images/about/beach-triangles.png';
+import lionsBayBeach from '~/images/about/lions-bay-beach.svg';
+import scratched1982 from '~/images/about/1982-scratched-words.png';
+import mudSlideCbc from '~/images/about/mud-slide-cbc.svg';
+import marcelTriangles from '~/images/about/marcel-triangles.png';
+import marcelPhoto from '~/images/about/marcel-photo.svg';
+import marcelScratchedWords from '~/images/about/marcel-scratched-words.png';
+import andrie1983ScratchedWords from '~/images/about/1983-andrie-scratched-words.png';
+import base1992ScratchedWords from '~/images/about/1992-base-scratched-words.png';
+import basePhoto from '~/images/about/base.svg';
+import landslide2024Title from '~/images/about/2024-landslide-scratched-words.png';
+import landslide2 from '~/images/about/landslide-2.svg';
+import landslide1 from '~/images/about/landslide-1.svg';
 
 const SCRATCH_TOP = {
   mobile: '91%',

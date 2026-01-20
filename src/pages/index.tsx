@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 
-import triangles_logo from '~/images/triangles-logo.png';
+import triangles_logo from '~/images/home/triangles-logo.png';
 import lbsar_scratched_words from '~/images/lbsar-scratched-words.png';
-import trees from '~/images/trees.jpg';
-import call_911 from '~/images/call-911.png';
-import bottom_triangles from '~/images/bottom-triangles.png';
-import lbsar_map_word from '~/images/lbsar-map-word.png';
-import lbsar_map from '~/images/lbsar-map.jpg';
+import trees from '~/images/home/trees.jpg';
+import call_911 from '~/images/home/call-911.png';
+import bottom_triangles from '~/images/home/bottom-triangles.png';
+import lbsar_map_word from '~/images/home/lbsar-map-word.png';
+import lbsar_map from '~/images/home/lbsar-map.jpg';
 
 /** --------- Grid framework --------- */
 function GridContainer({
@@ -119,7 +119,7 @@ const Hero = () => {
           ].join(' ')}
         >
           <Image
-            src='/images/lions.svg'
+            src='/images/home/lions.svg'
             alt='Lions Mountains'
             fill
             priority

@@ -5,17 +5,17 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Image from 'next/image';
-import rescue_mountain from '~/images/rescue-mountain.jpg';
-import pick_axe from '~/images/pick-axe.svg';
-import rope from '~/images/rope.svg';
-import helicopter from '~/images/helicopter.svg';
-import avalanche from '~/images/avalanche.svg';
-import first_aid from '~/images/first-aid.svg';
-import swiftwater from '~/images/swiftwater.svg';
-import shoe from '~/images/shoe.svg';
-import cave from '~/images/cave.svg';
-import canyon from '~/images/canyon.svg';
-import rescue_specialties_words from '~/images/rescue-specialties-scratched-words.png';
+import rescue_mountain from '~/images/rescue-specialties/rescue-mountain.jpg';
+import pick_axe from '~/images/rescue-specialties/pick-axe.svg';
+import rope from '~/images/rescue-specialties/rope.svg';
+import helicopter from '~/images/rescue-specialties/helicopter.svg';
+import avalanche from '~/images/rescue-specialties/avalanche.svg';
+import first_aid from '~/images/rescue-specialties/first-aid.svg';
+import swiftwater from '~/images/rescue-specialties/swiftwater.svg';
+import shoe from '~/images/rescue-specialties/shoe.svg';
+import cave from '~/images/rescue-specialties/cave.svg';
+import canyon from '~/images/rescue-specialties/canyon.svg';
+import rescue_specialties_words from '~/images/rescue-specialties/rescue-specialties-scratched-words.png';
 
 const BG = '#121d2f';
 const CARD = '#333f4e';

@@ -4,13 +4,13 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import rope_rescue_photo from '~/images/rope-rescue.jpg';
-import rope_rescue_scratched_words from '~/images/rope-rescue-scratched-words.png';
-import rope from '~/images/rope.svg';
-import ropeRescue2 from '~/images/rope-rescue-2.jpg';
-import ropeRescue3 from '~/images/rope-rescue-3.jpg';
-import dcttrsWords from '~/images/dcttrs-scratched-words.png';
-import ropeRescue4 from '~/images/rope-rescue-4.jpg';
+import rope_rescue_photo from '~/images/rescue-specialties/rope-rescue/rope-rescue.jpg';
+import rope_rescue_scratched_words from '~/images/rescue-specialties/rope-rescue/rope-rescue-scratched-words.png';
+import rope from '~/images/rescue-specialties/rope.svg';
+import ropeRescue2 from '~/images/rescue-specialties/rope-rescue/rope-rescue-2.jpg';
+import ropeRescue3 from '~/images/rescue-specialties/rope-rescue/rope-rescue-3.jpg';
+import dcttrsWords from '~/images/rescue-specialties/rope-rescue/dcttrs-scratched-words.png';
+import ropeRescue4 from '~/images/rescue-specialties/rope-rescue/rope-rescue-4.jpg';
 
 const BG = '#151f2f';
 const ACCENT = '#febd29';

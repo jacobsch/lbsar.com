@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import helicopterRescuePhoto from '~/images/hets-rescue.jpg';
-import helicopterRescueWords from '~/images/helicopter-rescue-scratched-words.png';
-import brentTalonPhoto from '~/images/brent-talon.jpg';
-import longLinePhoto from '~/images/long-line.jpg';
+import helicopterRescuePhoto from '~/images/rescue-specialties/helicopter-rescue/hets-rescue.jpg';
+import helicopterRescueWords from '~/images/rescue-specialties/helicopter-rescue/helicopter-rescue-scratched-words.png';
+import brentTalonPhoto from '~/images/rescue-specialties/helicopter-rescue/brent-talon.jpg';
+import longLinePhoto from '~/images/rescue-specialties/helicopter-rescue/long-line.jpg';
 
-import helicopter from '~/images/helicopter.svg';
+import helicopter from '~/images/rescue-specialties/helicopter.svg';
 
 export default function HelicopterRescuePage() {
   return (
