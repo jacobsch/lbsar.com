@@ -47,11 +47,9 @@ export default function Footer() {
     document.body.scrollTop = 0;
 
     const currentPath = router.asPath.split('?')[0].split('#')[0];
-
     if (currentPath === '/') return;
 
     pendingHomeTopRef.current = true;
-
     router.push('/', undefined, { scroll: false });
   };
 
@@ -59,24 +57,33 @@ export default function Footer() {
     <>
       <div className='h-[8px] w-full bg-white' />
 
-      <footer className='font-primary w-full bg-[#121d2f] font-normal text-white'>
+      <footer className='font-primary w-full bg-[#121d2f] pb-12 font-normal text-white lg:pb-0'>
         <div className='flex w-full flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8'>
-          <div className='flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left'>
-            <Link
-              href='/'
-              scroll={false}
-              aria-label='Go to Lions Bay Search and Rescue home page'
-              className='inline-flex'
-              onClick={goHomeTop}
-            >
-              <Image
-                src={lbsarLogo}
-                alt='Lions Bay Search and Rescue Society logo'
-                width={96}
-                height={96}
-                className='cursor-pointer object-contain'
-              />
-            </Link>
+          <div className='relative flex flex-col items-center gap-5 text-center lg:flex-row lg:items-center lg:gap-7 lg:text-left'>
+            <div className='relative inline-flex flex-col items-center'>
+              <Link
+                href='/'
+                scroll={false}
+                aria-label='Go to Lions Bay Search and Rescue home page'
+                className='inline-flex'
+                onClick={goHomeTop}
+              >
+                <Image
+                  src={lbsarLogo}
+                  alt='Lions Bay Search and Rescue Society logo'
+                  width={96}
+                  height={96}
+                  className='cursor-pointer object-contain'
+                />
+              </Link>
+
+              <Link
+                href='/privacy'
+                className='absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] tracking-wide text-white/50 hover:text-white hover:underline max-lg:hidden'
+              >
+                Privacy
+              </Link>
+            </div>
 
             <div className='text-lg leading-8'>
               <div className='flex flex-col items-center gap-1 lg:flex-row lg:items-baseline lg:gap-2'>
@@ -111,7 +118,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='flex items-center justify-center gap-6 lg:justify-end'>
+          <div className='relative flex items-center justify-center gap-6 lg:justify-end'>
             <a
               href='https://www.facebook.com/LionsBaySAR/'
               target='_blank'
@@ -170,6 +177,18 @@ export default function Footer() {
                 <path d='M18.244 2H21l-6.543 7.472L22.5 22h-6.8l-5.325-6.93L4.5 22H1.744l7.02-8.02L1.5 2h6.9l4.82 6.272L18.244 2zm-1.19 18h1.883L7.01 4H5.01l12.044 16z' />
               </svg>
             </a>
+
+            <Link
+              href='/privacy'
+              className='absolute -bottom-20 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] tracking-wide text-white/50 hover:text-white hover:underline lg:hidden'
+            >
+              Privacy
+            </Link>
+
+            <p className='pointer-events-none absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] tracking-wide text-white/50 lg:-bottom-8 lg:left-auto lg:right-0 lg:translate-x-0'>
+              © {new Date().getFullYear()} Lions Bay Search and Rescue Society.
+              All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
