@@ -28,16 +28,19 @@ export default function Seo(props: SeoProps) {
   const router = useRouter();
   const isHome = router.pathname === '/';
 
-  const cleanPath = router.asPath.split('?')[0].split('#')[0];
+  const rawPath = router.asPath.split('?')[0].split('#')[0];
+  const cleanPath = rawPath === '/' ? '' : rawPath;
 
   const meta = {
     ...defaultMeta,
     ...props,
   };
 
-  meta['title'] = props.templateTitle
+  meta.title = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
+
+  const pageUrl = `${meta.url}${cleanPath}`;
 
   const ogImageAbs = meta.image.startsWith('http')
     ? meta.image
@@ -59,16 +62,15 @@ export default function Seo(props: SeoProps) {
       )}
 
       <meta name='robots' content={meta.robots} />
-      <meta content={meta.description} name='description' />
+      <meta name='description' content={meta.description} />
 
-      <meta property='og:url' content={`${meta.url}${cleanPath}`} />
-      <link rel='canonical' href={`${meta.url}${cleanPath}`} />
+      <link rel='canonical' href={pageUrl} />
 
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content={meta.siteName} />
-      <meta property='og:description' content={meta.description} />
       <meta property='og:title' content={meta.title} />
-      <meta property='og:url' content={`${meta.url}${cleanPath}`} />
+      <meta property='og:description' content={meta.description} />
+      <meta property='og:url' content={pageUrl} />
 
       <meta property='og:image' content={ogImageAbs} />
       <meta property='og:image:secure_url' content={ogImageAbs} />
