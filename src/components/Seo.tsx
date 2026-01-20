@@ -13,7 +13,7 @@ const defaultMeta = {
   lost or injured hikers, or complex rescues in steep and technical terrain. Operating under Emergency Management and Climate Readiness (EMCR), 
   LBSAR works closely with neighbouring search and rescue teams and other emergency services like the RCMP, Fire, and Ambulance. Our volunteers train year-round 
   to maintain operational readiness and to respond effectively in all weather and terrain conditions.`,
-  url: 'https://lbsar.com',
+  url: 'https://lions-bay-sar.vercel.app',
   type: 'website',
   robots: 'follow, index',
   image: '/images/og.png',
@@ -28,19 +28,16 @@ export default function Seo(props: SeoProps) {
   const router = useRouter();
   const isHome = router.pathname === '/';
 
-  const rawPath = router.asPath.split('?')[0].split('#')[0];
-  const cleanPath = rawPath === '/' ? '' : rawPath;
+  const cleanPath = router.asPath.split('?')[0].split('#')[0];
 
   const meta = {
     ...defaultMeta,
     ...props,
   };
 
-  meta.title = props.templateTitle
+  meta['title'] = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
-
-  const pageUrl = `${meta.url}${cleanPath}`;
 
   const ogImageAbs = meta.image.startsWith('http')
     ? meta.image
@@ -62,15 +59,16 @@ export default function Seo(props: SeoProps) {
       )}
 
       <meta name='robots' content={meta.robots} />
-      <meta name='description' content={meta.description} />
+      <meta content={meta.description} name='description' />
 
-      <link rel='canonical' href={pageUrl} />
+      <meta property='og:url' content={`${meta.url}${cleanPath}`} />
+      <link rel='canonical' href={`${meta.url}${cleanPath}`} />
 
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content={meta.siteName} />
-      <meta property='og:title' content={meta.title} />
       <meta property='og:description' content={meta.description} />
-      <meta property='og:url' content={pageUrl} />
+      <meta property='og:title' content={meta.title} />
+      <meta property='og:url' content={`${meta.url}${cleanPath}`} />
 
       <meta property='og:image' content={ogImageAbs} />
       <meta property='og:image:secure_url' content={ogImageAbs} />
