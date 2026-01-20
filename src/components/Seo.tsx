@@ -13,7 +13,7 @@ const defaultMeta = {
   lost or injured hikers, or complex rescues in steep and technical terrain. Operating under Emergency Management and Climate Readiness (EMCR), 
   LBSAR works closely with neighbouring search and rescue teams and other emergency services like the RCMP, Fire, and Ambulance. Our volunteers train year-round 
   to maintain operational readiness and to respond effectively in all weather and terrain conditions.`,
-  url: 'https://lions-bay-sar.vercel.app',
+  url: 'https://lbsar.com',
   type: 'website',
   robots: 'follow, index',
   image: '/images/og.png',
