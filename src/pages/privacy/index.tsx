@@ -167,13 +167,6 @@ export default function PrivacyPage() {
               </p>
 
               <p className='mt-4'>
-                Website analytics data and contact information submitted through
-                our website are retained for up to 14 months and are then
-                securely deleted, unless a longer retention period is required
-                by law or necessary for record-keeping or legal purposes.
-              </p>
-
-              <p className='mt-4'>
                 Personal information may be stored on servers located in Canada
                 or the United States and is protected by appropriate safeguards
                 consistent with Canadian privacy laws.
