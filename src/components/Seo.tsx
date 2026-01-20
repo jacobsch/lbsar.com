@@ -13,7 +13,7 @@ const defaultMeta = {
   lost or injured hikers, or complex rescues in steep and technical terrain. Operating under Emergency Management and Climate Readiness (EMCR), 
   LBSAR works closely with neighbouring search and rescue teams and other emergency services like the RCMP, Fire, and Ambulance. Our volunteers train year-round 
   to maintain operational readiness and to respond effectively in all weather and terrain conditions.`,
-  url: 'https://lbsar.com', // without the trailing / at the end of url
+  url: 'https://lions-bay-sar.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   image: '/images/og.png',
@@ -28,7 +28,6 @@ export default function Seo(props: SeoProps) {
   const router = useRouter();
   const isHome = router.pathname === '/';
 
-  // avoid query strings / hashes in canonical + og:url
   const cleanPath = router.asPath.split('?')[0].split('#')[0];
 
   const meta = {
@@ -48,7 +47,6 @@ export default function Seo(props: SeoProps) {
     <Head>
       <title>{meta.title}</title>
 
-      {/* Preload critical hero visuals ONLY on homepage */}
       {isHome && (
         <>
           <link rel='preload' as='image' href='/images/triangles-logo.png' />
@@ -63,20 +61,22 @@ export default function Seo(props: SeoProps) {
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
 
-      {/* Use cleaned path for canonical and OG url */}
       <meta property='og:url' content={`${meta.url}${cleanPath}`} />
       <link rel='canonical' href={`${meta.url}${cleanPath}`} />
 
-      {/* Open Graph */}
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content={meta.siteName} />
       <meta property='og:description' content={meta.description} />
       <meta property='og:title' content={meta.title} />
-      <meta property='og:image' content={ogImageAbs} />
+      <meta property='og:url' content={`${meta.url}${cleanPath}`} />
 
-      {/* Twitter */}
+      <meta property='og:image' content={ogImageAbs} />
+      <meta property='og:image:secure_url' content={ogImageAbs} />
+      <meta property='og:image:type' content='image/png' />
+      <meta property='og:image:width' content='1200' />
+      <meta property='og:image:height' content='630' />
+
       <meta name='twitter:card' content='summary_large_image' />
-      {/* <meta name='twitter:site' content='@th_clarence' /> */}
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={ogImageAbs} />
@@ -92,7 +92,6 @@ export default function Seo(props: SeoProps) {
         </>
       )}
 
-      {/* Favicons */}
       {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
       ))}
