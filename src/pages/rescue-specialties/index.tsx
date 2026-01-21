@@ -281,7 +281,6 @@ function RescueSpecialtiesSection() {
                 }}
               >
                 <div className='flex h-full w-full flex-col px-3 pb-4 pt-4'>
-                  {/* ICON wrapper controls hover/active yellow */}
                   <span
                     className={[
                       'flex flex-1 items-center justify-center transition-colors',
@@ -297,7 +296,6 @@ function RescueSpecialtiesSection() {
                   <span
                     className={[
                       'mt-auto w-full',
-                      // slightly smaller on mobile to avoid cut-off
                       'text-lg sm:text-xl md:text-2xl',
                       'font-semibold',
                       'tracking-[0.16em] sm:tracking-[0.18em]',
@@ -315,7 +313,6 @@ function RescueSpecialtiesSection() {
                   </span>
                 </div>
 
-                {/* hover border */}
                 <span
                   aria-hidden='true'
                   className='pointer-events-none absolute inset-0 border-2 opacity-0 transition-opacity group-hover:opacity-100'
@@ -336,7 +333,6 @@ export default function RescueSpecialtiesPage() {
       <Seo templateTitle='Rescue Specialties' />
 
       <div style={{ backgroundColor: BG }}>
-        {/* ---------- HERO IMAGE ---------- */}
         <div className='relative aspect-[1.5/1] w-full sm:aspect-[2/1] lg:aspect-[2.75/1]'>
           <Image
             src={rescue_mountain}

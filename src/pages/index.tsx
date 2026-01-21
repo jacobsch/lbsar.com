@@ -3,7 +3,7 @@ import Layout from '$/layout/Layout';
 import Seo from '$/Seo';
 
 import triangles_logo from '~/images/home/triangles-logo.png';
-import lbsar_scratched_words from '~/images/lbsar-scratched-words.png';
+import lbsar_scratched_words from '~/images/home/lbsar-scratched-words.png';
 import trees from '~/images/home/trees.jpg';
 import call_911 from '~/images/home/call-911.png';
 import bottom_triangles from '~/images/home/bottom-triangles.png';
@@ -217,7 +217,6 @@ const EmergencyBanner = () => (
       <div className='bg-black/55 absolute inset-0' />
     </div>
 
-    {/* Foreground */}
     <div
       className={[
         'relative z-10',
@@ -229,12 +228,11 @@ const EmergencyBanner = () => (
         'xl:min-h-[720px]',
       ].join(' ')}
     >
-      {/* Call 911 PNG */}
       <div
         className={[
           'pointer-events-none absolute z-20',
 
-          // MOBILE: centered
+          // MOBILE
           'left-1/2 -translate-x-1/2',
 
           // DESKTOP
@@ -244,13 +242,13 @@ const EmergencyBanner = () => (
           'lg:-translate-x-[80px]',
           'xl:-translate-x-[80px]',
 
-          // vertical positioning
+          // VERTICAL POSITIONING
           'top-[-75px]',
           'sm:top-[-80px]',
           'md:top-[-100px]',
           'lg:top-[-100px]',
 
-          // sizing
+          // SIZING
           'w-[260px]',
           'sm:w-[320px]',
           'md:w-[360px]',
@@ -273,14 +271,12 @@ const EmergencyBanner = () => (
           'pointer-events-none absolute bottom-0 left-0 z-20',
           'hidden sm:block',
 
-          // scale smaller
           'w-[140px]',
           'sm:w-[170px]',
           'md:w-[210px]',
           'lg:w-[250px]',
           'xl:w-[250px]',
 
-          // translate knobs
           '[--bt-x:0px] [--bt-y:0px]',
           'sm:[--bt-x:0px] sm:[--bt-y:0px]',
           'md:[--bt-x:0px] md:[--bt-y:0px]',
@@ -329,12 +325,11 @@ const AreaMapSection = () => {
         className={[
           'relative',
 
-          // shared knobs
           '[--map-max:920px] [--map-x:0px] [--map-y:0px]',
-          'sm:[--map-x:0px] sm:[--map-y:0px] sm:[--map-max:975px]',
-          'md:[--map-x:0px] md:[--map-y:0px] md:[--map-max:975px]',
-          'lg:[--map-x:0px] lg:[--map-y:0px] lg:[--map-max:1040px]',
-          'xl:[--map-x:0px] xl:[--map-y:0px] xl:[--map-max:1040px]',
+          'sm:[--map-max:975px] sm:[--map-x:0px] sm:[--map-y:0px]',
+          'md:[--map-max:975px] md:[--map-x:0px] md:[--map-y:0px]',
+          'lg:[--map-max:1040px] lg:[--map-x:0px] lg:[--map-y:0px]',
+          'xl:[--map-max:1040px] xl:[--map-x:0px] xl:[--map-y:0px]',
         ].join(' ')}
       >
         <div className='mx-auto w-full max-w-[1320px] px-5 pb-3 pt-6 sm:px-8 lg:px-12'>

@@ -9,12 +9,9 @@ export default function NotFoundPage() {
     <Layout>
       <main>
         <section className='relative min-h-screen bg-[#121d2f]'>
-          {/* subtle background glow */}
           <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_60%)]' />
 
-          {/* centering wrapper */}
           <div className='relative flex min-h-screen items-center justify-center'>
-            {/* content */}
             <div className='mx-auto flex max-w-md flex-col items-center text-center text-white'>
               <RiAlarmWarningFill
                 size={72}

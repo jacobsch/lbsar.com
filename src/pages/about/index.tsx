@@ -5,7 +5,7 @@ import Seo from '@/components/Seo';
 import VolunteerStats from '@/components/VolunteerStats';
 
 import teamphoto from '~/images/about/teamphoto.svg';
-import lbsarScratchedWords from '~/images/lbsar-scratched-words.png';
+import lbsarScratchedWords from '~/images//home/lbsar-scratched-words.png';
 import team2026ScratchedWords from '~/images/about/team-2026-scratched-words.png';
 import lbsarLogo from '~/images/lbsar-logo.png';
 import generalStore from '~/images/about/general-store.svg';
@@ -37,7 +37,6 @@ export default function AboutUsPage() {
       <Seo templateTitle='About Us' />
 
       <div className='min-h-screen w-full'>
-        {/* ----------------- TEAM PHOTO (FULL WIDTH, FIXED RATIO) ----------------- */}
         <section className='relative w-full bg-[#121d2f]'>
           <div className='relative aspect-[3/1] w-full'>
             <Image
@@ -168,7 +167,6 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* ----------------- RED INFO + BEACH (WRAPPED) ----------------- */}
         <section className='relative w-full overflow-hidden'>
           <Image
             src={beachTriangles}
@@ -369,7 +367,6 @@ export default function AboutUsPage() {
                   />
                 </div>
 
-                {/* 1983 ANDRIE */}
                 <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
                   <Image
                     src={andrie1983ScratchedWords}

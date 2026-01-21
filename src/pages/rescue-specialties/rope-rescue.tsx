@@ -65,20 +65,20 @@ export default function RopeRescuePage() {
                 ].join(' ')}
               >
                 {/* ======================
-                    CONTROL PANEL (edit px/scale here)
+                        CONTROL PANEL
                     ====================== */}
                 <div
                   className={[
                     'relative flex w-full flex-col items-center',
 
-                    // WORDMARK variables (px + scale)
+                    // WORDMARK variables
                     '[--word-h:260px] [--word-scale:.80] [--word-x:0px] [--word-y:-15px]',
                     'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:0px] sm:[--word-y:0px]',
                     'md:[--word-h:360px] md:[--word-scale:0.8] md:[--word-x:0px] md:[--word-y:-90px]',
                     'lg:[--word-h:500px] lg:[--word-scale:0.9] lg:[--word-x:0px] lg:[--word-y:-100px]',
                     'xl:[--word-h:400px] xl:[--word-scale:0.9] xl:[--word-x:0px] xl:[--word-y:0px]',
 
-                    // ROPE variables (px + scale + size)
+                    // ROPE variables
                     '[--rope-scale:1] [--rope-size:140px] [--rope-x:0px] [--rope-y:-10px]',
                     'sm:[--rope-scale:1] sm:[--rope-size:150px] sm:[--rope-x:0px] sm:[--rope-y:30px]',
                     'md:[--rope-scale:1] md:[--rope-size:200px] md:[--rope-x:0px] md:[--rope-y:-100px]',
@@ -127,7 +127,7 @@ export default function RopeRescuePage() {
 
                 <div className='-mt-0 flex w-full justify-center'></div>
 
-                <div className='mx-auto mt-[450px] w-full max-w-[640px] px-6 text-left sm:mt-[500px] sm:px-0 md:mt-[500px] lg:mt-[700px] xl:mt-[850px]'>
+                <div className='mx-auto mt-[450px] w-full max-w-[640px] px-8 text-left sm:mt-[500px] sm:px-0 md:mt-[500px] lg:mt-[700px] xl:mt-[850px]'>
                   <p className='leading-relroped text-[15px] text-white sm:text-[16px] lg:text-[20px]'>
                     Many search and rescue incidents in Lions Bay involve steep
                     slopes, cliffs, gullies, and drainage features.{' '}
@@ -262,7 +262,7 @@ export default function RopeRescuePage() {
               className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-16 md:py-14'
               style={{ backgroundColor: '#392e29' }}
             >
-              <p className='mx-auto max-w-[90ch] text-center text-[13px] leading-[1.7] text-white sm:text-[14px] md:text-[15px] lg:text-[16px]'>
+              <p className='mx-auto max-w-[90ch] text-center text-[13px] leading-[1.7] text-white sm:text-[15px] md:text-[16px] lg:text-[20px]'>
                 All rope rescue personnel must successfully complete provincial
                 certification examinations and maintain operational readiness
                 through a minimum of 20 hours of annual rope rescue training and

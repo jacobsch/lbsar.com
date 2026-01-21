@@ -51,13 +51,17 @@ export default function AvalancheRescuePage() {
       <section className='w-full'>
         <div className='grid w-full grid-cols-1 md:min-h-[760px] md:grid-cols-[1.35fr_8px_1.25fr] lg:min-h-[820px] xl:min-h-[900px]'>
           <div className='flex items-center justify-center bg-[#b2092d] px-6 py-12 sm:px-8 md:px-10 lg:px-12'>
-            <div className='w-full max-w-[44ch] text-white'>
-              <div className='mx-auto w-[140px] sm:w-[170px] md:w-[200px] lg:w-[230px]'>
-                <Image
-                  src={avalancheIcon}
-                  alt='Avalanche'
-                  className='h-auto w-full object-contain'
-                />
+            <div className='w-full max-w-[44ch] pl-4 text-white sm:pl-0'>
+              <div className='w-full'>
+                <div className='flex w-full justify-center sm:justify-center'>
+                  <div className='w-[140px] sm:w-[170px] md:w-[200px] lg:w-[230px]'>
+                    <Image
+                      src={avalancheIcon}
+                      alt='Avalanche'
+                      className='h-auto w-full object-contain'
+                    />
+                  </div>
+                </div>
               </div>
 
               <div className='h-10 sm:h-12 md:h-14' />
@@ -227,7 +231,7 @@ export default function AvalancheRescuePage() {
           ========================= */}
       <section className='w-full bg-[#b2092d]'>
         <div className='mx-auto w-full max-w-[1200px] px-6 py-20 sm:px-10 sm:py-24 md:px-14 md:py-28 lg:py-32'>
-          <p className='mx-auto max-w-[64ch] text-left text-[15px] leading-[1.8] text-white md:text-[16px] lg:text-[20px]'>
+          <p className='mx-auto max-w-[64ch] pl-4 text-left text-[15px] leading-[1.8] text-white sm:pl-0 md:text-[16px] lg:text-[20px]'>
             For anyone travelling in avalanche terrain, proper personal safety
             equipment is essential. This includes carrying a functioning
             avalanche transceiver (beacon), shovel, and probe, and knowing how

@@ -141,9 +141,7 @@ export default function HelicopterRescuePage() {
             LONG-LINE OPERATIONS
           ========================= */}
       <section className='w-full bg-[#febd29]'>
-        {/* ORDER CONTROLLER */}
         <div className='flex flex-col min-[944px]:flex-col-reverse'>
-          {/* TEXT */}
           <div
             className='
               mx-auto w-full px-4 pb-4 pt-10 min-[500px]:pb-1 min-[556px]:pb-6
@@ -155,7 +153,7 @@ export default function HelicopterRescuePage() {
               min-[944px]:px-10 min-[944px]:py-20
               lg:px-14 lg:py-16'
           >
-            <div className='mx-auto max-w-[92ch] text-left'>
+            <div className='mx-auto max-w-[92ch] pl-4 text-left sm:pl-0'>
               <p
                 className='text-[15px] leading-[1.7] text-black
                   min-[970px]:text-[16px]
@@ -172,7 +170,6 @@ export default function HelicopterRescuePage() {
             </div>
           </div>
 
-          {/* PHOTO */}
           <div
             className='relative h-[46vh] w-full
               overflow-hidden sm:h-[50vh] md:h-[54vh]

@@ -67,20 +67,20 @@ export default function MountainRescuePage() {
                 ].join(' ')}
               >
                 {/* ======================
-                    CONTROL PANEL (edit px/scale here)
+                        CONTROL PANEL
                     ====================== */}
                 <div
                   className={[
                     'relative flex w-full flex-col items-center',
 
-                    // WORDMARK variables (px + scale)
-                    '[--word-h:260px] [--word-scale:.90] [--word-y:-24px] [--word-x:-0px]',
+                    // WORDMARK variables
+                    '[--word-h:260px] [--word-scale:.90] [--word-x:-0px] [--word-y:-24px]',
                     'sm:[--word-h:280px] sm:[--word-scale:1] sm:[--word-x:-8px] sm:[--word-y:-20px]',
                     'md:[--word-h:360px] md:[--word-scale:1.15] md:[--word-x:-8px] md:[--word-y:-130px]',
-                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-y:-180px] lg:[--word-x:-0px]',
-                    'xl:[--word-h:400px] xl:[--word-scale:1] xl:[--word-y:-80px] xl:[--word-x:-0px]',
+                    'lg:[--word-h:500px] lg:[--word-scale:1.1] lg:[--word-x:-0px] lg:[--word-y:-180px]',
+                    'xl:[--word-h:400px] xl:[--word-scale:1] xl:[--word-x:-0px] xl:[--word-y:-80px]',
 
-                    // PICKAXE variables (px + scale + size)
+                    // PICKAXE variables
                     '[--axe-scale:1] [--axe-size:140px] [--axe-x:0px] [--axe-y:-50px]',
                     'sm:[--axe-scale:1] sm:[--axe-size:150px] sm:[--axe-x:0px] sm:[--axe-y:-12px]',
                     'md:[--axe-scale:1] md:[--axe-size:200px] md:[--axe-x:0px] md:[--axe-y:-170px]',
@@ -88,7 +88,6 @@ export default function MountainRescuePage() {
                     'xl:[--axe-scale:1.25] xl:[--axe-size:205px] xl:[--axe-x:0px] xl:[--axe-y:-60px]',
                   ].join(' ')}
                 >
-                  {/* WORDMARK */}
                   <div className='w-full px-6 sm:px-10 md:px-0'>
                     <div
                       className='relative mx-auto w-full max-w-[560px] md:max-w-none'
@@ -160,7 +159,7 @@ export default function MountainRescuePage() {
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
-            SECTION 2 — CLASS 4 / EXPOSURE
+                    CLASS 4
             ========================= */}
 
         <section className='w-full'>
@@ -230,10 +229,9 @@ export default function MountainRescuePage() {
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
-            SECTION 3 — SKYPILOT
+                    SKYPILOT
             ========================= */}
         <section className='w-full' style={{ backgroundColor: '#151f2f' }}>
-          {/* PHOTO BLOCK */}
           <div className='relative mx-auto w-full max-w-[1400px] px-6 pt-12 sm:px-10 sm:pt-16 md:px-14 md:pt-20'>
             <div className='relative h-[360px] translate-x-0 overflow-hidden sm:h-[420px] sm:-translate-x-[2px] md:h-[480px] lg:h-[520px]'>
               <Image
@@ -244,7 +242,6 @@ export default function MountainRescuePage() {
                 className='object-cover object-center'
               />
 
-              {/* Triangles */}
               <div className='pointer-events-none absolute left-0 top-0 z-10 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[210px] xl:w-[240px]'>
                 <Image
                   src={mountainRescueTriangles}
@@ -255,7 +252,6 @@ export default function MountainRescuePage() {
             </div>
           </div>
 
-          {/* TEXT BLOCK */}
           <div className='w-full px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14'>
             <div className='mx-auto w-full max-w-[980px]'>
               <p className='text-[15px] leading-relaxed text-white sm:text-[16px] lg:text-[20px]'>
@@ -273,7 +269,7 @@ export default function MountainRescuePage() {
         <div className='h-[8px] w-full bg-white' />
 
         {/* =========================
-            SECTION — IMAGE BLOCK
+                  IMAGE BLOCK
             ========================= */}
 
         <section className='w-full bg-white'>

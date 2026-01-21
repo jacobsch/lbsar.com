@@ -35,7 +35,7 @@
 
 .anchor {
   position: absolute;
-  top: -64px; /* given the fixed header is 50px tall, and you want 15px padding */
+  top: -64px;
   left: 0px;
 }
 
