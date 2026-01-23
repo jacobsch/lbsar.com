@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 import '@/styles/globals.css';
 import '@/styles/header.css';
@@ -26,6 +27,19 @@ const chakra = localFont({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const onContextMenu = (e: MouseEvent) => e.preventDefault();
+    const onDragStart = (e: DragEvent) => e.preventDefault();
+
+    document.addEventListener('contextmenu', onContextMenu);
+    document.addEventListener('dragstart', onDragStart);
+
+    return () => {
+      document.removeEventListener('contextmenu', onContextMenu);
+      document.removeEventListener('dragstart', onDragStart);
+    };
+  }, []);
+
   return (
     <>
       <Seo />
