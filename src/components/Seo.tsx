@@ -49,11 +49,15 @@ export default function Seo(props: SeoProps) {
 
       {isHome && (
         <>
-          <link rel='preload' as='image' href='/images/triangles-logo.png' />
           <link
             rel='preload'
             as='image'
-            href='/images/lbsar-scratched-words.png'
+            href='/images/home/triangles-logo.png'
+          />
+          <link
+            rel='preload'
+            as='image'
+            href='/images/home/lbsar-scratched-words.png'
           />
         </>
       )}
