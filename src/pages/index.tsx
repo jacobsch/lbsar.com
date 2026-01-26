@@ -76,7 +76,7 @@ const Hero = () => {
           src={triangles_logo}
           alt='LBSAR Logo with Triangles Pattern'
           fill
-          loading='eager'
+          priority
           sizes='(min-width:1070px) 700px, 0px'
           className='object-contain object-right-top'
         />
@@ -101,7 +101,7 @@ const Hero = () => {
           alt='LBSAR scratched lettering'
           width={1800}
           height={650}
-          loading='eager'
+          priority
           sizes='(max-width: 639px) 200px, (max-width: 767px) 300px, (max-width: 1023px) 350px, 500px'
           className='h-auto w-full drop-shadow-[0_10px_22px_rgba(0,0,0,0.35)]'
         />

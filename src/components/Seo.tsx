@@ -26,7 +26,6 @@ type SeoProps = {
 
 export default function Seo(props: SeoProps) {
   const router = useRouter();
-  const isHome = router.pathname === '/';
 
   const cleanPath = router.asPath.split('?')[0].split('#')[0];
 
@@ -46,21 +45,6 @@ export default function Seo(props: SeoProps) {
   return (
     <Head>
       <title>{meta.title}</title>
-
-      {isHome && (
-        <>
-          <link
-            rel='preload'
-            as='image'
-            href='/images/home/triangles-logo.png'
-          />
-          <link
-            rel='preload'
-            as='image'
-            href='/images/home/lbsar-scratched-words.png'
-          />
-        </>
-      )}
 
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
