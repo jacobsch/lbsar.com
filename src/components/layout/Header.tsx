@@ -244,7 +244,7 @@ export default function Header() {
               >
                 <Image
                   src={headerLogo}
-                  alt='Header Logo'
+                  alt='Lions Bay Search and Rescue Society Logo'
                   priority
                   className='h-10 w-auto'
                 />

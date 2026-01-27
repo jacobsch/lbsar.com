@@ -41,7 +41,7 @@ export default function AboutUsPage() {
           <div className='relative aspect-[3/1] w-full'>
             <Image
               src={teamphoto}
-              alt='LBSAR Team'
+              alt='LBSAR Team Photo'
               fill
               sizes='100vw'
               className='object-cover'
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
               <div className='flex flex-col items-center gap-2 sm:gap-5 lg:gap-6'>
                 <Image
                   src={lbsarScratchedWords}
-                  alt='LBSAR'
+                  alt=''
                   width={420}
                   height={120}
                   sizes='(max-width: 639px) 200px, (max-width: 1023px) 300px, 460px'
@@ -72,7 +72,7 @@ export default function AboutUsPage() {
 
                 <Image
                   src={team2026ScratchedWords}
-                  alt='Team 2026'
+                  alt=''
                   width={420}
                   height={120}
                   sizes='(max-width: 639px) 200px, (max-width: 1023px) 300px, 460px'
@@ -118,7 +118,7 @@ export default function AboutUsPage() {
               <div className='shrink-0'>
                 <Image
                   src={lbsarLogo}
-                  alt='LBSAR Logo'
+                  alt='Lions Bay Search and Rescue Society Logo'
                   width={180}
                   height={180}
                   sizes='(max-width: 639px) 110px, 160px'
@@ -153,7 +153,7 @@ export default function AboutUsPage() {
           <div className='font-primary flex flex-col items-center gap-4 px-6 pb-8 text-center text-white'>
             <Image
               src={historyScratchedWords}
-              alt='History'
+              alt=''
               width={420}
               height={120}
               sizes='(max-width: 640px) 200px, 360px'
@@ -250,7 +250,7 @@ export default function AboutUsPage() {
             <div className='flex w-full justify-center'>
               <Image
                 src={scratched1982}
-                alt='1982'
+                alt=''
                 width={480}
                 height={140}
                 sizes='(max-width: 640px) 200px, (max-width: 1024px) 340px, 440px'
@@ -267,7 +267,7 @@ export default function AboutUsPage() {
 
             <Image
               src={mudSlideCbc}
-              alt=''
+              alt='Lions Bay Mudslide'
               aria-hidden
               width={760}
               height={620}
@@ -354,7 +354,7 @@ export default function AboutUsPage() {
                 >
                   <Image
                     src={marcelScratchedWords}
-                    alt='Marcel'
+                    alt=''
                     width={420}
                     height={120}
                     sizes='(max-width: 639px) 180px, (max-width: 1023px) 240px, 280px'
@@ -370,7 +370,7 @@ export default function AboutUsPage() {
                 <div className='relative z-30 flex -translate-y-2 justify-center max-[800px]:hidden sm:-translate-y-[94px] sm:justify-end min-[1081px]:-translate-y-[117.5px]'>
                   <Image
                     src={andrie1983ScratchedWords}
-                    alt='1983 Andrie'
+                    alt=''
                     width={420}
                     height={120}
                     sizes='(max-width: 639px) 200px, (max-width: 1023px) 260px, 320px'
@@ -435,7 +435,7 @@ export default function AboutUsPage() {
               <div className='flex w-full justify-center lg:justify-start lg:pr-20'>
                 <Image
                   src={base1992ScratchedWords}
-                  alt='1992 Base'
+                  alt=''
                   width={520}
                   height={220}
                   sizes='(max-width: 640px) 220px, (max-width: 1024px) 300px, 420px'
@@ -466,7 +466,7 @@ export default function AboutUsPage() {
             <div className='relative mx-auto w-full max-w-[1400px]'>
               <Image
                 src={basePhoto}
-                alt='Lions Bay Fire Hall and LBSAR base'
+                alt='Lions Bay Fire Hall and LBSAR Base'
                 width={1600}
                 height={900}
                 sizes='100vw'
@@ -491,7 +491,7 @@ export default function AboutUsPage() {
             <div className='mb-8 sm:mb-10 lg:-ml-32 lg:mb-12'>
               <Image
                 src={landslide2024Title}
-                alt='2024 Landslide'
+                alt=''
                 width={900}
                 height={180}
                 sizes='(max-width: 640px) 280px, (max-width: 1024px) 520px, 760px'
@@ -503,7 +503,7 @@ export default function AboutUsPage() {
               <div className='lg:col-span-8 lg:-ml-32'>
                 <Image
                   src={landslide2}
-                  alt='Landslide debris'
+                  alt='Lions Bay Landslide'
                   width={1200}
                   height={700}
                   sizes='(max-width: 1024px) 100vw, 960px'
@@ -549,7 +549,7 @@ export default function AboutUsPage() {
               <div className='order-1 lg:order-2 lg:col-span-8 lg:-mr-32'>
                 <Image
                   src={landslide1}
-                  alt='Landslide scene'
+                  alt='Lions Bay Landslide'
                   width={1200}
                   height={700}
                   sizes='(max-width: 1024px) 100vw, 960px'

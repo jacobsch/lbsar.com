@@ -50,7 +50,7 @@ export default function MountainRescuePage() {
             <div className='w-full'>
               <Image
                 src={mountain_rescue_photo}
-                alt='Mountain rescue'
+                alt='LBSAR Mountain Rescue'
                 priority
                 sizes='(max-width: 768px) 100vw, (max-width: 1024px) 58vw, 60vw'
                 className='h-auto w-full object-contain md:h-full md:object-cover md:object-center'
@@ -95,7 +95,7 @@ export default function MountainRescuePage() {
                     >
                       <Image
                         src={mountain_rescue_scratched_words}
-                        alt='Mountain Rescue'
+                        alt=''
                         fill
                         priority
                         sizes='100vw'
@@ -171,7 +171,7 @@ export default function MountainRescuePage() {
               <div className='relative flex w-full max-w-[560px] translate-x-0 justify-center px-2 sm:-translate-x-[6px] sm:px-3'>
                 <Image
                   src={class4ScratchedWords}
-                  alt='Class 4'
+                  alt=''
                   className='h-auto w-full scale-[1.0] object-contain sm:scale-[1.06] md:scale-[1.1] lg:scale-[1.12]'
                 />
               </div>
@@ -209,7 +209,7 @@ export default function MountainRescuePage() {
               <div className='absolute inset-0 overflow-hidden'>
                 <Image
                   src={class4ExposedPhoto}
-                  alt='Exposed class 4 terrain'
+                  alt='LBSAR Class 4 Terrain'
                   fill
                   sizes='(max-width: 768px) 100vw, 60vw'
                   className='object-cover object-center'
@@ -219,7 +219,7 @@ export default function MountainRescuePage() {
               <div className='pointer-events-none absolute inset-x-0 bottom-[5px] px-3 sm:bottom-[8px] sm:px-4 md:bottom-[10px] md:px-7 lg:px-11'>
                 <Image
                   src={exposureScratchedWords}
-                  alt='Exposure'
+                  alt=''
                   className='block h-auto w-full translate-x-0 scale-[0.96] object-contain sm:-translate-x-[6px] sm:scale-[0.99] md:-translate-x-[8px] md:scale-[1.02]'
                 />
               </div>
@@ -236,7 +236,7 @@ export default function MountainRescuePage() {
             <div className='relative h-[360px] translate-x-0 overflow-hidden sm:h-[420px] sm:-translate-x-[2px] md:h-[480px] lg:h-[520px]'>
               <Image
                 src={skypilotPhoto}
-                alt='Mountain rescue specialists in alpine terrain'
+                alt='LBSAR Skypilot Mountain Rescue'
                 fill
                 sizes='100vw'
                 className='object-cover object-center'
@@ -277,7 +277,7 @@ export default function MountainRescuePage() {
             <div className='mx-auto flex w-full max-w-[1400px] translate-x-0 justify-center sm:-translate-x-[7px]'>
               <Image
                 src={mountainRescueImageBlock}
-                alt='Mountain rescue'
+                alt='LBSAR Mountain Rescue'
                 className='h-auto w-full object-contain'
                 sizes='100vw'
               />
@@ -294,7 +294,7 @@ export default function MountainRescuePage() {
           <div className='flex items-center justify-center px-6 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14'>
             <Image
               src={harveySunset}
-              alt='Mountain rescue'
+              alt='LBSAR Mountain Rescue'
               sizes='100vw'
               className='h-auto w-full max-w-[1200px] object-contain'
             />

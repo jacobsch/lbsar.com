@@ -19,7 +19,7 @@ export default function HelicopterRescuePage() {
         <div className='relative h-[62vh] w-full overflow-hidden sm:h-[68vh] md:h-[72vh] lg:h-[78vh]'>
           <Image
             src={helicopterRescuePhoto}
-            alt='Helicopter rescue operation'
+            alt='LBSAR Helicopter Rescue Operation'
             fill
             priority
             sizes='100vw'
@@ -29,7 +29,7 @@ export default function HelicopterRescuePage() {
           <div className='pointer-events-none absolute bottom-[-1px] left-0 w-[80%] sm:bottom-[-1px] sm:w-[75%] md:bottom-[-1px] md:w-[80%] lg:bottom-[-3px] lg:w-[50%]'>
             <Image
               src={helicopterRescueWords}
-              alt='Helicopter Rescue'
+              alt=''
               className='block h-auto w-[90vw] object-contain sm:w-[75vw] md:w-[60vw] lg:w-[55vw]'
             />
           </div>
@@ -125,7 +125,7 @@ export default function HelicopterRescuePage() {
           <div className='relative min-h-[52vh] overflow-hidden bg-black min-[944px]:h-full min-[944px]:border-l-[8px] min-[944px]:border-white'>
             <Image
               src={brentTalonPhoto}
-              alt='Helicopter rescue with long-line extraction'
+              alt='LBSAR Helicopter Rescue'
               fill
               priority
               sizes='(min-width: 944px) 560px, 100vw'
@@ -180,7 +180,7 @@ export default function HelicopterRescuePage() {
           >
             <Image
               src={longLinePhoto}
-              alt='Helicopter long-line operation'
+              alt='LBSAR Helicopter Long-Line Operation'
               fill
               priority
               sizes='100vw'

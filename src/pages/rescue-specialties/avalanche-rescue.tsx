@@ -25,7 +25,7 @@ export default function AvalancheRescuePage() {
         <div className='relative h-[58vh] min-h-[340px] w-full overflow-hidden sm:h-[64vh] md:h-[70vh] lg:h-[76vh]'>
           <Image
             src={avalancheMainPhoto}
-            alt='Avalanche rescue'
+            alt='LBSAR Avalanche Rescue'
             fill
             priority
             className='object-cover object-center'
@@ -35,7 +35,7 @@ export default function AvalancheRescuePage() {
           <div className='pointer-events-none absolute bottom-[-1px] right-0 w-[74%] sm:bottom-[-2px] sm:w-[64%] md:bottom-[-2px] md:w-[54%] lg:bottom-[-3px] lg:w-[48%]'>
             <Image
               src={avalancheScratchedWords}
-              alt='Avalanche Rescue'
+              alt=''
               className='block h-auto w-full object-contain'
               sizes='(min-width: 1024px) 46vw, (min-width: 768px) 52vw, (min-width: 640px) 62vw, 72vw'
             />
@@ -57,7 +57,7 @@ export default function AvalancheRescuePage() {
                   <div className='w-[140px] sm:w-[170px] md:w-[200px] lg:w-[230px]'>
                     <Image
                       src={avalancheIcon}
-                      alt='Avalanche'
+                      alt=''
                       className='h-auto w-full object-contain'
                     />
                   </div>
@@ -91,7 +91,7 @@ export default function AvalancheRescuePage() {
           <div className='relative h-[320px] sm:h-[380px] md:h-auto'>
             <Image
               src={reccoHeliPhoto}
-              alt='RECCO avalanche training'
+              alt='LBSAR RECCO Avalanche Training'
               fill
               className='object-cover object-[50%_65%] md:object-center'
               sizes='(min-width: 1024px) 58vw, 100vw'
@@ -108,7 +108,7 @@ export default function AvalancheRescuePage() {
         <div className='relative h-[66vh] min-h-[480px] w-full overflow-hidden sm:h-[72vh] md:h-[78vh] lg:h-[80vh]'>
           <Image
             src={avalancheTeamPhoto}
-            alt='Avalanche rescue team'
+            alt='LBSAR Avalanche Rescue Team'
             fill
             className='object-cover object-[50%_75%]'
             sizes='100vw'
@@ -134,7 +134,7 @@ export default function AvalancheRescuePage() {
           <div className='relative order-1 h-[380px] overflow-hidden sm:h-[460px] md:order-1 md:h-full'>
             <Image
               src={avalancheProbing}
-              alt='Avalanche probing'
+              alt='LBSAR Avalanche Probing'
               fill
               sizes='(max-width: 768px) 100vw, 50vw'
               className='object-cover object-[50%_65%] md:object-center'
@@ -171,7 +171,7 @@ export default function AvalancheRescuePage() {
             <div className='w-full max-w-[520px]'>
               <Image
                 src={reccoScratchedWords}
-                alt='RECCO'
+                alt=''
                 width={1400}
                 height={360}
                 className='h-auto w-full object-contain'
@@ -195,7 +195,7 @@ export default function AvalancheRescuePage() {
           <div className='relative order-3 h-[380px] overflow-hidden bg-[#b2092d] sm:h-[460px] md:order-4 md:h-full'>
             <Image
               src={reccoHandheld}
-              alt='RECCO handheld detector'
+              alt='RECCO Handheld Detector'
               fill
               sizes='(max-width: 768px) 100vw, 50vw'
               className='object-cover object-[50%_75%] md:object-center'
@@ -214,7 +214,7 @@ export default function AvalancheRescuePage() {
         <div className='relative h-[360px] sm:h-[420px] md:h-[520px] lg:h-[620px]'>
           <Image
             src={avalancheThree}
-            alt='Avalanche rescue operations'
+            alt='LBSAR Avalanche Rescue Operations'
             fill
             priority
             sizes='100vw'

@@ -70,7 +70,7 @@ export default function Footer() {
               >
                 <Image
                   src={lbsarLogo}
-                  alt='Lions Bay Search and Rescue Society logo'
+                  alt='Lions Bay Search and Rescue Society Logo'
                   width={96}
                   height={96}
                   className='cursor-pointer object-contain'

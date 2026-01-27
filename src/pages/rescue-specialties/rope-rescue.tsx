@@ -48,7 +48,7 @@ export default function RopeRescuePage() {
             <div className='w-full'>
               <Image
                 src={rope_rescue_photo}
-                alt='Rope Rescue'
+                alt='LBSAR Rope Rescue'
                 priority
                 sizes='(max-width: 768px) 100vw, (max-width: 1024px) 58vw, 60vw'
                 className='h-auto w-full object-contain md:h-full md:object-cover md:object-center'
@@ -92,7 +92,7 @@ export default function RopeRescuePage() {
                   >
                     <Image
                       src={rope_rescue_scratched_words}
-                      alt='Rope Rescue'
+                      alt=''
                       fill
                       priority
                       sizes='100vw'
@@ -182,7 +182,7 @@ export default function RopeRescuePage() {
             <div className='relative order-2 h-[380px] overflow-hidden sm:h-[460px] md:order-2 md:h-full'>
               <Image
                 src={ropeRescue2}
-                alt='Rope rescue system setup'
+                alt='LBSAR Rope Rescue System Setup'
                 fill
                 sizes='(max-width: 768px) 100vw, 65vw'
                 className='object-cover object-center'
@@ -192,7 +192,7 @@ export default function RopeRescuePage() {
             <div className='relative order-4 h-[380px] overflow-hidden sm:h-[460px] md:order-3 md:h-full'>
               <Image
                 src={ropeRescue3}
-                alt='Rope rescue in forest terrain'
+                alt='LBSAR Rope Rescue System Setup'
                 fill
                 sizes='(max-width: 768px) 100vw, 35vw'
                 className='object-cover object-center'
@@ -203,7 +203,7 @@ export default function RopeRescuePage() {
               <div className='w-full max-w-[560px]'>
                 <Image
                   src={dcttrsWords}
-                  alt='DCTTRS'
+                  alt=''
                   width={1400}
                   height={360}
                   className='h-auto w-full object-contain'
@@ -252,7 +252,7 @@ export default function RopeRescuePage() {
             <div className='flex h-[360px] items-center justify-center px-6 pt-10 sm:h-[420px] sm:px-10 sm:pt-14 md:h-[480px] md:pt-16 lg:h-[540px] lg:pt-20'>
               <Image
                 src={ropeRescue4}
-                alt='Rope rescue training exercise'
+                alt='LBSAR Rope Rescue Training'
                 sizes='100vw'
                 className='max-h-full w-auto max-w-full object-contain'
               />

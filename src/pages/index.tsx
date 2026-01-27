@@ -74,7 +74,7 @@ const Hero = () => {
       >
         <Image
           src={triangles_logo}
-          alt='LBSAR Logo with Triangles Pattern'
+          alt=''
           fill
           priority
           sizes='(min-width:1070px) 700px, 0px'
@@ -98,7 +98,7 @@ const Hero = () => {
       >
         <Image
           src={lbsar_scratched_words}
-          alt='LBSAR scratched lettering'
+          alt=''
           width={1800}
           height={650}
           priority
@@ -120,7 +120,7 @@ const Hero = () => {
         >
           <Image
             src='/images/home/lions.svg'
-            alt='Lions Mountains'
+            alt='Lions Bay Mountains'
             fill
             priority
             fetchPriority='high'
@@ -208,7 +208,7 @@ const EmergencyBanner = () => (
     <div className='absolute inset-0 z-0 bg-[#121d2f]'>
       <Image
         src={trees}
-        alt='Forest'
+        alt='Lions Bay Forest'
         fill
         sizes='100vw'
         className='object-cover'
@@ -257,7 +257,7 @@ const EmergencyBanner = () => (
       >
         <Image
           src={call_911}
-          alt='Call 911'
+          alt=''
           width={1200}
           height={600}
           sizes='(max-width: 639px) 260px, (max-width: 767px) 320px, (max-width: 1023px) 360px, 420px'
@@ -288,7 +288,7 @@ const EmergencyBanner = () => (
       >
         <Image
           src={bottom_triangles}
-          alt='Triangle Pattern'
+          alt=''
           width={1200}
           height={1200}
           sizes='(max-width: 639px) 0px, (max-width: 767px) 170px, (max-width: 1023px) 210px, (max-width: 1279px) 260px, 300px'
@@ -343,7 +343,7 @@ const AreaMapSection = () => {
           >
             <Image
               src={lbsar_map_word}
-              alt='Lions Bay Area Map'
+              alt=''
               width={1200}
               height={220}
               sizes='(max-width: 639px) 320px, (max-width: 1023px) 520px, 680px'

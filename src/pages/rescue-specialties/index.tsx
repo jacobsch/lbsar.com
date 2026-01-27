@@ -336,7 +336,7 @@ export default function RescueSpecialtiesPage() {
         <div className='relative aspect-[1.5/1] w-full sm:aspect-[2/1] lg:aspect-[2.75/1]'>
           <Image
             src={rescue_mountain}
-            alt='Mountain Rescue'
+            alt='LBSAR Mountain Rescue'
             fill
             priority
             sizes='100vw'
@@ -346,7 +346,7 @@ export default function RescueSpecialtiesPage() {
           <div className='pointer-events-none absolute inset-x-0 bottom-[-46px] flex justify-center sm:bottom-[-61px] lg:bottom-[-80px]'>
             <Image
               src={rescue_specialties_words}
-              alt='Rescue Specialties'
+              alt=''
               className='h-auto w-[320px] sm:w-[420px] lg:w-[550px]'
             />
           </div>
